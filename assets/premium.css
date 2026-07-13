@@ -2367,3 +2367,36 @@ body {
   #packages .package-cta { margin-inline: 22px !important; }
   #packages .package-card > ul { padding-inline: 22px; }
 }
+
+/* Perspective-safe casting composite. The previous rectangular overlay is
+   disabled; the movie is now projected into the display on a full-scene
+   canvas, leaving every original television-frame pixel untouched. */
+.casting-movie-screen,
+.casting-connected {
+  display: none !important;
+}
+
+.casting-composite-canvas {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0;
+  animation: casting-composite-story 12s cubic-bezier(.55, 0, .22, 1) infinite;
+}
+
+@keyframes casting-composite-story {
+  0%, 27% { opacity: 0; }
+  34%, 76% { opacity: 1; }
+  84%, 100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .casting-composite-canvas {
+    display: none !important;
+    animation: none !important;
+  }
+}
