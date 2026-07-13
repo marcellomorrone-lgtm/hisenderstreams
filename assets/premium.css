@@ -1677,6 +1677,7 @@ body {
 /* --------------------------------------------------------------------------
    Visual system 6: professional Lucide icon set
    -------------------------------------------------------------------------- */
+.icon.hi-icon.lucide-icon-shell > svg,
 .lucide-icon-shell > svg,
 .contact-pill .lucide-contact-icon {
   display: block;
