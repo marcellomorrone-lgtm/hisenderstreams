@@ -1,0 +1,258 @@
+[
+  {
+    "name": "Das Erste / ARD",
+    "logo": "assets/channel-logos/das-erste-ard.png"
+  },
+  {
+    "name": "ZDF",
+    "logo": "assets/channel-logos/zdf.png"
+  },
+  {
+    "name": "RTL",
+    "logo": "assets/channel-logos/rtl.png"
+  },
+  {
+    "name": "SAT.1",
+    "logo": "assets/channel-logos/sat-1.png"
+  },
+  {
+    "name": "ProSieben",
+    "logo": "assets/channel-logos/prosieben.png"
+  },
+  {
+    "name": "VOX",
+    "logo": "assets/channel-logos/vox.png"
+  },
+  {
+    "name": "kabel eins",
+    "logo": "assets/channel-logos/kabel-eins.png"
+  },
+  {
+    "name": "RTL Zwei",
+    "logo": "assets/channel-logos/rtl-zwei.png"
+  },
+  {
+    "name": "3sat",
+    "logo": "assets/channel-logos/3sat.png"
+  },
+  {
+    "name": "ARTE Deutsch",
+    "logo": "assets/channel-logos/arte-deutsch.png"
+  },
+  {
+    "name": "WDR",
+    "logo": "assets/channel-logos/wdr.png"
+  },
+  {
+    "name": "NDR",
+    "logo": "assets/channel-logos/ndr.png"
+  },
+  {
+    "name": "BR Fernsehen",
+    "logo": "assets/channel-logos/br-fernsehen.png"
+  },
+  {
+    "name": "SWR Fernsehen",
+    "logo": "assets/channel-logos/swr-fernsehen.png"
+  },
+  {
+    "name": "MDR Fernsehen",
+    "logo": "assets/channel-logos/mdr-fernsehen.png"
+  },
+  {
+    "name": "Phoenix",
+    "logo": "assets/channel-logos/phoenix.png"
+  },
+  {
+    "name": "n-tv",
+    "logo": "assets/channel-logos/n-tv.png"
+  },
+  {
+    "name": "Welt",
+    "logo": "assets/channel-logos/welt.png"
+  },
+  {
+    "name": "ORF 1",
+    "logo": "assets/channel-logos/orf-1.png"
+  },
+  {
+    "name": "TF1",
+    "logo": "assets/channel-logos/tf1.png"
+  },
+  {
+    "name": "France 2",
+    "logo": "assets/channel-logos/france-2.png"
+  },
+  {
+    "name": "France 3",
+    "logo": "assets/channel-logos/france-3.png"
+  },
+  {
+    "name": "M6",
+    "logo": "assets/channel-logos/m6.png"
+  },
+  {
+    "name": "France 5",
+    "logo": "assets/channel-logos/france-5.png"
+  },
+  {
+    "name": "TMC",
+    "logo": "assets/channel-logos/tmc.png"
+  },
+  {
+    "name": "W9",
+    "logo": "assets/channel-logos/w9.png"
+  },
+  {
+    "name": "Arte France",
+    "logo": "assets/channel-logos/arte-france.png"
+  },
+  {
+    "name": "TV5Monde",
+    "logo": "assets/channel-logos/tv5monde.png"
+  },
+  {
+    "name": "RTS 1",
+    "logo": "assets/channel-logos/rts-1.png"
+  },
+  {
+    "name": "Rai 1",
+    "logo": "assets/channel-logos/rai-1.png"
+  },
+  {
+    "name": "Canale 5",
+    "logo": "assets/channel-logos/canale-5.png"
+  },
+  {
+    "name": "Rai 2",
+    "logo": "assets/channel-logos/rai-2.png"
+  },
+  {
+    "name": "Italia 1",
+    "logo": "assets/channel-logos/italia-1.png"
+  },
+  {
+    "name": "Rai 3",
+    "logo": "assets/channel-logos/rai-3.png"
+  },
+  {
+    "name": "Rete 4",
+    "logo": "assets/channel-logos/rete-4.png"
+  },
+  {
+    "name": "La7",
+    "logo": "assets/channel-logos/la7.png"
+  },
+  {
+    "name": "TV8",
+    "logo": "assets/channel-logos/tv8.png"
+  },
+  {
+    "name": "Nove",
+    "logo": "assets/channel-logos/nove.png"
+  },
+  {
+    "name": "Rai News 24",
+    "logo": "assets/channel-logos/rai-news-24.png"
+  },
+  {
+    "name": "Rai Movie",
+    "logo": "assets/channel-logos/rai-movie.png"
+  },
+  {
+    "name": "Rai Premium",
+    "logo": "assets/channel-logos/rai-premium.png"
+  },
+  {
+    "name": "Iris",
+    "logo": "assets/channel-logos/iris.png"
+  },
+  {
+    "name": "BBC One",
+    "logo": "assets/channel-logos/bbc-one.png"
+  },
+  {
+    "name": "ITV1",
+    "logo": "assets/channel-logos/itv1.png"
+  },
+  {
+    "name": "Channel 4",
+    "logo": "assets/channel-logos/channel-4.png"
+  },
+  {
+    "name": "Channel 5",
+    "logo": "assets/channel-logos/channel-5.png"
+  },
+  {
+    "name": "Sky News",
+    "logo": "assets/channel-logos/sky-news.png"
+  },
+  {
+    "name": "BBC News",
+    "logo": "assets/channel-logos/bbc-news.png"
+  },
+  {
+    "name": "CNN International",
+    "logo": "assets/channel-logos/cnn-international.png"
+  },
+  {
+    "name": "CNBC",
+    "logo": "assets/channel-logos/cnbc.png"
+  },
+  {
+    "name": "Bloomberg TV",
+    "logo": "assets/channel-logos/bloomberg-tv.png"
+  },
+  {
+    "name": "Al Jazeera",
+    "logo": "assets/channel-logos/al-jazeera.png"
+  },
+  {
+    "name": "La 1 / TVE",
+    "logo": "assets/channel-logos/la-1-tve.png"
+  },
+  {
+    "name": "SIC",
+    "logo": "assets/channel-logos/sic.png"
+  },
+  {
+    "name": "RTP1",
+    "logo": "assets/channel-logos/rtp1.png"
+  },
+  {
+    "name": "RTP2",
+    "logo": "assets/channel-logos/rtp2.png"
+  },
+  {
+    "name": "RTP Internacional",
+    "logo": "assets/channel-logos/rtp-internacional.png"
+  },
+  {
+    "name": "SRF 1",
+    "logo": "assets/channel-logos/srf-1.png"
+  },
+  {
+    "name": "SRF zwei",
+    "logo": "assets/channel-logos/srf-zwei.png"
+  },
+  {
+    "name": "SRF info",
+    "logo": "assets/channel-logos/srf-info.png"
+  },
+  {
+    "name": "RTS 1",
+    "logo": "assets/channel-logos/rts-1.png"
+  },
+  {
+    "name": "RTS 2",
+    "logo": "assets/channel-logos/rts-2.png"
+  },
+  {
+    "name": "RSI LA 2",
+    "logo": "assets/channel-logos/rsi-la-2.png"
+  },
+  {
+    "name": "blue Zoom",
+    "logo": "assets/channel-logos/blue-zoom.png"
+  }
+]
