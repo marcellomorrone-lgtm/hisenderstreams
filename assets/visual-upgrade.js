@@ -95,19 +95,16 @@
     heading.insertAdjacentElement('afterend', note);
   });
 
-  const iconGlyphs = {
-    plug: { glyph: 'IP', label: 'IP connection' },
-    network: { glyph: 'NET', label: 'Network' },
-    tv: { glyph: 'TV', label: 'Hotel TV' },
-    streams: { glyph: '≋', label: 'Streams' },
-    iptv: { glyph: '▶', label: 'IPTV' },
-    cast: { glyph: '◔', label: 'Casting' },
-    link: { glyph: '↔', label: 'Connection' },
-    shield: { glyph: '✓', label: 'Support' },
-    clock: { glyph: '24', label: '24/7 support' },
-    globe: { glyph: '◎', label: 'Website' },
-    mail: { glyph: '@', label: 'Email' },
-    phone: { glyph: '+', label: 'Telephone' }
+  const iconLabels = {
+    plug: 'IP connection',
+    network: 'Network',
+    tv: 'Hotel TV',
+    streams: 'TV streams',
+    iptv: 'IPTV',
+    cast: 'Casting',
+    link: 'Connection',
+    shield: 'Support',
+    clock: '24/7 support'
   };
 
   function classifyIcon(element, index) {
@@ -123,23 +120,35 @@
 
   document.querySelectorAll('.icon').forEach((element, index) => {
     const type = classifyIcon(element, index);
-    const icon = iconGlyphs[type];
     element.classList.add('hi-icon', `hi-icon-${type}`);
-    element.setAttribute('aria-label', icon.label);
-    element.innerHTML = `<span class="hi-icon-mark" aria-hidden="true"><span>${icon.glyph}</span><i></i></span>`;
+    element.setAttribute('aria-label', iconLabels[type] || 'Feature');
   });
 
   document.querySelectorAll('.contact-pill').forEach((link) => {
     const href = link.getAttribute('href') || '';
     const type = href.startsWith('mailto:') ? 'mail' : href.startsWith('tel:') ? 'phone' : 'globe';
-    const icon = iconGlyphs[type];
-    const oldIcon = link.querySelector('svg');
-    if (!oldIcon) return;
-    const replacement = document.createElement('span');
-    replacement.className = `hi-contact-icon hi-contact-icon-${type}`;
-    replacement.setAttribute('aria-hidden', 'true');
-    replacement.textContent = icon.glyph;
-    oldIcon.replaceWith(replacement);
+    link.classList.add(`hi-contact-${type}`);
+  });
+
+  const coaxLabels = {
+    de: ['Bestehendes Kabel', 'IP-Daten', 'Hotel-TV'],
+    en: ['Existing cable', 'IP data', 'Hotel TV'],
+    fr: ['Câble existant', 'Données IP', 'TV hôtel'],
+    it: ['Cavo esistente', 'Dati IP', 'Hotel TV']
+  };
+  document.querySelectorAll('.coax-visual').forEach((panel) => {
+    const labels = coaxLabels[locale] || coaxLabels.de;
+    panel.innerHTML = `
+      <div class="coax-flow" role="img" aria-label="COAX to IP to hotel TV">
+        <div class="coax-flow-grid" aria-hidden="true"></div>
+        <div class="coax-node coax-node-coax"><span class="coax-node-symbol">COAX</span><small>${labels[0]}</small></div>
+        <div class="coax-connector"><i></i><i></i><i></i></div>
+        <div class="coax-node coax-node-ip"><span class="coax-node-symbol">IP</span><small>${labels[1]}</small></div>
+        <div class="coax-connector"><i></i><i></i><i></i></div>
+        <div class="coax-node coax-node-tv"><span class="coax-tv-screen"></span><small>${labels[2]}</small></div>
+        <div class="coax-orbit coax-orbit-one"></div>
+        <div class="coax-orbit coax-orbit-two"></div>
+      </div>`;
   });
 
   const rail = document.createElement('div');
