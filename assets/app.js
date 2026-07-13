@@ -4,6 +4,87 @@
   const locale = cfg.locale || 'de';
   const byId = id => document.getElementById(id);
 
+  // Verified channel-to-logo assignments. The repository revision is pinned so
+  // a future upstream rename cannot silently attach a different logo.
+  const verifiedLogoBase = 'https://raw.githubusercontent.com/tv-logo/tv-logos/d32e347bb7c4c640dceec23957802ad9182f58a6/countries/';
+  const verifiedLogoPaths = {
+    'Das Erste / ARD': 'germany/das-erste-de.png',
+    'ZDF': 'germany/zdf-de.png',
+    'RTL': 'germany/rtl-de.png',
+    'SAT.1': 'germany/sat-1-de.png',
+    'ProSieben': 'germany/pro-sieben-de.png',
+    'VOX': 'germany/vox-de.png',
+    'kabel eins': 'germany/kabel-eins-de.png',
+    'RTL Zwei': 'germany/rtl-zwei-de.png',
+    '3sat': 'germany/3sat-de.png',
+    'ARTE Deutsch': 'germany/arte-de.png',
+    'WDR': 'germany/wdr-de.png',
+    'NDR': 'germany/ndr-de.png',
+    'BR Fernsehen': 'germany/br-fernsehen-de.png',
+    'SWR Fernsehen': 'germany/swr-de.png',
+    'MDR Fernsehen': 'germany/mdr-de.png',
+    'Phoenix': 'germany/phoenix-de.png',
+    'n-tv': 'germany/ntv-de.png',
+    'Welt': 'germany/welt-de.png',
+    'ORF 1': 'austria/orf1-at.png',
+    'TF1': 'france/tf1-fr.png',
+    'France 2': 'france/france-2-fr.png',
+    'France 3': 'france/france-3-fr.png',
+    'M6': 'france/m6-fr.png',
+    'France 5': 'france/france-5-fr.png',
+    'TMC': 'france/tmc-fr.png',
+    'W9': 'france/w9-fr.png',
+    'Arte France': 'france/arte-fr.png',
+    'Canal+': 'france/canal-plus-fr.png',
+    'TV5Monde': 'international/tv5-monde-int.png',
+    'RTS 1': 'switzerland/rts-un-ch.png',
+    'Rai 1': 'italy/rai-1-it.png',
+    'Canale 5': 'italy/canale5-it.png',
+    'Rai 2': 'italy/rai-2-it.png',
+    'Italia 1': 'italy/italia1-it.png',
+    'Rai 3': 'italy/rai-3-it.png',
+    'Rete 4': 'italy/rete4-it.png',
+    'La7': 'italy/la7-it.png',
+    'TV8': 'italy/tv8-it.png',
+    'Nove': 'italy/nove-it.png',
+    'Rai News 24': 'italy/rai-news-24-it.png',
+    'Rai Movie': 'italy/rai-movie-it.png',
+    'Rai Premium': 'italy/rai-premium-it.png',
+    'Iris': 'italy/iris-it.png',
+    'RSI LA 1': 'switzerland/rsi-la1-ch.png',
+    'BBC One': 'united-kingdom/bbc-one-uk.png',
+    'ITV1': 'united-kingdom/itv-1-uk.png',
+    'Channel 4': 'united-kingdom/channel-4-uk.png',
+    'Channel 5': 'united-kingdom/channel-5-uk.png',
+    'Sky News': 'united-kingdom/sky-news-uk.png',
+    'BBC News': 'united-kingdom/bbc-news-uk.png',
+    'CNN International': 'international/cnn-international-int.png',
+    'CNBC': 'united-states/cnbc-us.png',
+    'Bloomberg TV': 'united-states/bloomberg-television-us.png',
+    'Al Jazeera': 'united-kingdom/aljazeera-uk.png',
+    'Antena 3': 'spain/antena-3-es.png',
+    'La 1 / TVE': 'spain/tve-1-es.png',
+    'SIC': 'portugal/sic-pt.png',
+    'RTP1': 'portugal/rtp-1-pt.png',
+    'RTP2': 'portugal/rtp-2-pt.png',
+    'CNN Portugal': 'portugal/cnn-portugal-pt.png',
+    'SIC Notícias': 'portugal/sic-noticias-pt.png',
+    'RTP Internacional': null,
+    'SRF 1': 'switzerland/srf-1-ch.png',
+    'SRF zwei': 'switzerland/srf-zwei-ch.png',
+    'SRF info': 'switzerland/srf-info-ch.png',
+    'RTS 2': 'switzerland/rts-deux-ch.png',
+    'RSI LA 2': 'switzerland/rsi-la2-ch.png',
+    'blue Zoom': null
+  };
+
+  data.forEach(item => {
+    const path = Object.prototype.hasOwnProperty.call(verifiedLogoPaths, item.name)
+      ? verifiedLogoPaths[item.name]
+      : null;
+    item.logo = path ? verifiedLogoBase + path : '';
+  });
+
   const progress = byId('progress');
   const updateProgress = () => {
     const h = document.documentElement.scrollHeight - window.innerHeight;
@@ -150,14 +231,13 @@
   function renderLogoMarquee(){
     if(!marqueeHosts.length) return;
     const cleanLogoSet = [
-      ['Das Erste / ARD','das-erste-ard.png'], ['ZDF','zdf.png'], ['RTL','rtl.png'],
-      ['SAT.1','sat-1.png'], ['ProSieben','prosieben.png'], ['VOX','vox.png'],
-      ['kabel eins','kabel-eins.png'], ['RTL Zwei','rtl-zwei.png'], ['3sat','3sat.png'],
-      ['ARTE','arte-deutsch.png'], ['WDR','wdr.png'], ['NDR','ndr.png'],
-      ['BR Fernsehen','br-fernsehen.png'], ['SWR Fernsehen','swr-fernsehen.png'],
-      ['MDR Fernsehen','mdr-fernsehen.png']
+      'Das Erste / ARD', 'ZDF', 'RTL', 'SAT.1', 'ProSieben', 'VOX',
+      'kabel eins', 'RTL Zwei', '3sat', 'ARTE Deutsch', 'WDR', 'NDR',
+      'BR Fernsehen', 'SWR Fernsehen', 'MDR Fernsehen'
     ];
-    const items = cleanLogoSet.map(([name,file]) => ({name, logo:`${assetBase}channel-logos/${file}`}));
+    const items = cleanLogoSet
+      .map(name => ({name, logo: verifiedLogoPaths[name] ? verifiedLogoBase + verifiedLogoPaths[name] : ''}))
+      .filter(item => item.logo);
     const markup = items.map(item => `
       <div class="logo-pill" aria-label="${item.name}" title="${item.name}">
         <span class="logo-crop"><img src="${item.logo}" alt="${item.name}" decoding="async"></span>
@@ -323,6 +403,15 @@
         </div>
         <div class="channel-flag-wrap">${flagMarkup(item.language, item.flag, langLabel)}</div>
       `;
+      const renderedLogo = card.querySelector('.channel-logo');
+      if(renderedLogo){
+        renderedLogo.addEventListener('error', () => {
+          const fallback = document.createElement('div');
+          fallback.className = 'channel-badge';
+          fallback.textContent = item.badge || item.name.slice(0,3).toUpperCase();
+          renderedLogo.closest('.channel-logo-wrap')?.replaceWith(fallback);
+        }, {once:true});
+      }
       grid.appendChild(card);
     });
 
