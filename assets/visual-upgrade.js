@@ -170,21 +170,96 @@
     element.setAttribute('aria-label', iconLabels[type] || 'Feature');
   });
 
-  document.querySelectorAll('.solution-card .icon-cast').forEach((icon) => {
-    icon.classList.add('hi-css-symbol', 'hi-css-cast');
-    icon.innerHTML = '<span class="hi-cast-screen" aria-hidden="true"></span><span class="hi-cast-signal" aria-hidden="true"></span>';
-  });
-
-  document.querySelectorAll('.solution-card .icon-network').forEach((icon) => {
-    icon.classList.add('hi-css-symbol', 'hi-css-network');
-    icon.innerHTML = '<span class="hi-network-symbol" aria-hidden="true"></span>';
-  });
-
   document.querySelectorAll('.contact-pill').forEach((link) => {
     const href = link.getAttribute('href') || '';
     const type = href.startsWith('mailto:') ? 'mail' : href.startsWith('tel:') ? 'phone' : 'globe';
     link.classList.add(`hi-contact-${type}`);
   });
+
+  const lucideIconTargets = [
+    ['.icon-plug', 'cable'],
+    ['.icon-network', 'network'],
+    ['.icon-tv', 'monitor'],
+    ['.icon-streams', 'radio-tower'],
+    ['.icon-iptv', 'tv'],
+    ['.icon-cast', 'cast'],
+    ['.icon-link', 'cable'],
+    ['.footer-icon-streams', 'radio-tower'],
+    ['.footer-icon-iptv', 'tv'],
+    ['.footer-icon-cast', 'cast'],
+    ['.footer-icon-network', 'network'],
+    ['.footer-icon-coax', 'cable']
+  ];
+
+  const lucideContactTargets = [
+    ['.contact-pill[href^="https://"]', 'globe'],
+    ['.contact-pill[href^="mailto:"]', 'mail'],
+    ['.contact-pill[href^="tel:"]', 'phone']
+  ];
+
+  function applyLucideIcons() {
+    if (!window.lucide?.createIcons || document.documentElement.classList.contains('hi-lucide-ready')) return;
+
+    const shellBackups = [];
+    const contactBackups = [];
+
+    lucideIconTargets.forEach(([selector, name]) => {
+      document.querySelectorAll(selector).forEach((shell) => {
+        shellBackups.push([shell, shell.innerHTML]);
+        shell.classList.add('lucide-icon-shell');
+        shell.innerHTML = `<i data-lucide="${name}" aria-hidden="true"></i>`;
+      });
+    });
+
+    lucideContactTargets.forEach(([selector, name]) => {
+      document.querySelectorAll(selector).forEach((link) => {
+        const currentIcon = link.querySelector('svg');
+        if (!currentIcon) return;
+        const replacement = document.createElement('i');
+        replacement.className = 'lucide-contact-icon';
+        replacement.setAttribute('data-lucide', name);
+        replacement.setAttribute('aria-hidden', 'true');
+        contactBackups.push([link, currentIcon, replacement]);
+        currentIcon.replaceWith(replacement);
+      });
+    });
+
+    try {
+      window.lucide.createIcons();
+      document.documentElement.classList.add('hi-lucide-ready');
+    } catch (error) {
+      shellBackups.forEach(([shell, html]) => {
+        shell.classList.remove('lucide-icon-shell');
+        shell.innerHTML = html;
+      });
+      contactBackups.forEach(([link, original]) => {
+        link.querySelector('.lucide-contact-icon')?.replaceWith(original);
+      });
+    }
+  }
+
+  function loadLucideIcons() {
+    if (window.lucide?.createIcons) {
+      applyLucideIcons();
+      return;
+    }
+
+    const existingScript = document.getElementById('hi-lucide-library');
+    if (existingScript) {
+      existingScript.addEventListener('load', applyLucideIcons, { once: true });
+      return;
+    }
+
+    const script = document.createElement('script');
+    script.id = 'hi-lucide-library';
+    script.src = 'https://unpkg.com/lucide@1.17.0/dist/umd/lucide.min.js';
+    script.crossOrigin = 'anonymous';
+    script.referrerPolicy = 'no-referrer';
+    script.addEventListener('load', applyLucideIcons, { once: true });
+    document.head.appendChild(script);
+  }
+
+  loadLucideIcons();
 
   const coaxLabels = {
     de: ['Bestehendes Kabel', 'IP-Daten', 'Hotel-TV'],
