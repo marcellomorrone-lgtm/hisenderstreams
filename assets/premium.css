@@ -1959,6 +1959,8 @@ body {
 }
 
 #packages .package-card.popular .package-card-head {
+  min-height: 164px;
+  padding-top: 68px;
   background: linear-gradient(145deg, rgba(255,255,255,.08), rgba(183,223,54,.05));
   border-bottom-color: rgba(255,255,255,.10);
 }
@@ -2027,6 +2029,7 @@ body {
 
 @media (max-width: 620px) {
   #packages .package-card-head { min-height: 110px; padding: 26px 22px 17px; }
+  #packages .package-card.popular .package-card-head { min-height: 150px; padding-top: 64px; }
   #packages .package-card > h3 { padding: 20px 22px 11px; }
   #packages .package-price-block,
   #packages .package-spectrum,
