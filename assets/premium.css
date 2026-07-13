@@ -1086,9 +1086,9 @@ body {
 }
 
 .logo-pill {
-  min-width: 120px !important;
-  height: 54px !important;
-  padding: 0 10px !important;
+  min-width: 112px !important;
+  height: 50px !important;
+  padding: 0 14px !important;
   overflow: hidden;
   border-color: rgba(151,188,40,.18) !important;
   background: #fff !important;
@@ -1103,20 +1103,23 @@ body {
 }
 
 .logo-crop {
-  width: 102px;
-  height: 29px;
-  display: block;
-  overflow: hidden;
+  width: 82px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
 }
 
 .logo-crop img,
 .logo-marquee-section-compact .logo-pill .logo-crop img {
   display: block;
-  width: 102px !important;
-  max-width: none !important;
+  width: auto !important;
+  max-width: 82px !important;
   height: auto !important;
-  max-height: none !important;
-  transform: translateY(-8px);
+  max-height: 22px !important;
+  object-fit: contain;
+  transform: none;
   filter: saturate(.96) contrast(1.03);
 }
 
