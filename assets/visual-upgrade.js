@@ -394,3 +394,180 @@
   }, { passive: true });
   updateScrollEffects();
 })();
+
+/*
+ * Perspective-safe casting movie.
+ *
+ * The television in the source illustration is a quadrilateral, not a flat
+ * rectangle.  Painting a positioned HTML layer over it therefore always
+ * leaves visible seams.  This renderer starts with a complete copy of the
+ * room illustration and projects the movie into the four inner display
+ * corners.  The unchanged room and television frame remain on top-level
+ * canvas pixels, so the movie can never escape the screen.
+ */
+(function () {
+  const demos = document.querySelectorAll('.casting-demo');
+  if (!demos.length || !window.HTMLCanvasElement) return;
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reducedMotion) return;
+
+  function extractMovieSource(layer) {
+    const background = window.getComputedStyle(layer).backgroundImage || '';
+    const match = background.match(/url\(["']?(data:image\/[^;]+;base64,[A-Za-z0-9+/=]+)["']?\)/);
+    return match ? match[1] : '';
+  }
+
+  function drawMovieArtwork(ctx, image, width, height) {
+    const imageRatio = image.naturalWidth / image.naturalHeight;
+    const targetRatio = width / height;
+    let sourceX = 0;
+    let sourceY = 0;
+    let sourceWidth = image.naturalWidth;
+    let sourceHeight = image.naturalHeight;
+
+    if (imageRatio > targetRatio) {
+      sourceWidth = image.naturalHeight * targetRatio;
+      sourceX = (image.naturalWidth - sourceWidth) / 2;
+    } else {
+      sourceHeight = image.naturalWidth / targetRatio;
+      sourceY = (image.naturalHeight - sourceHeight) / 2;
+    }
+
+    ctx.drawImage(image, sourceX, sourceY, sourceWidth, sourceHeight, 0, 0, width, height);
+
+    const shade = ctx.createLinearGradient(0, 0, width * .72, 0);
+    shade.addColorStop(0, 'rgba(3, 12, 22, .62)');
+    shade.addColorStop(.48, 'rgba(3, 12, 22, .17)');
+    shade.addColorStop(1, 'rgba(3, 12, 22, 0)');
+    ctx.fillStyle = shade;
+    ctx.fillRect(0, 0, width, height);
+
+    ctx.fillStyle = '#c8ec57';
+    ctx.font = '700 18px Arial, sans-serif';
+    ctx.letterSpacing = '4px';
+    ctx.fillText('HOTEL CINEMA', 48, 56);
+
+    ctx.fillStyle = '#ffffff';
+    ctx.font = '800 48px Arial, sans-serif';
+    ctx.fillText('BEYOND', 48, 126);
+    ctx.fillText('THE SUMMIT', 48, 174);
+
+    ctx.beginPath();
+    ctx.arc(71, height - 92, 25, 0, Math.PI * 2);
+    ctx.fillStyle = '#b7df36';
+    ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(66, height - 104);
+    ctx.lineTo(66, height - 80);
+    ctx.lineTo(84, height - 92);
+    ctx.closePath();
+    ctx.fillStyle = '#10202a';
+    ctx.fill();
+
+    ctx.fillStyle = 'rgba(255,255,255,.28)';
+    ctx.fillRect(48, height - 45, width - 96, 4);
+    ctx.fillStyle = '#b7df36';
+    ctx.fillRect(48, height - 45, (width - 96) * .58, 4);
+  }
+
+  function renderComposite(demo, base, movie) {
+    if (!base.naturalWidth || !base.naturalHeight) return;
+
+    const canvas = document.createElement('canvas');
+    canvas.className = 'casting-composite-canvas';
+    canvas.setAttribute('aria-hidden', 'true');
+    canvas.width = base.naturalWidth;
+    canvas.height = base.naturalHeight;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    ctx.drawImage(base, 0, 0, canvas.width, canvas.height);
+
+    const artwork = document.createElement('canvas');
+    artwork.width = 960;
+    artwork.height = 540;
+    const artworkContext = artwork.getContext('2d');
+    if (!artworkContext) return;
+    drawMovieArtwork(artworkContext, movie, artwork.width, artwork.height);
+
+    const scaleX = canvas.width / 1448;
+    const scaleY = canvas.height / 1086;
+    const corners = {
+      topLeft: { x: 828 * scaleX, y: 183 * scaleY },
+      topRight: { x: 1392 * scaleX, y: 61 * scaleY },
+      bottomRight: { x: 1394 * scaleX, y: 669 * scaleY },
+      bottomLeft: { x: 828 * scaleX, y: 598 * scaleY }
+    };
+
+    ctx.save();
+    ctx.beginPath();
+    ctx.moveTo(corners.topLeft.x, corners.topLeft.y);
+    ctx.lineTo(corners.topRight.x, corners.topRight.y);
+    ctx.lineTo(corners.bottomRight.x, corners.bottomRight.y);
+    ctx.lineTo(corners.bottomLeft.x, corners.bottomLeft.y);
+    ctx.closePath();
+    ctx.clip();
+
+    const slices = 240;
+    for (let index = 0; index < slices; index += 1) {
+      const start = index / slices;
+      const end = (index + 1) / slices;
+      const sourceX = Math.floor(start * artwork.width);
+      const sourceWidth = Math.max(1, Math.ceil(end * artwork.width) - sourceX);
+
+      const topStartX = corners.topLeft.x + (corners.topRight.x - corners.topLeft.x) * start;
+      const topEndX = corners.topLeft.x + (corners.topRight.x - corners.topLeft.x) * end;
+      const bottomStartX = corners.bottomLeft.x + (corners.bottomRight.x - corners.bottomLeft.x) * start;
+      const bottomEndX = corners.bottomLeft.x + (corners.bottomRight.x - corners.bottomLeft.x) * end;
+      const destinationX = (topStartX + bottomStartX) / 2;
+      const destinationEndX = (topEndX + bottomEndX) / 2;
+
+      const topY = (
+        corners.topLeft.y + (corners.topRight.y - corners.topLeft.y) * start +
+        corners.topLeft.y + (corners.topRight.y - corners.topLeft.y) * end
+      ) / 2;
+      const bottomY = (
+        corners.bottomLeft.y + (corners.bottomRight.y - corners.bottomLeft.y) * start +
+        corners.bottomLeft.y + (corners.bottomRight.y - corners.bottomLeft.y) * end
+      ) / 2;
+
+      ctx.drawImage(
+        artwork,
+        sourceX,
+        0,
+        sourceWidth,
+        artwork.height,
+        destinationX - .6,
+        topY,
+        Math.max(1, destinationEndX - destinationX + 1.2),
+        bottomY - topY
+      );
+    }
+    ctx.restore();
+
+    const existing = demo.querySelector('.casting-composite-canvas');
+    if (existing) existing.remove();
+    base.insertAdjacentElement('afterend', canvas);
+  }
+
+  demos.forEach((demo) => {
+    const base = demo.querySelector(':scope > img');
+    const movieLayer = demo.querySelector('.casting-movie-screen');
+    if (!base || !movieLayer) return;
+
+    const movieSource = extractMovieSource(movieLayer);
+    if (!movieSource) return;
+
+    const movie = new Image();
+    const tryRender = () => {
+      if (base.complete && base.naturalWidth && movie.complete && movie.naturalWidth) {
+        renderComposite(demo, base, movie);
+      }
+    };
+    base.addEventListener('load', tryRender, { once: true });
+    movie.addEventListener('load', tryRender, { once: true });
+    movie.src = movieSource;
+    tryRender();
+  });
+})();
