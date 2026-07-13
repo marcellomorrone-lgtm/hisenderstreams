@@ -1713,3 +1713,325 @@ body {
 .hi-lucide-ready .footer-icon {
   box-shadow: 0 9px 24px rgba(92,119,35,.09), inset 0 0 0 5px #f8fbed !important;
 }
+
+/* --------------------------------------------------------------------------
+   Visual system 7: compact, premium package comparison cards
+   -------------------------------------------------------------------------- */
+#packages .cards3 {
+  align-items: stretch;
+  gap: clamp(16px, 2vw, 24px);
+}
+
+#packages .package-card {
+  --package-accent: #9bc62c;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 100%;
+  gap: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+  border: 1px solid rgba(97, 121, 60, .18) !important;
+  border-radius: 28px !important;
+  background: rgba(255, 255, 255, .94) !important;
+  box-shadow: 0 22px 60px rgba(24, 40, 27, .09) !important;
+  transform: none !important;
+  isolation: isolate;
+}
+
+#packages .package-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 5px;
+  z-index: 3;
+  background: linear-gradient(90deg, var(--package-accent), #d8ef82);
+}
+
+#packages .package-card::after {
+  content: '';
+  position: absolute;
+  inset: -45% -70%;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(105deg, transparent 42%, rgba(183, 223, 54, .10) 50%, transparent 58%);
+  transform: translateX(-38%);
+  transition: transform .65s ease;
+}
+
+#packages .package-card:hover {
+  transform: translateY(-7px) !important;
+  border-color: rgba(133, 171, 35, .38) !important;
+  box-shadow: 0 30px 75px rgba(24, 40, 27, .14) !important;
+}
+
+#packages .package-card:hover::after {
+  transform: translateX(38%);
+}
+
+#packages .package-basic { --package-accent: #a8ce37; }
+#packages .package-essential { --package-accent: #b8df42; }
+#packages .package-max { --package-accent: #7fa80d; }
+
+#packages .package-card-head {
+  min-height: 126px;
+  margin: 0 !important;
+  padding: 30px 28px 20px;
+  align-items: flex-start;
+  background: linear-gradient(150deg, rgba(235, 245, 213, .76), rgba(255,255,255,.35));
+  border-bottom: 1px solid rgba(103, 126, 66, .12);
+}
+
+#packages .package-card-head .sub {
+  flex: 0 1 auto;
+  min-width: 88px;
+  margin-top: 4px;
+  padding: 8px 13px;
+  border: 1px solid rgba(126, 159, 40, .28);
+  border-radius: 999px;
+  background: rgba(247, 251, 239, .86);
+  color: #526719;
+  font-size: .76rem;
+  font-weight: 820;
+  letter-spacing: .12em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+#packages .package-card .count,
+#packages .package-card.popular .count {
+  position: static !important;
+  max-width: none;
+  color: #132234 !important;
+  font-size: clamp(3.15rem, 4.3vw, 4.65rem) !important;
+  font-weight: 810;
+  line-height: .82 !important;
+  letter-spacing: -.075em;
+  opacity: 1;
+}
+
+#packages .package-card > h3 {
+  min-height: 76px;
+  margin: 0;
+  padding: 22px 28px 12px;
+  color: #142333;
+  font-size: clamp(1.28rem, 1.6vw, 1.62rem);
+  line-height: 1.15;
+  letter-spacing: -.035em;
+}
+
+#packages .package-price-block {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 14px;
+  margin: 0 28px 18px;
+  padding: 16px 17px;
+  border: 1px solid rgba(111, 140, 54, .15);
+  border-radius: 17px;
+  background: #f7f9f3;
+}
+
+#packages .package-price-block .price {
+  color: #152536 !important;
+  font-size: clamp(1.55rem, 2vw, 2.05rem) !important;
+  font-weight: 790;
+  line-height: 1;
+  letter-spacing: -.045em;
+}
+
+#packages .package-price-block .per {
+  max-width: 104px;
+  color: #6e7a71;
+  font-size: .72rem;
+  line-height: 1.3;
+  text-align: right;
+}
+
+#packages .package-spectrum {
+  margin: 0 28px 18px;
+}
+
+#packages .package-spectrum-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 9px;
+  color: #778078;
+  font-size: .72rem;
+  letter-spacing: .03em;
+}
+
+#packages .package-spectrum-meta strong {
+  color: #334222;
+  font-size: .73rem;
+  font-weight: 770;
+}
+
+#packages .package-spectrum-track {
+  height: 7px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e7ecdf;
+}
+
+#packages .package-spectrum-track span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--package-accent), #d1ed70);
+  box-shadow: 0 0 18px rgba(157, 199, 45, .35);
+}
+
+#packages .package-card > ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0 28px;
+  color: #586760;
+  list-style: none;
+}
+
+#packages .package-card > ul li {
+  position: relative;
+  padding-left: 20px;
+  font-size: .9rem;
+  line-height: 1.4;
+}
+
+#packages .package-card > ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: .48em;
+  width: 8px;
+  height: 8px;
+  border: 2px solid var(--package-accent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(167, 207, 54, .10);
+}
+
+#packages .package-languages {
+  margin: 20px 28px 0;
+  padding-top: 17px;
+  border-top: 1px solid rgba(106, 129, 72, .13);
+}
+
+#packages .package-languages .lang-chip {
+  padding: 6px 9px;
+  border-color: rgba(116, 146, 45, .20);
+  background: #f7faef;
+  color: #596849;
+  font-size: .71rem;
+}
+
+#packages .package-card .ideal {
+  margin: 18px 28px 0;
+  padding: 14px 15px;
+  border: 0;
+  border-left: 3px solid var(--package-accent);
+  border-radius: 0 14px 14px 0;
+  background: rgba(237, 246, 217, .62);
+  color: #52605a;
+  font-size: .82rem;
+  line-height: 1.45;
+}
+
+#packages .package-cta {
+  margin: auto 28px 0 !important;
+  padding: 22px 0 28px;
+}
+
+#packages .package-cta > a {
+  width: 100%;
+  justify-content: center;
+}
+
+#packages .package-card.popular {
+  color: #eef4e8;
+  background:
+    radial-gradient(circle at 92% 4%, rgba(183, 223, 54, .20), transparent 30%),
+    linear-gradient(155deg, #102232, #182e30 66%, #20372d) !important;
+  border-color: rgba(183, 223, 54, .38) !important;
+  box-shadow: 0 28px 76px rgba(11, 29, 35, .24) !important;
+}
+
+#packages .package-card.popular .package-card-head {
+  background: linear-gradient(145deg, rgba(255,255,255,.08), rgba(183,223,54,.05));
+  border-bottom-color: rgba(255,255,255,.10);
+}
+
+#packages .package-card.popular .package-card-head .sub {
+  border-color: rgba(183,223,54,.42);
+  background: rgba(183,223,54,.12);
+  color: #d9f28b;
+}
+
+#packages .package-card.popular .count,
+#packages .package-card.popular > h3,
+#packages .package-card.popular .package-price-block .price,
+#packages .package-card.popular .package-spectrum-meta strong {
+  color: #fff !important;
+}
+
+#packages .package-card.popular .package-price-block {
+  border-color: rgba(255,255,255,.12);
+  background: rgba(255,255,255,.07);
+}
+
+#packages .package-card.popular .package-price-block .per,
+#packages .package-card.popular .package-spectrum-meta,
+#packages .package-card.popular > ul,
+#packages .package-card.popular .ideal {
+  color: rgba(242, 247, 235, .76) !important;
+}
+
+#packages .package-card.popular .package-spectrum-track {
+  background: rgba(255,255,255,.13);
+}
+
+#packages .package-card.popular .package-languages {
+  border-top-color: rgba(255,255,255,.11);
+}
+
+#packages .package-card.popular .package-languages .lang-chip {
+  border-color: rgba(255,255,255,.13);
+  background: rgba(255,255,255,.08);
+  color: rgba(247,250,240,.82);
+}
+
+#packages .package-card.popular .ideal {
+  border-left-color: #b8df42;
+  background: rgba(255,255,255,.07);
+}
+
+#packages .package-card.popular .ribbon {
+  top: 18px;
+  right: 18px;
+  max-width: calc(100% - 36px);
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #b8df42;
+  color: #132234;
+  font-size: .66rem;
+  letter-spacing: .08em;
+}
+
+@media (max-width: 980px) {
+  #packages .cards3 { grid-template-columns: 1fr; }
+  #packages .package-card { max-width: 680px; width: 100%; margin-inline: auto; }
+  #packages .package-card > h3 { min-height: 0; }
+}
+
+@media (max-width: 620px) {
+  #packages .package-card-head { min-height: 110px; padding: 26px 22px 17px; }
+  #packages .package-card > h3 { padding: 20px 22px 11px; }
+  #packages .package-price-block,
+  #packages .package-spectrum,
+  #packages .package-languages,
+  #packages .package-card .ideal,
+  #packages .package-cta { margin-inline: 22px !important; }
+  #packages .package-card > ul { padding-inline: 22px; }
+}
