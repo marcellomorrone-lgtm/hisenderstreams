@@ -1297,3 +1297,338 @@ body {
   .coax-connector i,
   .coax-orbit { animation: none !important; }
 }
+
+/* --------------------------------------------------------------------------
+   Visual system 4: compact circular icons and resilient layouts
+   -------------------------------------------------------------------------- */
+.section,
+.section.soft {
+  padding: 70px 0;
+}
+
+.section-head {
+  margin-bottom: 30px;
+}
+
+.section-head h2 {
+  margin-top: 10px;
+}
+
+.section-head .hi-heading::after {
+  margin-top: 14px;
+}
+
+.hi-heading-copy,
+.hi-heading-copy-generated {
+  margin-top: 9px;
+}
+
+.icon.hi-icon,
+.footer-icon,
+.support-card-icon {
+  width: 58px !important;
+  height: 58px !important;
+  flex: 0 0 58px;
+  border: 2px solid #a8ce31 !important;
+  border-radius: 50% !important;
+  color: #78980f !important;
+  background: #fff !important;
+  box-shadow: 0 9px 24px rgba(92,119,35,.09), inset 0 0 0 5px #f6faeb !important;
+}
+
+.icon.hi-icon svg,
+.footer-icon svg,
+.support-card-icon svg {
+  width: 27px !important;
+  height: 27px !important;
+  stroke: #719411 !important;
+  stroke-width: 1.9 !important;
+  filter: none;
+}
+
+.icon.hi-icon::before,
+.footer-solution-item .footer-icon::before,
+.support-card-icon::before {
+  display: none !important;
+}
+
+.feature,
+.solution-card,
+.support-card {
+  padding: 24px !important;
+  gap: 10px !important;
+  border-radius: 24px !important;
+  background: rgba(255,255,255,.94) !important;
+}
+
+.feature:hover,
+.solution-card:hover,
+.support-card:hover,
+.footer-solution-item:hover {
+  transform: translateY(-4px) !important;
+}
+
+.feature .icon,
+.solution-card .icon,
+.support-card .support-card-icon {
+  margin-bottom: 4px !important;
+}
+
+.feature h4,
+.solution-card strong,
+.support-card h3 {
+  font-weight: 780;
+}
+
+.package-card {
+  gap: 12px;
+  padding: 28px !important;
+  overflow: hidden;
+}
+
+.package-card:hover,
+.package-card.popular,
+.package-card.popular:hover {
+  transform: translateY(-4px) !important;
+}
+
+.package-card-head {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.package-card.popular .package-card-head {
+  margin-top: 34px;
+}
+
+.package-card-head .sub {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.package-card .count,
+.package-card.popular .count {
+  position: static !important;
+  flex: 0 0 auto;
+  max-width: 48%;
+  font-size: clamp(2.75rem, 4.5vw, 4.25rem) !important;
+  line-height: .88 !important;
+  letter-spacing: -.07em;
+  white-space: nowrap;
+  color: var(--hi-ink) !important;
+  opacity: 1;
+}
+
+.package-card.popular .count {
+  color: #fff !important;
+}
+
+.package-card .ribbon {
+  max-width: calc(100% - 32px);
+  white-space: nowrap;
+}
+
+.package-card ul {
+  margin-block: 4px;
+}
+
+.coax-card {
+  grid-template-columns: minmax(0,1fr) minmax(480px,.9fr) !important;
+  gap: clamp(28px,4vw,56px) !important;
+  align-items: center;
+  overflow: hidden;
+}
+
+.coax-visual {
+  width: 100%;
+  min-width: 0;
+  min-height: 330px;
+  padding: 16px !important;
+}
+
+.coax-flow {
+  width: 100%;
+  min-width: 0;
+  min-height: 296px;
+  grid-template-columns: minmax(0,1fr) 32px minmax(0,1fr) 32px minmax(0,1fr);
+  gap: 4px;
+}
+
+.coax-node {
+  min-width: 0;
+  min-height: 118px;
+  padding: 17px 7px 13px;
+  border-radius: 24px;
+}
+
+.coax-node-symbol {
+  font-size: clamp(1.15rem,1.75vw,1.6rem);
+}
+
+.coax-node small {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.coax-connector {
+  gap: 4px;
+}
+
+.coax-connector i {
+  width: 6px;
+  height: 6px;
+}
+
+.about-merged .section-head {
+  margin-bottom: 24px;
+}
+
+.about-merged .about-grid {
+  gap: 18px;
+}
+
+.about-reference-grid {
+  margin-top: 20px;
+  gap: 14px !important;
+}
+
+.about-reference-grid .trust-card {
+  min-height: 112px;
+  padding: 20px !important;
+}
+
+.faq {
+  gap: 8px;
+}
+
+.faq-item {
+  padding: 16px 20px !important;
+  border-radius: 18px !important;
+}
+
+.faq-item p {
+  margin-top: 9px;
+}
+
+.footer {
+  padding: 52px 0 28px !important;
+}
+
+.footer-premium {
+  padding: clamp(26px,3vw,40px) !important;
+}
+
+.footer-solution-strip {
+  margin-top: 24px;
+  gap: 10px !important;
+}
+
+.footer-solution-item {
+  min-height: 126px;
+  padding: 16px 10px !important;
+  border-radius: 22px !important;
+  background: #fff !important;
+}
+
+.footer-solution-item .footer-icon {
+  width: 54px !important;
+  height: 54px !important;
+  flex-basis: 54px;
+  margin-bottom: 9px !important;
+  border-radius: 50% !important;
+}
+
+.contact-pill svg {
+  border-radius: 50% !important;
+}
+
+.footer-bottom {
+  margin-top: 24px !important;
+  padding-top: 22px !important;
+}
+
+@media (max-width: 1120px) {
+  .coax-card {
+    grid-template-columns: 1fr !important;
+  }
+
+  .coax-visual {
+    max-width: 720px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 820px) {
+  .section,
+  .section.soft {
+    padding: 52px 0;
+  }
+
+  .section-head {
+    margin-bottom: 24px;
+  }
+
+  .package-card.popular .package-card-head {
+    margin-top: 30px;
+  }
+
+  .about-reference-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .coax-visual {
+    min-height: 450px;
+    padding: 14px !important;
+  }
+
+  .coax-flow {
+    min-height: 420px;
+    max-width: 230px;
+    margin-inline: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: 108px 32px 108px 32px 108px;
+    gap: 4px;
+  }
+
+  .coax-node {
+    min-height: 102px;
+  }
+}
+
+@media (max-width: 560px) {
+  .section,
+  .section.soft {
+    padding: 44px 0;
+  }
+
+  .package-card {
+    padding: 22px !important;
+  }
+
+  .package-card .count,
+  .package-card.popular .count {
+    max-width: 44%;
+    font-size: clamp(2.55rem,14vw,3.5rem) !important;
+  }
+
+  .package-card-head {
+    gap: 10px;
+  }
+
+  .about-reference-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-solution-strip {
+    grid-template-columns: repeat(2,minmax(0,1fr)) !important;
+  }
+
+  .footer-solution-item {
+    min-height: 118px;
+  }
+}
