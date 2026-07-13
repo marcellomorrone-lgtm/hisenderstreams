@@ -104,7 +104,20 @@
     document.querySelectorAll('a[href="#references"]').forEach((link) => link.remove());
   }
 
-  document.querySelectorAll('.package-card').forEach((card) => {
+  const packageVisualLabels = {
+    de: { scope: 'Senderumfang', channels: 'Sender' },
+    en: { scope: 'Package scope', channels: 'channels' },
+    fr: { scope: 'Étendue du bouquet', channels: 'chaînes' },
+    it: { scope: 'Ampiezza pacchetto', channels: 'canali' }
+  };
+  const packageKinds = ['basic', 'essential', 'max'];
+  const packageWidths = ['32%', '48%', '100%'];
+
+  document.querySelectorAll('.package-card').forEach((card, index) => {
+    const kind = packageKinds[index] || `option-${index + 1}`;
+    card.classList.add(`package-${kind}`);
+    card.dataset.packageVisual = kind;
+
     if (card.querySelector(':scope > .package-card-head')) return;
     const label = card.querySelector(':scope > .sub');
     const count = card.querySelector(':scope > .count');
@@ -114,6 +127,26 @@
     head.className = 'package-card-head';
     card.insertBefore(head, label);
     head.append(label, count);
+
+    const price = card.querySelector(':scope > .price');
+    const per = card.querySelector(':scope > .per');
+    if (price && per) {
+      const priceBlock = document.createElement('div');
+      priceBlock.className = 'package-price-block';
+      price.parentNode.insertBefore(priceBlock, price);
+      priceBlock.append(price, per);
+    }
+
+    const labels = packageVisualLabels[locale] || packageVisualLabels.de;
+    const spectrum = document.createElement('div');
+    spectrum.className = 'package-spectrum';
+    spectrum.innerHTML = `<div class="package-spectrum-meta"><span>${labels.scope}</span><strong>${count.textContent.trim()} ${labels.channels}</strong></div><div class="package-spectrum-track"><span style="width:${packageWidths[index] || '100%'}"></span></div>`;
+    const priceBlock = card.querySelector(':scope > .package-price-block');
+    (priceBlock || head).insertAdjacentElement('afterend', spectrum);
+
+    card.querySelector(':scope > .lang-chips')?.classList.add('package-languages');
+    const cta = [...card.children].find(element => element.querySelector?.(':scope > a.btn, :scope > a.btn-secondary'));
+    cta?.classList.add('package-cta');
   });
 
   document.querySelectorAll('#faq details[open], .faq-item[open]').forEach((item) => item.removeAttribute('open'));
