@@ -494,10 +494,10 @@
     const scaleX = canvas.width / 1448;
     const scaleY = canvas.height / 1086;
     const corners = {
-      topLeft: { x: 828 * scaleX, y: 183 * scaleY },
-      topRight: { x: 1392 * scaleX, y: 61 * scaleY },
-      bottomRight: { x: 1394 * scaleX, y: 669 * scaleY },
-      bottomLeft: { x: 828 * scaleX, y: 598 * scaleY }
+      topLeft: { x: 818 * scaleX, y: 177 * scaleY },
+      topRight: { x: 1395 * scaleX, y: 54 * scaleY },
+      bottomRight: { x: 1395 * scaleX, y: 676 * scaleY },
+      bottomLeft: { x: 818 * scaleX, y: 601 * scaleY }
     };
 
     ctx.save();
