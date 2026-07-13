@@ -149,19 +149,23 @@
   const marqueeHosts = [...document.querySelectorAll('.js-logo-marquee')];
   function renderLogoMarquee(){
     if(!marqueeHosts.length) return;
-    const byLogo = new Map();
-    data.forEach(item => {
-      if(!item.logo || byLogo.has(item.name)) return;
-      const logoSrc = item.logo.startsWith('assets/') ? assetBase + item.logo.replace(/^assets\//,'') : item.logo;
-      byLogo.set(item.name, {name:item.name, logo:logoSrc});
-    });
-    const items = [...byLogo.values()].slice(0, 28);
-    if(!items.length) return;
+    const cleanLogoSet = [
+      ['Das Erste / ARD','das-erste-ard.png'], ['ZDF','zdf.png'], ['RTL','rtl.png'],
+      ['SAT.1','sat-1.png'], ['ProSieben','prosieben.png'], ['VOX','vox.png'],
+      ['kabel eins','kabel-eins.png'], ['RTL Zwei','rtl-zwei.png'], ['3sat','3sat.png'],
+      ['ARTE','arte-deutsch.png'], ['WDR','wdr.png'], ['NDR','ndr.png'],
+      ['BR Fernsehen','br-fernsehen.png'], ['SWR Fernsehen','swr-fernsehen.png'],
+      ['MDR Fernsehen','mdr-fernsehen.png']
+    ];
+    const items = cleanLogoSet.map(([name,file]) => ({name, logo:`${assetBase}channel-logos/${file}`}));
     const markup = items.map(item => `
       <div class="logo-pill" aria-label="${item.name}" title="${item.name}">
-        <img src="${item.logo}" alt="${item.name}" loading="lazy">
+        <span class="logo-crop"><img src="${item.logo}" alt="${item.name}" decoding="async"></span>
       </div>`).join('');
-    marqueeHosts.forEach(host => { host.innerHTML = `<div class="logo-marquee-track">${markup}${markup}</div>`; });
+    marqueeHosts.forEach(host => {
+      host.innerHTML = `<div class="logo-marquee-track">${markup}${markup}</div>`;
+      host.querySelectorAll('img').forEach(image => image.addEventListener('error', () => image.closest('.logo-pill')?.remove(), {once:true}));
+    });
   }
   renderLogoMarquee();
   function flagMarkup(code, fallback, label){
