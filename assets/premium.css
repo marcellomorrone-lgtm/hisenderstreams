@@ -1670,102 +1670,45 @@ body {
   border-left-color: #b8dc45;
 }
 
-.solution-card .hi-css-symbol {
-  position: relative;
-  overflow: hidden !important;
-}
-
-.solution-card .hi-css-symbol::before {
-  display: none !important;
-}
-
-.solution-card .hi-css-cast::after,
-.solution-card .hi-css-network::after {
-  content: "" !important;
-  display: block !important;
-  position: absolute;
-  z-index: 3;
-  inset: -30% auto -30% -65%;
-  width: 42%;
-  transform: skewX(-18deg);
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,.94), transparent);
-  opacity: 0;
-  pointer-events: none;
-}
-
-.solution-card:hover .hi-css-cast::after,
-.solution-card:hover .hi-css-network::after {
-  opacity: 1;
-  animation: hi-icon-glimmer .78s ease both;
-}
-
-.hi-cast-screen {
-  position: absolute;
-  left: 17px;
-  top: 14px;
-  width: 27px;
-  height: 19px;
-  border: 2px solid #719411;
-  border-radius: 4px;
-  box-shadow: inset 0 0 0 3px #fff;
-}
-
-.hi-cast-screen::after {
-  content: "";
-  position: absolute;
-  width: 12px;
-  height: 2px;
-  left: 6px;
-  top: 22px;
-  border-radius: 99px;
-  background: #719411;
-}
-
-.hi-cast-signal {
-  position: absolute;
-  left: 12px;
-  bottom: 10px;
-  width: 22px;
-  height: 22px;
-  background: radial-gradient(circle at 0 100%, #719411 0 2.5px, transparent 3px 7px, #719411 7.5px 9.5px, transparent 10px 14px, #719411 14.5px 16.5px, transparent 17px);
-}
-
-.hi-network-symbol {
-  position: relative;
-  width: 32px;
-  height: 32px;
-  display: block;
-}
-
-.hi-network-symbol::before {
-  content: "";
-  position: absolute;
-  z-index: 2;
-  left: 13px;
-  top: 13px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #719411;
-  box-shadow: 0 -12px 0 -1px #719411, 0 12px 0 -1px #719411, -12px 0 0 -1px #719411, 12px 0 0 -1px #719411;
-}
-
-.hi-network-symbol::after {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  inset: 4px;
-  background:
-    linear-gradient(#719411,#719411) center / 2px 100% no-repeat,
-    linear-gradient(90deg,#719411,#719411) center / 100% 2px no-repeat;
-}
-
-.solution-card:hover .hi-cast-screen,
-.solution-card:hover .hi-network-symbol {
-  transform: translateY(-2px) scale(1.05);
-  transition: transform .32s ease;
-}
-
 .about-merged .section-head {
   grid-template-columns: 1fr !important;
+}
+
+/* --------------------------------------------------------------------------
+   Visual system 6: professional Lucide icon set
+   -------------------------------------------------------------------------- */
+.lucide-icon-shell > svg,
+.contact-pill .lucide-contact-icon {
+  display: block;
+  fill: none !important;
+  stroke: #719411 !important;
+  stroke-width: 1.8 !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+}
+
+.icon.lucide-icon-shell > svg,
+.footer-icon.lucide-icon-shell > svg {
+  width: 28px !important;
+  height: 28px !important;
+  transform-origin: center;
+}
+
+.feature:hover .lucide-icon-shell > svg,
+.solution-card:hover .lucide-icon-shell > svg,
+.footer-solution-item:hover .lucide-icon-shell > svg {
+  transform: translateY(-2px) scale(1.08);
+  stroke: #63850a !important;
+}
+
+.contact-pill .lucide-contact-icon {
+  width: 29px !important;
+  height: 29px !important;
+  padding: 6px;
+  box-sizing: content-box;
+}
+
+.hi-lucide-ready .icon.hi-icon,
+.hi-lucide-ready .footer-icon {
+  box-shadow: 0 9px 24px rgba(92,119,35,.09), inset 0 0 0 5px #f8fbed !important;
 }
