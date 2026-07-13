@@ -88,11 +88,13 @@
     const labels = mergedAboutHeadings[locale] || mergedAboutHeadings.de;
     const aboutHeading = aboutSection.querySelector('.section-head h2');
     const aboutEyebrow = aboutSection.querySelector('.section-head .eyebrow');
+    const duplicateAboutIntro = aboutSection.querySelector('.section-head > p');
     const trustGrid = referencesSection.querySelector('.trust-grid');
     const aboutWrap = aboutSection.querySelector('.wrap');
 
     if (aboutHeading) aboutHeading.textContent = labels.title;
     if (aboutEyebrow) aboutEyebrow.textContent = labels.eyebrow;
+    if (duplicateAboutIntro) duplicateAboutIntro.remove();
     if (trustGrid && aboutWrap) {
       trustGrid.classList.add('about-reference-grid');
       aboutWrap.appendChild(trustGrid);
@@ -160,10 +162,22 @@
     return index % 2 ? 'network' : 'tv';
   }
 
+  document.querySelectorAll('.support-card-icon').forEach((icon) => icon.remove());
+
   document.querySelectorAll('.icon').forEach((element, index) => {
     const type = classifyIcon(element, index);
     element.classList.add('hi-icon', `hi-icon-${type}`);
     element.setAttribute('aria-label', iconLabels[type] || 'Feature');
+  });
+
+  document.querySelectorAll('.solution-card .icon-cast').forEach((icon) => {
+    icon.classList.add('hi-css-symbol', 'hi-css-cast');
+    icon.innerHTML = '<span class="hi-cast-screen" aria-hidden="true"></span><span class="hi-cast-signal" aria-hidden="true"></span>';
+  });
+
+  document.querySelectorAll('.solution-card .icon-network').forEach((icon) => {
+    icon.classList.add('hi-css-symbol', 'hi-css-network');
+    icon.innerHTML = '<span class="hi-network-symbol" aria-hidden="true"></span>';
   });
 
   document.querySelectorAll('.contact-pill').forEach((link) => {
