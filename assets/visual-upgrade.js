@@ -75,6 +75,48 @@
 
   const copy = sectionCopy[locale] || sectionCopy.de;
 
+  const mergedAboutHeadings = {
+    de: { eyebrow: 'Erfahrung aus der Schweiz', title: 'Über Hotelinnovativ & Referenzen' },
+    en: { eyebrow: 'Experience from Switzerland', title: 'About Hotelinnovativ & References' },
+    fr: { eyebrow: 'Expérience suisse', title: 'À propos de Hotelinnovativ & Références' },
+    it: { eyebrow: 'Esperienza dalla Svizzera', title: 'Hotelinnovativ & Referenze' }
+  };
+
+  const aboutSection = document.getElementById('about');
+  const referencesSection = document.getElementById('references');
+  if (aboutSection && referencesSection) {
+    const labels = mergedAboutHeadings[locale] || mergedAboutHeadings.de;
+    const aboutHeading = aboutSection.querySelector('.section-head h2');
+    const aboutEyebrow = aboutSection.querySelector('.section-head .eyebrow');
+    const trustGrid = referencesSection.querySelector('.trust-grid');
+    const aboutWrap = aboutSection.querySelector('.wrap');
+
+    if (aboutHeading) aboutHeading.textContent = labels.title;
+    if (aboutEyebrow) aboutEyebrow.textContent = labels.eyebrow;
+    if (trustGrid && aboutWrap) {
+      trustGrid.classList.add('about-reference-grid');
+      aboutWrap.appendChild(trustGrid);
+    }
+    aboutSection.classList.add('about-merged');
+    referencesSection.remove();
+    document.querySelectorAll('a[href="#references"]').forEach((link) => link.remove());
+  }
+
+  document.querySelectorAll('.package-card').forEach((card) => {
+    if (card.querySelector(':scope > .package-card-head')) return;
+    const label = card.querySelector(':scope > .sub');
+    const count = card.querySelector(':scope > .count');
+    if (!label || !count) return;
+
+    const head = document.createElement('div');
+    head.className = 'package-card-head';
+    card.insertBefore(head, label);
+    head.append(label, count);
+  });
+
+  document.querySelectorAll('#faq details[open], .faq-item[open]').forEach((item) => item.removeAttribute('open'));
+  document.querySelectorAll('.logo-marquee-secondary').forEach((marquee) => marquee.remove());
+
   document.querySelectorAll('.section-head > p').forEach((paragraph) => paragraph.classList.add('hi-section-intro'));
 
   document.querySelectorAll('h1, h2, h3, h4').forEach((heading) => {
