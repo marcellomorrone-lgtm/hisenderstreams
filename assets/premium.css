@@ -1890,6 +1890,210 @@ body {
   }
 }
 
+/* Compact hero sender portfolio: 80 / 120 / 250+ live channels. */
+.hero-panel {
+  padding: 19px !important;
+  border-radius: 27px !important;
+  background:
+    radial-gradient(circle at 88% 9%, rgba(190, 226, 73, .30), transparent 25%),
+    linear-gradient(148deg, #ffffff 0%, #f5f9ec 100%) !important;
+  border-color: rgba(143, 181, 34, .34) !important;
+  box-shadow: 0 24px 64px rgba(38, 61, 45, .14), inset 0 1px #fff !important;
+}
+
+.hero-panel .portfolio-top {
+  margin-bottom: 13px !important;
+  gap: 18px;
+}
+
+.hero-panel .portfolio-title {
+  margin-top: 7px !important;
+  max-width: 370px;
+  font-size: clamp(1.22rem, 1rem + .65vw, 1.55rem) !important;
+  line-height: 1.06;
+  letter-spacing: -.025em;
+}
+
+.hero-panel .panel-badge {
+  padding: 6px 10px !important;
+  font-size: .61rem !important;
+  letter-spacing: .035em;
+  box-shadow: none !important;
+}
+
+.hero-panel .signal {
+  transform: scale(.82);
+  transform-origin: right center;
+}
+
+.hero-panel .tv-portfolio {
+  padding: 0 3px !important;
+}
+
+.hero-panel .tv-frame {
+  padding: 8px !important;
+  border: 1px solid rgba(121, 154, 28, .42) !important;
+  border-radius: 23px !important;
+  background: linear-gradient(145deg, #192b3b, #0d1c29 62%, #263d4d) !important;
+  box-shadow: 0 18px 38px rgba(18, 35, 46, .22), inset 0 1px rgba(255, 255, 255, .16) !important;
+}
+
+.hero-panel .tv-frame::before {
+  inset: 6px !important;
+  border-color: rgba(204, 235, 91, .18) !important;
+  border-radius: 18px !important;
+}
+
+.hero-panel .tv-screen {
+  min-height: 224px !important;
+  padding: 16px 17px 17px !important;
+  border: 1px solid rgba(205, 236, 93, .18) !important;
+  border-radius: 17px !important;
+  color: #fff !important;
+  background:
+    linear-gradient(rgba(205, 235, 92, .045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(205, 235, 92, .045) 1px, transparent 1px),
+    radial-gradient(circle at 82% 4%, rgba(186, 226, 59, .30), transparent 31%),
+    linear-gradient(145deg, #142a3a 0%, #0d1d2b 62%, #183545 100%) !important;
+  background-size: 24px 24px, 24px 24px, auto, auto !important;
+  box-shadow: inset 0 0 42px rgba(2, 12, 20, .16) !important;
+}
+
+.hero-panel .tv-screen::after {
+  width: 34% !important;
+  height: 165% !important;
+  opacity: .22;
+  background: linear-gradient(90deg, rgba(255, 255, 255, .25), transparent) !important;
+}
+
+.hero-panel .tv-screen-head {
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-panel .tv-kicker {
+  margin-bottom: 4px;
+  color: #c3e854 !important;
+  font-size: .58rem !important;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+
+.hero-panel .tv-screen-head strong {
+  color: #fff !important;
+  font-size: clamp(1.3rem, 1.04rem + .72vw, 1.65rem) !important;
+  letter-spacing: -.025em;
+  white-space: nowrap;
+}
+
+.hero-panel .tv-pill {
+  flex: 0 0 auto;
+  padding: 7px 10px !important;
+  color: #e8f6bf !important;
+  background: rgba(196, 232, 81, .10) !important;
+  border: 1px solid rgba(196, 232, 81, .24) !important;
+  font-size: .6rem !important;
+  box-shadow: none !important;
+}
+
+.hero-panel .tv-bars {
+  margin-top: 17px !important;
+  gap: 10px !important;
+}
+
+.hero-panel .tv-bar-row {
+  grid-template-columns: 70px minmax(90px, 1fr) 46px !important;
+  gap: 11px !important;
+  color: rgba(255, 255, 255, .88) !important;
+  font-size: .86rem !important;
+}
+
+.hero-panel .tv-bar-row span:first-child {
+  font-weight: 700;
+}
+
+.hero-panel .tv-bar-row strong {
+  color: #fff !important;
+  font-size: 1.25rem !important;
+  text-align: right;
+}
+
+.hero-panel .tv-bar-row .meter {
+  height: 9px !important;
+  background: rgba(255, 255, 255, .13) !important;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, .28) !important;
+}
+
+.hero-panel .tv-bar-row .meter span {
+  background: linear-gradient(90deg, #d2f069, #99c525) !important;
+  box-shadow: 0 0 16px rgba(190, 229, 67, .34) !important;
+}
+
+.hero-panel .tv-screen-foot {
+  display: none !important;
+}
+
+.hero-panel .tv-stand-neck {
+  width: 66px !important;
+  height: 13px !important;
+  margin-top: 5px !important;
+  border-radius: 0 0 12px 12px !important;
+  background: linear-gradient(180deg, #b6cb7d, #7f9e2d) !important;
+}
+
+.hero-panel .tv-stand-base {
+  width: 138px !important;
+  height: 10px !important;
+  margin-top: -1px !important;
+  background: linear-gradient(180deg, #adc96a, #78972a) !important;
+  box-shadow: 0 8px 14px rgba(57, 78, 45, .16) !important;
+}
+
+@media (max-width: 640px) {
+  .hero-panel {
+    padding: 14px !important;
+    border-radius: 22px !important;
+  }
+
+  .hero-panel .portfolio-top {
+    margin-bottom: 10px !important;
+  }
+
+  .hero-panel .tv-screen {
+    min-height: 210px !important;
+    padding: 14px !important;
+  }
+
+  .hero-panel .tv-screen-head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .hero-panel .tv-screen-head strong {
+    white-space: normal;
+  }
+
+  .hero-panel .tv-pill {
+    display: none !important;
+  }
+
+  .hero-panel .tv-bars {
+    margin-top: 14px !important;
+  }
+
+  .hero-panel .tv-bar-row {
+    grid-template-columns: 62px minmax(70px, 1fr) 42px !important;
+    gap: 8px !important;
+    font-size: .78rem !important;
+  }
+
+  .hero-panel .tv-bar-row strong {
+    font-size: 1.08rem !important;
+  }
+}
+
 @media (max-width: 820px) {
   .section,
   .section.soft {
