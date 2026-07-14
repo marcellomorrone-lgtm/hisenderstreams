@@ -80,6 +80,23 @@
 
   const copy = sectionCopy[locale] || sectionCopy.de;
 
+  const portfolioCopy = {
+    de: { kicker: 'Live-Senderportfolio', headline: '250+ Live-Sender', pill: '3 Pakete · zentral verwaltet' },
+    en: { kicker: 'Live channel portfolio', headline: '250+ live channels', pill: '3 packages · centrally managed' },
+    fr: { kicker: 'Portefeuille de chaînes en direct', headline: '250+ chaînes en direct', pill: '3 bouquets · gestion centralisée' },
+    it: { kicker: 'Portafoglio canali live', headline: '250+ canali live', pill: '3 pacchetti · gestione centrale' }
+  };
+  const portfolioLabels = portfolioCopy[locale] || portfolioCopy.de;
+  const portfolioPanel = document.querySelector('.hero-panel .tv-screen');
+  if (portfolioPanel) {
+    const portfolioKicker = portfolioPanel.querySelector('.tv-kicker');
+    const portfolioHeadline = portfolioPanel.querySelector('.tv-screen-head strong');
+    const portfolioPill = portfolioPanel.querySelector('.tv-pill');
+    if (portfolioKicker) portfolioKicker.textContent = portfolioLabels.kicker;
+    if (portfolioHeadline) portfolioHeadline.textContent = portfolioLabels.headline;
+    if (portfolioPill) portfolioPill.textContent = portfolioLabels.pill;
+  }
+
   const mergedAboutHeadings = {
     de: { eyebrow: 'Erfahrung aus der Schweiz', title: 'Über Hotelinnovativ & Referenzen' },
     en: { eyebrow: 'Experience from Switzerland', title: 'About Hotelinnovativ & References' },
