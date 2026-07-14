@@ -147,6 +147,32 @@
     cta?.classList.add('package-cta');
   });
 
+  const packageAudienceLabels = {
+    de: 'Passend für',
+    en: 'Best suited for',
+    fr: 'Idéal pour',
+    it: 'Ideale per'
+  };
+  document.querySelectorAll('#packages .package-card').forEach((card, index) => {
+    card.classList.add('package-story-card');
+
+    const head = card.querySelector(':scope > .package-card-head');
+    if (head && !head.querySelector('.package-tier-index')) {
+      const tier = document.createElement('span');
+      tier.className = 'package-tier-index';
+      tier.textContent = String(index + 1).padStart(2, '0');
+      head.prepend(tier);
+    }
+
+    const ideal = card.querySelector(':scope > .ideal');
+    if (ideal && !ideal.querySelector('.package-ideal-label')) {
+      const label = document.createElement('span');
+      label.className = 'package-ideal-label';
+      label.textContent = packageAudienceLabels[locale] || packageAudienceLabels.de;
+      ideal.prepend(label);
+    }
+  });
+
   document.querySelectorAll('#faq details[open], .faq-item[open]').forEach((item) => item.removeAttribute('open'));
   document.querySelectorAll('.logo-marquee-secondary').forEach((marquee) => marquee.remove());
 
@@ -156,15 +182,62 @@
   // larger annual total is intentionally not shown.
   document.getElementById('calcAnnual')?.closest('.result-row')?.remove();
 
-  // The form already provides every contact path. Remove the duplicated
-  // direct-contact card in every language, keeping the useful checklist.
-  const directContactHeadings = new Set([
-    'Direkter Kontakt', 'Direct contact', 'Contact direct', 'Contatto diretto'
-  ]);
-  document.querySelectorAll('.contact-side .card').forEach((card) => {
-    const heading = card.querySelector('h3');
-    if (heading && directContactHeadings.has(heading.textContent.trim())) card.remove();
-  });
+  // The request form is self-explanatory. Remove the complete secondary block
+  // beside it and give the form the full available width.
+  document.querySelector('.contact-side')?.remove();
+  document.querySelector('#contact .contact-grid')?.classList.add('contact-form-only');
+
+  // Some source logos are white artwork intended for dark backgrounds. Detect
+  // those assets with an isolated CORS-safe probe and invert only the affected
+  // artwork so every mark has enough contrast on the light marquee.
+  const detectWhiteLogo = (image) => {
+    const pill = image.closest('.logo-pill');
+    if (!pill || pill.dataset.contrastChecked) return;
+    pill.dataset.contrastChecked = 'true';
+
+    const probe = new Image();
+    probe.crossOrigin = 'anonymous';
+    probe.onload = () => {
+      try {
+        const canvas = document.createElement('canvas');
+        canvas.width = 72;
+        canvas.height = 44;
+        const context = canvas.getContext('2d', { willReadFrequently: true });
+        if (!context) return;
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.drawImage(probe, 0, 0, canvas.width, canvas.height);
+        const pixels = context.getImageData(0, 0, canvas.width, canvas.height).data;
+        let opaque = 0;
+        let brightNeutral = 0;
+        let stronglyColoured = 0;
+        for (let pixel = 0; pixel < pixels.length; pixel += 4) {
+          const alpha = pixels[pixel + 3];
+          if (alpha < 42) continue;
+          const red = pixels[pixel];
+          const green = pixels[pixel + 1];
+          const blue = pixels[pixel + 2];
+          const high = Math.max(red, green, blue);
+          const low = Math.min(red, green, blue);
+          const luminance = red * .2126 + green * .7152 + blue * .0722;
+          opaque += 1;
+          if (luminance > 218 && high - low < 34) brightNeutral += 1;
+          if (high - low > 58) stronglyColoured += 1;
+        }
+        if (!opaque) return;
+        const coverage = opaque / (canvas.width * canvas.height);
+        const whiteShare = brightNeutral / opaque;
+        const colourShare = stronglyColoured / opaque;
+        if (coverage < .82 && whiteShare > .56 && colourShare < .22) {
+          pill.classList.add('logo-needs-invert');
+        }
+      } catch (error) {
+        pill.classList.add('logo-contrast-fallback');
+      }
+    };
+    probe.onerror = () => pill.classList.add('logo-contrast-fallback');
+    probe.src = image.currentSrc || image.src;
+  };
+  document.querySelectorAll('.logo-marquee img').forEach(detectWhiteLogo);
 
   document.querySelectorAll('h1, h2, h3, h4').forEach((heading) => {
     heading.classList.add('hi-heading');
@@ -582,4 +655,97 @@
     movie.src = movieSource;
     tryRender();
   });
+
+  // Scrollytelling turns the long landing page into a guided sequence. Each
+  // major section becomes a chapter with a persistent progress rail and a
+  // focused active state as it enters the reading zone.
+  const storyWords = {
+    de: { chapter: 'Kapitel', navigation: 'Seitennavigation' },
+    en: { chapter: 'Chapter', navigation: 'Page navigation' },
+    fr: { chapter: 'Chapitre', navigation: 'Navigation de page' },
+    it: { chapter: 'Capitolo', navigation: 'Navigazione pagina' }
+  };
+  const storyCopy = storyWords[locale] || storyWords.de;
+  const storyChapters = [...document.querySelectorAll('main > section')]
+    .filter((section) => !section.classList.contains('logo-marquee-section'));
+
+  if (storyChapters.length && !document.body.classList.contains('hi-scrollytelling')) {
+    document.body.classList.add('hi-scrollytelling');
+
+    const progress = document.createElement('div');
+    progress.className = 'story-progress';
+    progress.setAttribute('aria-hidden', 'true');
+    const progressFill = document.createElement('span');
+    progress.append(progressFill);
+    document.body.append(progress);
+
+    const rail = document.createElement('nav');
+    rail.className = 'story-rail';
+    rail.setAttribute('aria-label', storyCopy.navigation);
+    document.body.append(rail);
+
+    const railButtons = storyChapters.map((section, index) => {
+      const chapterNumber = String(index + 1).padStart(2, '0');
+      const title = section.querySelector('h1, h2')?.textContent.trim() || `${storyCopy.chapter} ${chapterNumber}`;
+      section.classList.add('story-chapter');
+      section.dataset.storyIndex = chapterNumber;
+
+      const marker = document.createElement('div');
+      marker.className = 'story-chapter-marker';
+      marker.setAttribute('aria-hidden', 'true');
+      const markerNumber = document.createElement('strong');
+      markerNumber.textContent = chapterNumber;
+      const markerLabel = document.createElement('span');
+      markerLabel.textContent = storyCopy.chapter;
+      marker.append(markerNumber, markerLabel);
+      section.prepend(marker);
+
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'story-rail-dot';
+      button.setAttribute('aria-label', `${chapterNumber} — ${title}`);
+      button.title = title;
+      const dotNumber = document.createElement('span');
+      dotNumber.textContent = chapterNumber;
+      button.append(dotNumber);
+      button.addEventListener('click', () => section.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+      rail.append(button);
+      return button;
+    });
+
+    const setActiveChapter = (activeIndex) => {
+      storyChapters.forEach((section, index) => section.classList.toggle('is-story-active', index === activeIndex));
+      railButtons.forEach((button, index) => {
+        button.classList.toggle('is-active', index === activeIndex);
+        if (index === activeIndex) button.setAttribute('aria-current', 'step');
+        else button.removeAttribute('aria-current');
+      });
+    };
+    setActiveChapter(0);
+
+    if ('IntersectionObserver' in window) {
+      const storyObserver = new IntersectionObserver((entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (!visible) return;
+        setActiveChapter(storyChapters.indexOf(visible.target));
+      }, { rootMargin: '-16% 0px -52% 0px', threshold: [0, .08, .2, .45] });
+      storyChapters.forEach((section) => storyObserver.observe(section));
+    }
+
+    let storyFrame = 0;
+    const updateStoryProgress = () => {
+      storyFrame = 0;
+      const available = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+      const ratio = Math.min(1, Math.max(0, window.scrollY / available));
+      progressFill.style.transform = `scaleX(${ratio})`;
+      document.body.style.setProperty('--story-scroll-shift', `${Math.round(ratio * 110)}px`);
+      document.body.style.setProperty('--story-number-shift', `${Math.round(ratio * -9)}px`);
+    };
+    window.addEventListener('scroll', () => {
+      if (!storyFrame) storyFrame = window.requestAnimationFrame(updateStoryProgress);
+    }, { passive: true });
+    updateStoryProgress();
+  }
 })();
