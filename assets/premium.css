@@ -3602,3 +3602,87 @@ body {
     max-width: 340px;
   }
 }
+
+/* Clean hero reception indicator. */
+.hero-panel .hi-heading-copy-generated {
+  display: none !important;
+}
+
+.hero-panel .signal {
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: center !important;
+  align-self: center;
+  width: 76px;
+  height: 38px !important;
+  gap: 7px !important;
+  transform: none !important;
+  transform-origin: center bottom !important;
+}
+
+.hero-panel .signal span {
+  width: 7px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(180deg, #d7f36f 0%, #95bd1f 100%) !important;
+  box-shadow: 0 0 0 rgba(177, 218, 49, 0);
+  transform-origin: center bottom;
+  animation: hi-tv-reception 1.45s ease-in-out infinite;
+  will-change: transform, opacity, box-shadow;
+}
+
+.hero-panel .signal span:nth-child(1) {
+  height: 7px !important;
+  animation-delay: 0s;
+}
+
+.hero-panel .signal span:nth-child(2) {
+  height: 13px !important;
+  animation-delay: .14s;
+}
+
+.hero-panel .signal span:nth-child(3) {
+  height: 20px !important;
+  animation-delay: .28s;
+}
+
+.hero-panel .signal span:nth-child(4) {
+  height: 28px !important;
+  animation-delay: .42s;
+}
+
+@keyframes hi-tv-reception {
+  0%, 100% {
+    opacity: .48;
+    transform: scaleY(.72);
+    box-shadow: 0 0 0 rgba(177, 218, 49, 0);
+  }
+  45% {
+    opacity: 1;
+    transform: scaleY(1.08);
+    box-shadow: 0 0 15px rgba(177, 218, 49, .52);
+  }
+  70% {
+    opacity: .72;
+    transform: scaleY(.92);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-panel .signal span {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-panel .signal {
+    width: 58px;
+    height: 32px !important;
+    gap: 5px !important;
+  }
+
+  .hero-panel .signal span {
+    width: 6px !important;
+  }
+}
