@@ -3125,3 +3125,276 @@ body {
     transform: none !important;
   }
 }
+
+/* ================================================================
+   SIMPLIFIED STORY + CENTRED PACKAGE TILES
+   Removes both numbered chapter navigation systems and returns the
+   package comparison to three calm, compact square cards.
+   ================================================================ */
+
+.story-rail,
+.story-chapter-marker {
+  display: none !important;
+}
+
+.story-chapter::after {
+  content: none !important;
+  display: none !important;
+}
+
+.story-chapter#packages > .wrap {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+#packages .section-head {
+  position: relative !important;
+  z-index: 1;
+  top: auto !important;
+  margin-bottom: 30px;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+#packages .cards3 {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 332px)) !important;
+  justify-content: center;
+  align-items: stretch;
+  gap: 24px !important;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  perspective: none;
+}
+
+#packages .package-card,
+#packages .package-card.popular,
+#packages .package-card:hover,
+#packages .package-card.popular:hover {
+  position: relative;
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  grid-template-rows: 84px minmax(58px, auto) auto 1fr auto !important;
+  grid-template-areas:
+    'head'
+    'title'
+    'price'
+    'benefits'
+    'cta' !important;
+  width: 100%;
+  max-width: 332px;
+  min-height: 0 !important;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  padding: 0 !important;
+  overflow: hidden;
+  transform: none !important;
+  animation: none !important;
+  transition: none !important;
+  border: 1px solid rgba(19, 34, 52, .1) !important;
+  border-radius: 28px !important;
+  background: rgba(255, 255, 255, .96) !important;
+  color: #132234 !important;
+  box-shadow: 0 20px 52px rgba(19, 34, 52, .1) !important;
+}
+
+#packages .package-card.popular {
+  border: 2px solid rgba(151, 194, 28, .72) !important;
+  background: linear-gradient(180deg, #ffffff, #f8fce9) !important;
+  box-shadow: 0 22px 58px rgba(116, 154, 12, .16) !important;
+}
+
+#packages .package-card::before,
+#packages .package-card::after,
+#packages .package-card:hover::after {
+  content: none !important;
+  display: none !important;
+}
+
+#packages .package-card-head,
+#packages .package-card.popular .package-card-head {
+  grid-area: head;
+  display: grid !important;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 11px;
+  width: 100%;
+  min-height: 0 !important;
+  height: 84px;
+  padding: 16px 20px !important;
+  border: 0;
+  border-radius: 0;
+  background: #edf5dc;
+  color: #132234;
+}
+
+#packages .package-essential .package-card-head {
+  background: linear-gradient(145deg, #172b3c, #10202e);
+  color: #fff;
+}
+
+#packages .package-max .package-card-head {
+  background: linear-gradient(145deg, #e1ece8, #f1f6ee);
+}
+
+#packages .package-tier-index {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  opacity: .62;
+  font-size: .58rem;
+  font-weight: 900;
+}
+
+#packages .package-card-head .sub,
+#packages .package-card.popular .package-card-head .sub {
+  min-width: 0;
+  margin: 0 !important;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font-size: .67rem;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+#packages .package-card .count,
+#packages .package-card.popular .count {
+  margin: 0;
+  color: inherit !important;
+  font-size: 2.35rem !important;
+  line-height: .9;
+  letter-spacing: -.06em;
+}
+
+#packages .package-card > h3,
+#packages .package-card.popular > h3 {
+  grid-area: title;
+  align-self: center;
+  min-height: 0;
+  margin: 0;
+  padding: 15px 22px 7px;
+  color: #132234 !important;
+  font-size: 1.2rem;
+  line-height: 1.12;
+  text-align: center;
+}
+
+#packages .package-price-block,
+#packages .package-card.popular .package-price-block {
+  grid-area: price;
+  align-self: center;
+  justify-self: center;
+  width: calc(100% - 44px);
+  margin: 0 !important;
+  padding: 8px 12px;
+  border: 1px solid rgba(19, 34, 52, .08);
+  border-radius: 14px;
+  background: #f5f7f2;
+  color: #132234;
+  text-align: center;
+}
+
+#packages .package-card.popular .package-price-block {
+  border-color: rgba(143, 184, 22, .24);
+  background: #f1f8dc;
+}
+
+#packages .package-price-block .price,
+#packages .package-card.popular .package-price-block .price {
+  display: inline;
+  color: #132234 !important;
+  font-size: 1.18rem !important;
+}
+
+#packages .package-price-block .per,
+#packages .package-card.popular .package-price-block .per {
+  display: inline;
+  margin: 0 0 0 7px;
+  color: #687481 !important;
+  font-size: .56rem;
+}
+
+#packages .package-card > ul,
+#packages .package-card.popular > ul {
+  grid-area: benefits;
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  align-content: center;
+  gap: 4px;
+  margin: 0;
+  padding: 9px 24px 8px;
+  color: #4f5d6a !important;
+}
+
+#packages .package-card > ul li {
+  min-height: 0;
+  padding-left: 16px;
+  font-size: .65rem;
+  line-height: 1.3;
+}
+
+#packages .package-card > ul li:nth-child(n + 4) {
+  display: none;
+}
+
+#packages .package-card .ideal,
+#packages .package-card.popular .ideal {
+  display: none !important;
+}
+
+#packages .package-cta {
+  grid-area: cta;
+  align-self: end;
+  justify-self: stretch;
+  margin: 0 22px 20px !important;
+  padding: 0 !important;
+}
+
+#packages .package-cta > a {
+  width: 100%;
+  min-height: 39px;
+  padding: 9px 12px;
+  border-radius: 13px;
+  font-size: .68rem;
+}
+
+#packages .package-card.popular .ribbon {
+  top: 7px;
+  right: 10px;
+  max-width: 112px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  font-size: .48rem;
+  letter-spacing: .07em;
+  box-shadow: none;
+}
+
+@media (max-width: 1040px) {
+  #packages .cards3 {
+    grid-template-columns: repeat(2, minmax(0, 332px)) !important;
+  }
+}
+
+@media (max-width: 720px) {
+  #packages .cards3 {
+    grid-template-columns: minmax(0, 340px) !important;
+    gap: 18px !important;
+  }
+
+  #packages .package-card,
+  #packages .package-card.popular {
+    max-width: 340px;
+  }
+}
