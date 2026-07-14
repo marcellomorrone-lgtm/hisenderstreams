@@ -657,14 +657,6 @@
   // Scrollytelling turns the long landing page into a guided sequence. Each
   // major section becomes a chapter with a persistent progress rail and a
   // focused active state as it enters the reading zone.
-  const storyWords = {
-    de: { chapter: 'Kapitel', navigation: 'Seitennavigation' },
-    en: { chapter: 'Chapter', navigation: 'Page navigation' },
-    fr: { chapter: 'Chapitre', navigation: 'Navigation de page' },
-    it: { chapter: 'Capitolo', navigation: 'Navigazione pagina' }
-  };
-  const storyLocale = ((window.pageConfig && window.pageConfig.locale) || document.documentElement.lang || 'de').slice(0, 2);
-  const storyCopy = storyWords[storyLocale] || storyWords.de;
   const storyChapters = [...document.querySelectorAll('main > section')]
     .filter((section) => !section.classList.contains('logo-marquee-section'));
 
@@ -678,47 +670,12 @@
     progress.append(progressFill);
     document.body.append(progress);
 
-    const rail = document.createElement('nav');
-    rail.className = 'story-rail';
-    rail.setAttribute('aria-label', storyCopy.navigation);
-    document.body.append(rail);
-
-    const railButtons = storyChapters.map((section, index) => {
-      const chapterNumber = String(index + 1).padStart(2, '0');
-      const title = section.querySelector('h1, h2')?.textContent.trim() || `${storyCopy.chapter} ${chapterNumber}`;
+    storyChapters.forEach((section) => {
       section.classList.add('story-chapter');
-      section.dataset.storyIndex = chapterNumber;
-
-      const marker = document.createElement('div');
-      marker.className = 'story-chapter-marker';
-      marker.setAttribute('aria-hidden', 'true');
-      const markerNumber = document.createElement('strong');
-      markerNumber.textContent = chapterNumber;
-      const markerLabel = document.createElement('span');
-      markerLabel.textContent = storyCopy.chapter;
-      marker.append(markerNumber, markerLabel);
-      section.prepend(marker);
-
-      const button = document.createElement('button');
-      button.type = 'button';
-      button.className = 'story-rail-dot';
-      button.setAttribute('aria-label', `${chapterNumber} — ${title}`);
-      button.title = title;
-      const dotNumber = document.createElement('span');
-      dotNumber.textContent = chapterNumber;
-      button.append(dotNumber);
-      button.addEventListener('click', () => section.scrollIntoView({ behavior: 'smooth', block: 'start' }));
-      rail.append(button);
-      return button;
     });
 
     const setActiveChapter = (activeIndex) => {
       storyChapters.forEach((section, index) => section.classList.toggle('is-story-active', index === activeIndex));
-      railButtons.forEach((button, index) => {
-        button.classList.toggle('is-active', index === activeIndex);
-        if (index === activeIndex) button.setAttribute('aria-current', 'step');
-        else button.removeAttribute('aria-current');
-      });
     };
     setActiveChapter(0);
 
