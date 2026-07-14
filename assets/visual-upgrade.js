@@ -492,10 +492,8 @@
  */
 (function () {
   const demos = document.querySelectorAll('.casting-demo');
-  if (!demos.length || !window.HTMLCanvasElement) return;
-
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reducedMotion) return;
+  const canRenderMovie = Boolean(demos.length && window.HTMLCanvasElement && !reducedMotion);
 
   function extractMovieSource(layer) {
     const background = window.getComputedStyle(layer).backgroundImage || '';
@@ -636,7 +634,7 @@
     base.insertAdjacentElement('afterend', canvas);
   }
 
-  demos.forEach((demo) => {
+  if (canRenderMovie) demos.forEach((demo) => {
     const base = demo.querySelector(':scope > img');
     const movieLayer = demo.querySelector('.casting-movie-screen');
     if (!base || !movieLayer) return;
@@ -665,7 +663,8 @@
     fr: { chapter: 'Chapitre', navigation: 'Navigation de page' },
     it: { chapter: 'Capitolo', navigation: 'Navigazione pagina' }
   };
-  const storyCopy = storyWords[locale] || storyWords.de;
+  const storyLocale = ((window.pageConfig && window.pageConfig.locale) || document.documentElement.lang || 'de').slice(0, 2);
+  const storyCopy = storyWords[storyLocale] || storyWords.de;
   const storyChapters = [...document.querySelectorAll('main > section')]
     .filter((section) => !section.classList.contains('logo-marquee-section'));
 
