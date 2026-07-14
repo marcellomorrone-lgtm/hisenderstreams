@@ -141,6 +141,63 @@ footer{background:#fff;color:#6c7870;border-top:1px solid #e2e9df}
 @media (max-width:600px){.hero{padding:105px 20px 72px}.hero h1{font-size:44px}.hero-stage{min-height:620px;margin-top:20px}.hero-touchpoints{height:590px;border-radius:28px}.hero-map-head{left:20px;top:20px}.hero-map-head>span{width:46px;height:46px}.hero-touchpoint-path{display:none}.hero-touchpoint-list{inset:78px 16px 70px;display:grid;gap:8px}.hero-touchpoint-list::before{content:"";position:absolute;left:28px;top:28px;bottom:28px;width:3px;border-radius:3px;background:linear-gradient(#a8d331,#d8e9aa)}.hero-touchpoint-list li,.hero-touchpoint-list .tp-1,.hero-touchpoint-list .tp-2,.hero-touchpoint-list .tp-3,.hero-touchpoint-list .tp-4,.hero-touchpoint-list .tp-5{position:relative;left:auto;right:auto;top:auto;bottom:auto;width:100%;min-height:72px;padding:10px 16px 10px 74px;display:flex;align-items:center;text-align:left}.hero-touchpoint-list li>i{position:absolute;left:8px;margin:0;width:43px;height:43px}.hero-touchpoint-list li>span{right:13px;top:10px}.hero-touchpoint-list strong{font-size:12px}.hero-touchpoint-list small{margin:0 0 0 9px}.hero-map-badge{right:16px;bottom:15px;padding:8px 11px}.hero-map-badge>i{width:31px;height:31px}.promise{margin-top:0}.journey{padding-top:10px}.station,.station-left{padding:58px 14px 84px}.station-copy,.station-left .station-copy{margin-left:18px;padding:25px 22px}.station-copy h3{font-size:34px}.station-stage,.station-left .station-stage{min-height:410px;margin-left:18px}.phone-device{width:125px;max-width:42%}.stay-stage{min-height:470px}.stay-devices{height:380px}.stay-phone{left:2%;width:105px}.hotel-tv{right:0;top:12%;width:70%}.device-link{left:25%;bottom:12%}.after-stage{min-height:430px}.after-phone-image{width:145px!important;max-width:none}.potential,.platform,.contact{padding:90px 20px}.logo-tile{width:190px;height:112px;padding:20px 24px}.logo-tile img{max-height:64px}}
 @media (hover:none),(pointer:coarse){.station-stage:hover{--lift:0px}.hero-touchpoint-list li:hover{transform:none}}
 @media (prefers-reduced-motion:reduce){.hero-touchpoints,.hero-touchpoint-path path,.hero-touchpoint-list li{animation:none;opacity:1;transition:none}.phone-device,.hotel-tv{transition:none}}
+
+/* Calmer scale, continuous route and HI pulse */
+.hero{min-height:100svh;padding-top:125px;padding-bottom:55px}
+.hero h1{font-size:clamp(42px,4.1vw,69px);line-height:1}
+.hero-stage{min-height:520px}
+.hero-touchpoints{width:min(90%,620px);height:460px;border-radius:31px;--map-glow-x:50%;--map-glow-y:50%}
+.hero-touchpoints::before{width:290px;height:290px;right:-115px;top:-120px}
+.hero-touchpoints::after{content:"";position:absolute;z-index:1;inset:0;background:radial-gradient(circle 150px at var(--map-glow-x) var(--map-glow-y),rgba(185,224,82,.19),transparent 72%);opacity:0;pointer-events:none;transition:opacity .55s ease}
+.hero-touchpoints:hover::after{opacity:1}
+.hero-map-head{left:27px;top:22px;gap:11px}.hero-map-head>span{width:42px;height:42px;border-radius:14px;font-size:9px}.hero-map-head strong{font-size:12px}
+.hero-touchpoint-path .hero-route-base{stroke:#9cca2e;stroke-width:4;stroke-dasharray:none;stroke-dashoffset:0;animation:none;filter:drop-shadow(0 0 5px rgba(152,198,39,.25))}
+.hero-touchpoint-path .hero-route-flow{stroke:#e6ff9d;stroke-width:6;stroke-dasharray:12 88;stroke-dashoffset:0;animation:routeFlow 12s linear infinite;filter:drop-shadow(0 0 8px rgba(168,211,49,.7))}
+.hero-route-spark{fill:#f2ffc9;stroke:#8fbd26;stroke-width:3;filter:drop-shadow(0 0 8px rgba(143,189,38,.85))}
+.hero-touchpoint-list li{width:116px;min-height:102px;padding:12px 10px 10px;border-radius:17px;animation-duration:1.25s;box-shadow:0 14px 32px rgba(46,65,51,.09)}
+.hero-touchpoint-list li:hover{transform:translateY(-5px) rotate(-.6deg);box-shadow:0 20px 38px rgba(60,83,65,.14)}
+.hero-touchpoint-list li>span{right:9px;top:7px;font-size:8px}.hero-touchpoint-list li>i{width:36px;height:36px;margin:2px auto 8px;border-radius:12px}.hero-touchpoint-list svg{width:19px;height:19px}.hero-touchpoint-list strong{font-size:10px}.hero-touchpoint-list small{margin-top:2px;font-size:7px}
+.hero-touchpoint-list .tp-1{left:3%;top:20%;animation-delay:.3s}.hero-touchpoint-list .tp-2{left:calc(50% - 58px);top:20%;animation-delay:.55s}.hero-touchpoint-list .tp-3{right:3%;top:20%;animation-delay:.8s}.hero-touchpoint-list .tp-4{left:calc(50% - 58px);bottom:12%;animation-delay:1.05s}.hero-touchpoint-list .tp-5{left:3%;bottom:12%;animation-delay:1.3s}
+.hero-map-badge{right:20px;bottom:22px;gap:8px;padding:9px 12px;border-radius:14px;font:inherit;color:inherit;cursor:pointer;appearance:none;transition:transform .35s ease,box-shadow .35s ease}.hero-map-badge:hover{transform:translateY(-3px);box-shadow:0 16px 30px rgba(55,76,60,.14)}.hero-map-badge:focus-visible{outline:3px solid rgba(168,211,49,.38);outline-offset:3px}.hero-map-badge>i{width:30px;height:30px;font-size:16px}.hero-map-badge span{font-size:7px}.hero-map-badge strong{font-size:8px}
+.hero-touchpoints.pulse-active .hero-map-badge>i{animation:hiPulse 1.8s ease both}.hero-touchpoints.pulse-active .hero-touchpoint-list li{animation-name:journeyNodePulse;animation-duration:1.7s;animation-timing-function:cubic-bezier(.2,.8,.2,1);animation-fill-mode:both}.hero-touchpoints.pulse-active .hero-touchpoint-list li:nth-child(1){animation-delay:0s}.hero-touchpoints.pulse-active .hero-touchpoint-list li:nth-child(2){animation-delay:.25s}.hero-touchpoints.pulse-active .hero-touchpoint-list li:nth-child(3){animation-delay:.5s}.hero-touchpoints.pulse-active .hero-touchpoint-list li:nth-child(4){animation-delay:.75s}.hero-touchpoints.pulse-active .hero-touchpoint-list li:nth-child(5){animation-delay:1s}
+@keyframes routeFlow{to{stroke-dashoffset:-400}}@keyframes hiPulse{0%,100%{transform:scale(1)}35%{transform:scale(1.28);box-shadow:0 0 0 14px rgba(168,211,49,0)}50%{box-shadow:0 0 0 2px rgba(168,211,49,.48)}}@keyframes journeyNodePulse{0%,100%{transform:none;border-color:#e1e8de}45%{transform:translateY(-7px) scale(1.045);border-color:#a8d331;box-shadow:0 20px 42px rgba(126,167,31,.24)}}
+
+[data-reveal]{transition-duration:1.05s}.station[data-reveal]{transition-duration:1.25s}
+.logo-track{animation-duration:48s}
+.promise{width:min(1040px,88vw);padding:11px;border-radius:23px}.promise article{min-height:176px;padding:24px}.promise article>span{top:22px;right:22px;font-size:30px}.promise-icon{width:39px;height:39px;border-radius:12px;font-size:19px}.promise h2{margin:19px 0 7px;font-size:23px}
+.journey-intro{padding:120px 5vw 72px}.journey-intro h2{font-size:clamp(38px,4vw,62px)}
+.station{width:min(1160px,90vw);min-height:620px}.station-copy{max-width:460px;padding:30px;border-radius:24px}.station-kicker span{font-size:38px}.station-copy h3{margin:14px 0;font-size:clamp(29px,2.6vw,42px)}.station-copy ul{margin:22px 0;gap:9px 13px}.revenue-moment{gap:10px;padding:11px 13px;border-radius:12px}.revenue-moment i{width:29px;height:29px}
+.potential,.platform,.contact{padding:120px max(5vw,34px)}.potential h2,.platform h2,.contact h2,.integrations h2{font-size:clamp(38px,4vw,61px)}.potential-facts article{padding:18px;border-radius:15px}.potential-facts strong{font-size:30px}
+.calculator{padding:27px;border-radius:26px}.calculator-head h3{font-size:29px}.calculator-head>span{width:42px;height:42px}.parameter-grid{gap:10px;margin-top:20px}.parameter-grid label{padding:10px 12px;border-radius:11px}.parameter-grid input{font-size:22px}.potential-result{margin-top:19px;padding:19px;border-radius:16px}.potential-result strong{font-size:clamp(24px,3.2vw,42px)}
+.benefit-grid{gap:11px}.benefit-grid article{min-height:212px;padding:24px;border-radius:20px}.benefit-grid article>span{font-size:38px}.benefit-grid article>i{right:22px;top:21px;width:36px;height:36px;border-radius:12px;font-size:18px}.benefit-grid h3{margin:22px 0 7px;font-size:22px}
+.integrations{padding:112px 0}.integrations-head{margin-bottom:52px}.logo-tile{width:184px;height:104px;padding:19px 22px;border-radius:16px}.logo-tile img{max-height:58px}
+.contact form{padding:28px;border-radius:24px}.form-head{font-size:23px}
+
+@media (max-width:1100px){.hero{padding-bottom:75px}.hero-stage{min-height:490px}.hero-touchpoints{width:min(620px,86vw)}.station{min-height:580px}}
+@media (max-width:850px){.hero{padding-top:110px}.hero h1{font-size:clamp(40px,8vw,56px)}.hero-stage{min-height:500px}.station,.station-left{padding:58px 0 82px}.station-copy,.station-left .station-copy{margin-left:42px}.potential,.platform,.contact{gap:44px}.benefit-grid article{min-height:190px}}
+@media (max-width:600px){.hero{padding:95px 20px 58px}.hero h1{font-size:36px}.hero-stage{min-height:545px}.hero-touchpoints{width:100%;height:510px;border-radius:24px}.hero-map-head{left:16px;top:16px}.hero-map-head>span{width:38px;height:38px}.hero-map-head strong{font-size:11px}.hero-touchpoint-list{inset:66px 14px 54px;gap:7px}.hero-touchpoint-list::before{left:24px;top:23px;bottom:23px;width:3px;background:linear-gradient(180deg,#d8ec9f,#94c326,#efffc6,#94c326,#d8ec9f);background-size:100% 220%;animation:mobileRouteFlow 10s linear infinite}.hero-touchpoint-list::after{content:"";position:absolute;z-index:3;left:20px;top:20px;width:11px;height:11px;border-radius:50%;background:#f0ffc1;border:2px solid #8dbb25;box-shadow:0 0 12px rgba(141,187,37,.75);animation:mobileRouteSpark 13s linear infinite}.hero-touchpoint-list li,.hero-touchpoint-list .tp-1,.hero-touchpoint-list .tp-2,.hero-touchpoint-list .tp-3,.hero-touchpoint-list .tp-4,.hero-touchpoint-list .tp-5{min-height:60px;padding:8px 12px 8px 58px;border-radius:15px}.hero-touchpoint-list li>i{left:7px;width:36px;height:36px;border-radius:11px}.hero-touchpoint-list strong{font-size:10px}.hero-touchpoint-list small{margin-left:7px;font-size:6.5px}.hero-map-badge{right:12px;bottom:10px;padding:7px 9px}.hero-map-badge>i{width:27px;height:27px}.promise{width:calc(100% - 32px)}.promise article{min-height:152px;padding:20px}.journey-intro{padding:76px 22px 52px}.journey-intro h2{font-size:36px}.station,.station-left{padding:48px 14px 68px}.station-copy,.station-left .station-copy{margin-left:18px;padding:20px 18px;border-radius:19px}.station-copy h3{font-size:28px}.station-kicker span{font-size:32px}.station-stage,.station-left .station-stage{min-height:370px}.stay-stage{min-height:430px}.after-stage{min-height:380px}.potential,.platform,.contact{padding:76px 20px}.potential h2,.platform h2,.contact h2,.integrations h2{font-size:36px}.calculator{padding:20px 15px}.benefit-grid article{min-height:170px;padding:20px}.logo-tile{width:164px;height:94px;padding:17px 20px}.logo-tile img{max-height:52px}.contact form{padding:22px 17px}}
+@keyframes mobileRouteFlow{to{background-position:0 220%}}@keyframes mobileRouteSpark{0%{top:18px}100%{top:calc(100% - 30px)}}
+@media (prefers-reduced-motion:reduce){.hero-route-flow,.hero-route-spark,.hero-touchpoint-list::before,.hero-touchpoint-list::after,.hero-touchpoints.pulse-active .hero-map-badge>i,.hero-touchpoints.pulse-active .hero-touchpoint-list li{animation:none!important}.hero-route-spark{display:none}}
+
+/* Mobile readability: a visible journey rail and legible product screens */
+@media (max-width:600px){
+  .journey{isolation:isolate;overflow:hidden}
+  .journey-path{z-index:0;left:-8px;top:112px;width:42px;height:calc(100% - 155px);opacity:1;transform:none;pointer-events:none}
+  .journey-path .path-shadow{stroke:rgba(155,197,48,.34);stroke-width:44;filter:drop-shadow(0 0 8px rgba(145,188,39,.28))}
+  .journey-path .path-progress{stroke-width:11;filter:drop-shadow(0 0 8px rgba(133,178,31,.72))}
+  .journey-intro,.station{position:relative;z-index:1}
+  .station,.station-left{padding-left:20px;padding-right:14px}
+  .station-copy,.station-left .station-copy{margin-left:24px}
+  .station-stage,.station-left .station-stage{min-height:515px;margin-left:24px}
+  .station-stage>.phone-device{width:min(220px,62vw);max-width:none}
+  .stay-stage{min-height:600px}
+  .stay-devices{height:550px}
+  .stay-phone{left:0;bottom:0;width:min(185px,49vw);max-width:none}
+  .hotel-tv{right:-5%;top:5%;width:94%}
+  .device-link{left:38%;bottom:27%}
+  .after-stage{min-height:580px}
+  .after-phone-image{width:min(250px,70vw)!important;max-width:none}
+}
 </style>
 </head>
 <body>
@@ -175,7 +232,11 @@ footer{background:#fff;color:#6c7870;border-top:1px solid #e2e9df}
       <div class="hero-stage" aria-label="Die fünf Touchpoints der digitalen Guest Journey">
         <div class="hero-touchpoints">
           <div class="hero-map-head"><span>01–05</span><strong>Fünf Touchpoints.<br>Eine durchgängige Journey.</strong></div>
-          <svg class="hero-touchpoint-path" viewBox="0 0 700 500" preserveAspectRatio="none" aria-hidden="true"><path d="M95 130 C205 60 315 60 350 130 S505 205 605 130 C675 80 680 300 605 350 C510 420 430 415 350 350 S185 285 95 350"></path></svg>
+          <svg class="hero-touchpoint-path" viewBox="0 0 700 500" preserveAspectRatio="none" aria-hidden="true">
+            <path class="hero-route-base" d="M95 130 C205 60 315 60 350 130 S505 205 605 130 C675 80 680 300 605 350 C510 420 430 415 350 350 S185 285 95 350"></path>
+            <path class="hero-route-flow" d="M95 130 C205 60 315 60 350 130 S505 205 605 130 C675 80 680 300 605 350 C510 420 430 415 350 350 S185 285 95 350"></path>
+            <circle class="hero-route-spark" r="7"><animateMotion dur="14s" repeatCount="indefinite" path="M95 130 C205 60 315 60 350 130 S505 205 605 130 C675 80 680 300 605 350 C510 420 430 415 350 350 S185 285 95 350"></animateMotion></circle>
+          </svg>
           <ol class="hero-touchpoint-list">
             <li class="tp-1"><span>01</span><i><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"></rect><path d="M7 3v4M17 3v4M3 10h18M8 14h2M14 14h2"></path></svg></i><strong>Before Stay</strong><small>Planen & buchen</small></li>
             <li class="tp-2"><span>02</span><i><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="12" r="4"></circle><path d="M12 12h9M18 12v3M15 12v2"></path></svg></i><strong>Check-in</strong><small>Digital ankommen</small></li>
@@ -183,7 +244,7 @@ footer{background:#fff;color:#6c7870;border-top:1px solid #e2e9df}
             <li class="tp-4"><span>04</span><i><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"></rect><path d="m7 12 3 3 7-7"></path></svg></i><strong>Check-out</strong><small>Einfach abreisen</small></li>
             <li class="tp-5"><span>05</span><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6a5.5 5.5 0 0 0 1-8.8Z"></path></svg></i><strong>After Stay</strong><small>Verbunden bleiben</small></li>
           </ol>
-          <div class="hero-map-badge"><i>hi</i><span>Eine Plattform<br><strong>Alle Momente verbunden</strong></span></div>
+          <button class="hero-map-badge" type="button" data-journey-pulse aria-label="Alle fünf Touchpoints verbinden"><i>hi</i><span>Eine Plattform<br><strong>Alle Momente verbunden</strong></span></button>
         </div>
       </div>
       <div class="hero-scroll"><span>Scrollen und entdecken</span><i>↓</i></div>
@@ -410,16 +471,32 @@ footer{background:#fff;color:#6c7870;border-top:1px solid #e2e9df}
       frame = requestAnimationFrame(() => {
         element.style.setProperty(xProperty, `${(x * xStrength).toFixed(2)}deg`);
         element.style.setProperty(yProperty, `${(-y * yStrength).toFixed(2)}deg`);
+        if (element.classList.contains('hero-touchpoints')) {
+          element.style.setProperty('--map-glow-x', `${((x + .5) * 100).toFixed(1)}%`);
+          element.style.setProperty('--map-glow-y', `${((y + .5) * 100).toFixed(1)}%`);
+        }
       });
     });
     element.addEventListener('pointerleave', () => {
       cancelAnimationFrame(frame);
       element.style.setProperty(xProperty, '0deg');
       element.style.setProperty(yProperty, '0deg');
+      if (element.classList.contains('hero-touchpoints')) {
+        element.style.setProperty('--map-glow-x', '50%');
+        element.style.setProperty('--map-glow-y', '50%');
+      }
     });
   };
   document.querySelectorAll('.station-stage').forEach((stage) => bindTilt(stage, 5, 3.5, '--tilt-x', '--tilt-y'));
-  bindTilt(document.querySelector('.hero-touchpoints'), 2.4, 1.6, '--map-tilt-x', '--map-tilt-y');
+  const touchpointMap = document.querySelector('.hero-touchpoints');
+  bindTilt(touchpointMap, 2.4, 1.6, '--map-tilt-x', '--map-tilt-y');
+
+  const journeyPulse = document.querySelector('[data-journey-pulse]');
+  journeyPulse?.addEventListener('click', () => {
+    touchpointMap?.classList.remove('pulse-active');
+    void touchpointMap?.offsetWidth;
+    touchpointMap?.classList.add('pulse-active');
+  });
 
   const calculator = document.querySelector('[data-calculator]');
   if (calculator) {
