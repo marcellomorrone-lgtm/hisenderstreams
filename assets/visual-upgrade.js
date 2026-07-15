@@ -721,4 +721,66 @@
     }, { passive: true });
     updateStoryProgress();
   }
+
+  // Award edition: cinematic hospitality imagery with the existing tools,
+  // sender data and translations kept intact.
+  document.body.classList.add('hi-award-edition');
+
+  const awardCopy = {
+    de: {
+      heroProof: 'Live-TV · 250+ Sender · Swiss Support',
+      casting: 'Sicher verbunden · Persönliche Inhalte auf dem Hotel-TV',
+      contactKicker: 'Persönlich geplant',
+      contactTitle: 'Ihre Senderwelt. Ihr Hotel. Eine klare Lösung.',
+      contactText: 'Gemeinsam definieren wir Paket, Infrastruktur, Casting und Support – passend zu Ihren Gästen und Ihrem Betrieb.'
+    },
+    en: {
+      heroProof: 'Live TV · 250+ channels · Swiss support',
+      casting: 'Securely connected · Personal content on the hotel TV',
+      contactKicker: 'Planned personally',
+      contactTitle: 'Your channel world. Your hotel. One clear solution.',
+      contactText: 'Together we define package, infrastructure, casting and support around your guests and operations.'
+    },
+    fr: {
+      heroProof: 'TV en direct · 250+ chaînes · Support suisse',
+      casting: 'Connexion sécurisée · Contenus personnels sur le téléviseur',
+      contactKicker: 'Planification personnalisée',
+      contactTitle: 'Vos chaînes. Votre hôtel. Une solution claire.',
+      contactText: 'Nous définissons ensemble le bouquet, l’infrastructure, le casting et le support adaptés à vos clients.'
+    },
+    it: {
+      heroProof: 'TV live · 250+ canali · Supporto svizzero',
+      casting: 'Connessione sicura · Contenuti personali sulla TV',
+      contactKicker: 'Progettazione personale',
+      contactTitle: 'I vostri canali. Il vostro hotel. Una soluzione chiara.',
+      contactText: 'Definiamo insieme pacchetto, infrastruttura, casting e supporto in base agli ospiti e alla struttura.'
+    }
+  };
+  const awardLabels = awardCopy[locale] || awardCopy.de;
+
+  const heroActions = document.querySelector('.hero .hero-actions');
+  if (heroActions && !document.querySelector('.award-hero-proof')) {
+    const proof = document.createElement('div');
+    proof.className = 'award-hero-proof';
+    proof.innerHTML = `<i aria-hidden="true"></i><span>${awardLabels.heroProof}</span>`;
+    heroActions.insertAdjacentElement('afterend', proof);
+  }
+
+  const castingDemo = document.querySelector('#casting .casting-demo');
+  if (castingDemo && !castingDemo.querySelector('.award-casting-live')) {
+    const live = document.createElement('div');
+    live.className = 'award-casting-live';
+    live.innerHTML = `<i aria-hidden="true"></i><span>${awardLabels.casting}</span>`;
+    castingDemo.append(live);
+  }
+
+  const contactGrid = document.querySelector('#contact .contact-grid');
+  if (contactGrid && !contactGrid.querySelector('.award-contact-visual')) {
+    const visual = document.createElement('aside');
+    visual.className = 'award-contact-visual reveal';
+    visual.innerHTML = `<div class="award-contact-copy"><span>${awardLabels.contactKicker}</span><h3>${awardLabels.contactTitle}</h3><p>${awardLabels.contactText}</p><div class="award-contact-signal"><i></i><i></i><i></i></div></div>`;
+    contactGrid.append(visual);
+    contactGrid.classList.remove('contact-form-only');
+    contactGrid.classList.add('award-contact-grid');
+  }
 })();
