@@ -15,22 +15,24 @@
   <div class="scroll-progress" aria-hidden="true"><span id="progress"></span></div>
 
   <header class="site-header" id="header">
-    <a class="brand" href="#top" aria-label="Hotelinnovativ Startseite">
-      <img src="assets/hotelinnovativ-logo.png" alt="Hotelinnovativ — proud to serve you">
-    </a>
-    <nav class="main-nav" aria-label="Hauptnavigation">
-      <a href="#worlds" data-i18n="navSolutions">Lösungen</a>
-      <a href="#platform" data-i18n="navPlatform">Plattform</a>
-      <a href="#contact" data-i18n="navContact">Kontakt</a>
-    </nav>
-    <div class="header-actions">
-      <div class="language-switch" aria-label="Sprache wählen">
-        <button type="button" data-lang="de" class="active">DE</button>
-        <button type="button" data-lang="en">EN</button>
-        <button type="button" data-lang="fr">FR</button>
-        <button type="button" data-lang="it">IT</button>
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="Hotelinnovativ Startseite">
+        <span class="brand-surface"><img src="assets/hotelinnovativ-logo.png" alt="Hotelinnovativ — proud to serve you"></span>
+      </a>
+      <nav class="product-switch" aria-label="Produktwelten">
+        <a href="#worlds" class="active"><small>00</small><span data-i18n="navOverview">Übersicht</span></a>
+        <a href="../guest-journey-3d/"><small>01</small><span>Guest Journey</span></a>
+        <a href="../?award=cinematic"><small>02</small><span>TV-Streams</span></a>
+      </nav>
+      <div class="header-actions">
+        <div class="language-switch" aria-label="Sprache wählen">
+          <button type="button" data-lang="de" class="active">DE</button>
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="fr">FR</button>
+          <button type="button" data-lang="it">IT</button>
+        </div>
+        <a class="header-cta" href="#contact"><span data-i18n="navContact">Kontakt</span><b>↗</b></a>
       </div>
-      <a class="header-cta" href="mailto:sales@hotelinnovativ.ch" data-i18n="contactCta">Kontakt aufnehmen</a>
     </div>
   </header>
 
@@ -142,17 +144,32 @@
       </div>
     </section>
 
-    <section class="audience section">
+    <section class="audience section sectors">
       <div class="section-number">03</div>
       <div class="audience-heading reveal">
-        <span class="kicker" data-i18n="audienceKicker">Gebaut für Entscheider</span>
-        <h2 data-i18n="audienceTitle">Klar für den Gast.<br>Stark für den Betrieb.</h2>
+        <span class="kicker" data-i18n="audienceKicker">Unsere Branchen</span>
+        <h2 data-i18n="audienceTitle">Digitale Erlebnisse für Hotels und Gesundheitseinrichtungen.</h2>
       </div>
-      <div class="audience-grid">
-        <article class="reveal"><span>01</span><h3 data-i18n="roleHoteliers">Hoteliers</h3><p data-i18n="roleHoteliersText">Ein konsistentes Gästeerlebnis mit neuen Umsatzmomenten.</p></article>
-        <article class="reveal"><span>02</span><h3 data-i18n="roleGroups">Hotelgruppen</h3><p data-i18n="roleGroupsText">Skalierbare Standards über Standorte und Marken hinweg.</p></article>
-        <article class="reveal"><span>03</span><h3 data-i18n="roleIT">IT-Leitung</h3><p data-i18n="roleITText">Zentral verwaltete Systeme und verlässliche Integration.</p></article>
-        <article class="reveal"><span>04</span><h3 data-i18n="roleInvestors">Betreiber & Investoren</h3><p data-i18n="roleInvestorsText">Zukunftsfähige Infrastruktur mit messbarem Mehrwert.</p></article>
+      <p class="sectors-lead reveal" data-i18n="audienceLead">Wo Menschen ankommen, bleiben und sich gut aufgehoben fühlen sollen, schafft Hotelinnovativ die digitale Verbindung.</p>
+      <div class="sector-grid">
+        <article class="sector-card hotel-sector reveal">
+          <div class="sector-visual" aria-hidden="true"><span>01</span><i></i></div>
+          <div class="sector-content">
+            <span class="sector-label" data-i18n="sectorHotelLabel">Hotellerie</span>
+            <h3 data-i18n="sectorHotelTitle">Mehr Komfort für Gäste.<br>Mehr Wirkung für Hotels.</h3>
+            <p data-i18n="sectorHotelText">Guest Journey, IPTV, Casting, WiFi und Automation verbinden sich zu einem konsistenten Aufenthalt und effizienteren Abläufen.</p>
+            <a href="../guest-journey-3d/"><span data-i18n="sectorHotelLink">Lösungen für Hotels</span><b>↗</b></a>
+          </div>
+        </article>
+        <article class="sector-card health-sector reveal">
+          <div class="health-signal" aria-hidden="true"><i></i><i></i><i></i><i></i><span>02</span></div>
+          <div class="sector-content">
+            <span class="sector-label" data-i18n="sectorHealthLabel">Gesundheitseinrichtungen</span>
+            <h3 data-i18n="sectorHealthTitle">Information und Unterhaltung.<br>Zuverlässig am Patientenbett.</h3>
+            <p data-i18n="sectorHealthText">Moderne Medien-, Informations- und Netzwerklösungen unterstützen Kliniken, Reha-Zentren und Pflegeeinrichtungen im täglichen Betrieb.</p>
+            <a href="mailto:sales@hotelinnovativ.ch?subject=Digitale%20Lösungen%20für%20Gesundheitseinrichtungen"><span data-i18n="sectorHealthLink">Lösungen für Gesundheit</span><b>↗</b></a>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -170,15 +187,36 @@
     </section>
   </main>
 
-  <footer>
-    <img src="assets/hotelinnovativ-logo.png" alt="Hotelinnovativ">
-    <p data-i18n="footerClaim">Ihr Partner für digitale Hotelinfrastruktur.</p>
-    <div class="footer-links">
-      <a href="https://www.hotelinnovativ.ch/impressum/" target="_blank" rel="noopener" data-i18n="imprint">Impressum</a>
-      <a href="https://www.hotelinnovativ.ch/datenschutz/" target="_blank" rel="noopener" data-i18n="privacy">Datenschutz</a>
-      <a href="https://www.hotelinnovativ.ch/cookie-richtlinie-eu/" target="_blank" rel="noopener" data-i18n="cookies">Cookie-Richtlinie</a>
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <span class="footer-logo"><img src="assets/hotelinnovativ-logo.png" alt="Hotelinnovativ"></span>
+        <p data-i18n="footerClaim">Ihr Partner für digitale Hotelinfrastruktur.</p>
+        <a class="footer-mail" href="mailto:sales@hotelinnovativ.ch">sales@hotelinnovativ.ch <b>↗</b></a>
+      </div>
+      <div class="footer-column">
+        <span data-i18n="footerSolutions">Lösungen</span>
+        <a href="../guest-journey-3d/">Guest Journey</a>
+        <a href="../?award=cinematic">TV-Streams</a>
+        <a href="#platform" data-i18n="navPlatform">Plattform</a>
+      </div>
+      <div class="footer-column">
+        <span data-i18n="footerContact">Kontakt</span>
+        <p>Ruessenstrasse 5a<br>CH–6340 Baar</p>
+        <a href="tel:+41417666868">+41 41 766 68 68</a>
+      </div>
+      <div class="footer-column">
+        <span data-i18n="footerLegal">Rechtliches</span>
+        <a href="https://www.hotelinnovativ.ch/impressum/" target="_blank" rel="noopener" data-i18n="imprint">Impressum</a>
+        <a href="https://www.hotelinnovativ.ch/datenschutz/" target="_blank" rel="noopener" data-i18n="privacy">Datenschutz</a>
+        <a href="https://www.hotelinnovativ.ch/cookie-richtlinie-eu/" target="_blank" rel="noopener" data-i18n="cookies">Cookie-Richtlinie</a>
+      </div>
     </div>
-    <small>© <span id="year"></span> Hotelinnovativ AG</small>
+    <div class="footer-bottom">
+      <small>© <span id="year"></span> Hotelinnovativ AG · <span data-i18n="rights">Alle Rechte vorbehalten.</span></small>
+      <span data-i18n="footerTagline">Proud to serve you.</span>
+      <a href="#top"><span data-i18n="backTop">Nach oben</span> ↑</a>
+    </div>
   </footer>
 
   <script src="app.js"></script>
