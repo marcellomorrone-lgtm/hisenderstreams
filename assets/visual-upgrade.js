@@ -561,7 +561,7 @@
         <a href="#packages" class="hero-tv-package"><span><b>Max</b><small>${labels.max}</small></span><strong>250+</strong></a>
       </div>
       <div class="hero-tv-channel-strip" aria-hidden="true">
-        <img src="assets/channel-logos/srf-1.png" alt=""><img src="assets/channel-logos/tele-zueri.png" alt=""><img src="assets/channel-logos/tele-baern.png" alt=""><img src="assets/channel-logos/rai-1.png" alt=""><img src="assets/channel-logos/bbc-one.png" alt=""><img src="assets/channel-logos/france-2.png" alt="">
+        <img src="https://raw.githubusercontent.com/tv-logo/tv-logos/d32e347bb7c4c640dceec23957802ad9182f58a6/countries/switzerland/srf-1-ch.png" alt=""><img src="https://raw.githubusercontent.com/tv-logo/tv-logos/d32e347bb7c4c640dceec23957802ad9182f58a6/countries/germany/zdf-de.png" alt=""><img src="https://raw.githubusercontent.com/tv-logo/tv-logos/d32e347bb7c4c640dceec23957802ad9182f58a6/countries/germany/3sat-de.png" alt=""><img src="https://raw.githubusercontent.com/tv-logo/tv-logos/d32e347bb7c4c640dceec23957802ad9182f58a6/countries/germany/arte-de.png" alt=""><img src="https://raw.githubusercontent.com/tv-logo/tv-logos/d32e347bb7c4c640dceec23957802ad9182f58a6/countries/france/tf1-fr.png" alt=""><img src="https://raw.githubusercontent.com/tv-logo/tv-logos/d32e347bb7c4c640dceec23957802ad9182f58a6/countries/austria/orf1-at.png" alt="">
       </div>`;
   }
 
