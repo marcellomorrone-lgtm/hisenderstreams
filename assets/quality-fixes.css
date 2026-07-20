@@ -385,9 +385,68 @@
 }
 
 .hi-award-v2 #casting .casting-perspective-canvas.is-movie {
+  display: none !important;
+}
+
+.hi-award-v2.hi-award-edition #casting .casting-demo.casting-perspective-ready > .casting-projected-film {
+  position: absolute;
+  z-index: 4;
+  top: 7.1%;
+  left: 65.65%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  width: 30.05%;
+  height: 53.3%;
+  padding: 12% 8% 11% 16%;
+  overflow: hidden;
+  color: #ffffff;
   opacity: 1 !important;
-  clip-path: inset(0 100% 0 0);
-  animation: casting-perspective-movie 18s cubic-bezier(.45, 0, .2, 1) infinite;
+  pointer-events: none !important;
+  background:
+    linear-gradient(90deg, rgba(2, 10, 8, .66), rgba(2, 10, 8, .08) 76%),
+    linear-gradient(180deg, transparent 40%, rgba(2, 10, 8, .74)),
+    url('/assets/blockbuster-alpine-v1.jpg') center / cover no-repeat;
+  clip-path: polygon(.5% 25.5%, .5% 25.5%, .5% 88.2%, .5% 88.2%);
+  animation: casting-projected-film 18s cubic-bezier(.45, 0, .2, 1) infinite;
+}
+
+.hi-award-v2 #casting .casting-projected-film > span {
+  color: #dff49d;
+  font-size: clamp(.28rem, .48vw, .5rem);
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+
+.hi-award-v2 #casting .casting-projected-film > strong {
+  max-width: 78%;
+  margin-top: 3%;
+  color: #ffffff !important;
+  font-size: clamp(.58rem, 1.05vw, 1.05rem);
+  line-height: .96;
+  letter-spacing: -.04em;
+}
+
+.hi-award-v2 #casting .casting-projected-film > small {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 5%;
+  padding: 3px 7px;
+  color: rgba(255, 255, 255, .82);
+  border: 1px solid rgba(218, 242, 143, .28);
+  border-radius: 999px;
+  background: rgba(2, 10, 8, .52);
+  font-size: clamp(.25rem, .4vw, .42rem);
+}
+
+.hi-award-v2 #casting .casting-projected-film > small i {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #c2e84b;
+  box-shadow: 0 0 8px rgba(194, 232, 75, .6);
 }
 
 .hi-award-v2 #casting .casting-demo.casting-v2::before {
@@ -435,23 +494,27 @@
   100% { left: 100%; opacity: 0; transform: scale(.92); }
 }
 
-@keyframes casting-perspective-movie {
-  0%, 34% { clip-path: inset(0 100% 0 0); }
-  43%, 88% { clip-path: inset(0 0 0 0); }
-  97%, 100% { clip-path: inset(0 100% 0 0); }
+@keyframes casting-projected-film {
+  0%, 34% { clip-path: polygon(.5% 25.5%, .5% 25.5%, .5% 88.2%, .5% 88.2%); }
+  43%, 88% { clip-path: polygon(.5% 25.5%, 99.3% .5%, 99.5% 99%, .5% 88.2%); }
+  97%, 100% { clip-path: polygon(.5% 25.5%, .5% 25.5%, .5% 88.2%, .5% 88.2%); }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .hi-award-v2 .hero-channel-mosaic::after,
   .hi-award-v2 #casting .casting-perspective-canvas,
+  .hi-award-v2 #casting .casting-projected-film,
   .hi-award-v2 #casting .casting-data-flight i {
     animation: none !important;
   }
 
   .hi-award-v2 #casting .casting-perspective-canvas.is-qr { opacity: 1 !important; }
   .hi-award-v2 #casting .casting-perspective-canvas.is-movie {
-    opacity: 1 !important;
-    clip-path: inset(0 0 0 0) !important;
+    display: none !important;
+  }
+
+  .hi-award-v2 #casting .casting-projected-film {
+    clip-path: polygon(.5% 25.5%, 99.3% .5%, 99.5% 99%, .5% 88.2%) !important;
   }
 }
 

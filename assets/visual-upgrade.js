@@ -833,7 +833,14 @@
       const qrCanvas = projectArtwork(qrArtwork, 'is-qr');
       const movieCanvas = projectArtwork(movieArtwork, 'is-movie');
       if (!qrCanvas || !movieCanvas) return;
-      demo.append(qrCanvas, movieCanvas);
+      const projectedFilm = document.createElement('div');
+      projectedFilm.className = 'casting-projected-film';
+      projectedFilm.setAttribute('aria-hidden', 'true');
+      projectedFilm.innerHTML = `
+        <span>${filmLayer.querySelector('.casting-film-kicker')?.textContent || ''}</span>
+        <strong>${filmLayer.querySelector('strong')?.textContent || ''}</strong>
+        <small><i></i>${filmLayer.querySelector('.casting-film-status')?.textContent || ''}</small>`;
+      demo.append(qrCanvas, movieCanvas, projectedFilm);
       demo.classList.add('casting-perspective-ready');
     }, { once: true });
     movie.src = '/assets/blockbuster-alpine-v1.jpg';
