@@ -8,6 +8,34 @@
 
   const nodeMarks = ["PMS", "TV", "CAST", "CMS", "SVC", "DATA"];
 
+  function repairImagePath(image) {
+    const src = image.getAttribute("src") || "";
+    if (src.startsWith("/images/")) image.setAttribute("src", `/iptv-system${src}`);
+    if (src === "/hotelinnovativ-logo.png") image.setAttribute("src", "/iptv-system/hotelinnovativ-logo.png");
+  }
+
+  function repairAssetPaths(root = document) {
+    if (root instanceof HTMLImageElement) repairImagePath(root);
+    root.querySelectorAll?.('img[src^="/images/"], img[src="/hotelinnovativ-logo.png"]').forEach(repairImagePath);
+  }
+
+  const assetObserver = new MutationObserver((records) => {
+    records.forEach((record) => {
+      if (record.type === "attributes") repairAssetPaths(record.target);
+      record.addedNodes.forEach((node) => {
+        if (node instanceof Element) repairAssetPaths(node);
+      });
+    });
+  });
+
+  repairAssetPaths();
+  assetObserver.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["src"],
+    childList: true,
+    subtree: true,
+  });
+
   function enhanceHub() {
     const hub = document.querySelector(".hub-network");
     if (!hub || hub.dataset.premiumHub === "true") return;
@@ -54,6 +82,7 @@
   }
 
   function enhance() {
+    repairAssetPaths();
     enhanceHub();
     enhancePartnerBand();
   }
