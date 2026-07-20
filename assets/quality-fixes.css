@@ -600,6 +600,40 @@
   color: #52645b !important;
 }
 
+/* Final contrast lock: older premium rules must not wash out these sections. */
+.hi-award-v2 #calculator::before,
+.hi-award-v2 #support::before {
+  content: none !important;
+  display: none !important;
+}
+
+.hi-award-v2 #packages .package-card:not(.popular),
+.hi-award-v2 #packages .package-card:not(.popular) .package-card-head,
+.hi-award-v2 #packages .package-card:not(.popular) .package-card-head .sub,
+.hi-award-v2 #packages .package-card:not(.popular) .package-card-head .count,
+.hi-award-v2 #packages .package-card:not(.popular) > h3,
+.hi-award-v2 #packages .package-card:not(.popular) .package-price-block .price {
+  color: #14261d !important;
+}
+
+.hi-award-v2 #packages .package-card:not(.popular) .package-price-block .per,
+.hi-award-v2 #packages .package-card:not(.popular) > ul,
+.hi-award-v2 #packages .package-card:not(.popular) > ul li {
+  color: #52645b !important;
+}
+
+.hi-award-v2 #packages .package-card.popular,
+.hi-award-v2 #packages .package-card.popular .package-card-head,
+.hi-award-v2 #packages .package-card.popular .package-card-head .sub,
+.hi-award-v2 #packages .package-card.popular .package-card-head .count,
+.hi-award-v2 #packages .package-card.popular > h3,
+.hi-award-v2 #packages .package-card.popular .package-price-block .price,
+.hi-award-v2 #packages .package-card.popular .package-price-block .per,
+.hi-award-v2 #packages .package-card.popular > ul,
+.hi-award-v2 #packages .package-card.popular > ul li {
+  color: #ffffff !important;
+}
+
 @media (max-width: 1050px) {
   .hi-award-v2 #packages .cards3 {
     grid-template-columns: repeat(2, minmax(0, 334px)) !important;
