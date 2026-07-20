@@ -658,6 +658,34 @@ body.hi-award-v2 #packages .cards3 .package-card.package-essential.popular .pack
   background-image: linear-gradient(145deg, #173429, #10271d) !important;
 }
 
+body.hi-award-v2 #support .support-grid .support-card:not(.premium) h3,
+body.hi-award-v2 #support .support-grid .support-card:not(.premium) ul,
+body.hi-award-v2 #support .support-grid .support-card:not(.premium) ul li,
+body.hi-award-v2 #support .support-grid .support-card:not(.premium) .ideal {
+  color: #ffffff !important;
+}
+
+body.hi-award-v2 #support .support-grid .support-card:not(.premium) .sub,
+body.hi-award-v2 #support .support-grid .support-card:not(.premium) .support-meta {
+  color: #102118 !important;
+  border-color: rgba(194, 232, 75, .7) !important;
+  background: #c2e84b !important;
+}
+
+body.hi-award-v2 #support .support-grid .support-card.premium h3,
+body.hi-award-v2 #support .support-grid .support-card.premium ul,
+body.hi-award-v2 #support .support-grid .support-card.premium ul li,
+body.hi-award-v2 #support .support-grid .support-card.premium .sub,
+body.hi-award-v2 #support .support-grid .support-card.premium .support-meta,
+body.hi-award-v2 #support .support-grid .support-card.premium .ideal {
+  color: #102118 !important;
+}
+
+body.hi-award-v2 #about .section-head .hi-heading-copy,
+body.hi-award-v2 #about .section-head .hi-heading-copy-generated {
+  color: rgba(255, 255, 255, .78) !important;
+}
+
 @media (max-width: 1050px) {
   .hi-award-v2 #packages .cards3 {
     grid-template-columns: repeat(2, minmax(0, 334px)) !important;
