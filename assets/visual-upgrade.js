@@ -552,17 +552,29 @@
 
   const heroScreen = document.querySelector('.hero-panel .tv-screen');
   if (heroScreen) {
+    const heroChannelLogos = [
+      'srf-1', 'srf-zwei', 'srf-info', 'tele-zueri', 'tele-baern', 'rts-1',
+      'rsi-la-2', 'das-erste-ard', 'zdf', '3sat', 'sat-1', 'rtl',
+      'prosieben', 'arte-deutsch', 'orf-1', 'rai-1', 'rai-2', 'france-2',
+      'tf1', 'bbc-one', 'bbc-news', 'cnn-international', 'cnbc', 'sky-news',
+      'tv5monde', 'rtp1', 'al-jazeera', 'blue-zoom', 'canale-5', 'channel-4'
+    ];
+    const heroChannelTitle = {
+      de: 'Live-Sender aus aller Welt',
+      en: 'Live channels from around the world',
+      fr: 'Chaînes en direct du monde entier',
+      it: 'Canali live da tutto il mondo'
+    }[language] || 'Live-Sender aus aller Welt';
     heroScreen.innerHTML = `
-      <div class="hero-tv-head"><span><i></i>${labels.tvKicker}</span><small>${labels.tvNote}</small></div>
-      <div class="hero-tv-title">${labels.tvTitle}</div>
-      <div class="hero-tv-packages" role="group" aria-label="TV packages">
-        <a href="#packages" class="hero-tv-package"><span><b>Basic</b><small>${labels.basic}</small></span><strong>80</strong></a>
-        <a href="#packages" class="hero-tv-package is-featured"><span><b>Essential</b><small>${labels.essential}</small></span><strong>120</strong></a>
-        <a href="#packages" class="hero-tv-package"><span><b>Max</b><small>${labels.max}</small></span><strong>250+</strong></a>
+      <div class="hero-channel-wall">
+        <div class="hero-tv-head"><span><i></i>${labels.tvKicker}</span><small>250+</small></div>
+        <div class="hero-channel-wall-title"><strong>250+</strong><span>${heroChannelTitle}</span></div>
+        <div class="hero-channel-mosaic" aria-hidden="true">
+          ${heroChannelLogos.map((logo, index) => `<span style="--logo-index:${index}"><img src="/assets/channel-logos/${logo}.png" alt=""></span>`).join('')}
+        </div>
+        <div class="hero-channel-wall-note"><i></i>${labels.tvNote}</div>
       </div>
-      <div class="hero-tv-channel-strip" aria-hidden="true">
-        <img src="https://raw.githubusercontent.com/tv-logo/tv-logos/d32e347bb7c4c640dceec23957802ad9182f58a6/countries/switzerland/srf-1-ch.png" alt=""><img src="https://raw.githubusercontent.com/tv-logo/tv-logos/d32e347bb7c4c640dceec23957802ad9182f58a6/countries/germany/zdf-de.png" alt=""><img src="https://raw.githubusercontent.com/tv-logo/tv-logos/d32e347bb7c4c640dceec23957802ad9182f58a6/countries/germany/3sat-de.png" alt=""><img src="https://raw.githubusercontent.com/tv-logo/tv-logos/d32e347bb7c4c640dceec23957802ad9182f58a6/countries/germany/arte-de.png" alt=""><img src="https://raw.githubusercontent.com/tv-logo/tv-logos/d32e347bb7c4c640dceec23957802ad9182f58a6/countries/france/tf1-fr.png" alt=""><img src="https://raw.githubusercontent.com/tv-logo/tv-logos/d32e347bb7c4c640dceec23957802ad9182f58a6/countries/austria/orf1-at.png" alt="">
-      </div>`;
+      `;
   }
 
   const castingDemo = document.querySelector('#casting .casting-demo');
@@ -633,6 +645,199 @@
     coaxVisual.addEventListener('focusout', start);
     start();
   }
+})();
+
+/*
+ * Project both casting states directly into the four perspective corners of
+ * the television.  The canvases are transparent everywhere else, which
+ * makes it impossible for either the QR state or the movie to overlap the
+ * wooden TV frame.
+ */
+(function () {
+  const demos = document.querySelectorAll('.casting-demo.casting-v2');
+  if (!demos.length || !window.HTMLCanvasElement) return;
+
+  const corners = {
+    topLeft: { x: .658, y: .207 },
+    topRight: { x: .955, y: .074 },
+    bottomRight: { x: .9555, y: .598 },
+    bottomLeft: { x: .658, y: .541 }
+  };
+
+  function roundedRect(context, x, y, width, height, radius) {
+    const r = Math.min(radius, width / 2, height / 2);
+    context.beginPath();
+    context.moveTo(x + r, y);
+    context.arcTo(x + width, y, x + width, y + height, r);
+    context.arcTo(x + width, y + height, x, y + height, r);
+    context.arcTo(x, y + height, x, y, r);
+    context.arcTo(x, y, x + width, y, r);
+    context.closePath();
+  }
+
+  function drawQrArtwork(context, width, height, title, hint) {
+    const glow = context.createRadialGradient(width * .72, height * .25, 20, width * .72, height * .25, width * .72);
+    glow.addColorStop(0, '#173c24');
+    glow.addColorStop(.54, '#071b12');
+    glow.addColorStop(1, '#020b08');
+    context.fillStyle = glow;
+    context.fillRect(0, 0, width, height);
+
+    context.fillStyle = '#b8e43e';
+    [20, 35, 53, 76].forEach((barHeight, index) => {
+      roundedRect(context, width / 2 - 58 + index * 34, 72 - barHeight, 14, barHeight, 7);
+      context.fill();
+    });
+
+    context.textAlign = 'center';
+    context.fillStyle = '#ffffff';
+    context.font = '600 42px "Open Sans", Arial, sans-serif';
+    const words = title.trim().split(/\s+/);
+    const midpoint = Math.ceil(words.length / 2);
+    context.fillText(words.slice(0, midpoint).join(' '), width / 2, 142);
+    context.fillText(words.slice(midpoint).join(' '), width / 2, 190);
+
+    const qrSize = 176;
+    const qrX = width / 2 - qrSize / 2;
+    const qrY = 220;
+    context.fillStyle = '#ffffff';
+    roundedRect(context, qrX - 18, qrY - 18, qrSize + 36, qrSize + 36, 20);
+    context.fill();
+    const modules = 21;
+    const moduleSize = qrSize / modules;
+    context.fillStyle = '#07110d';
+    const finder = (startX, startY) => {
+      context.fillRect(qrX + startX * moduleSize, qrY + startY * moduleSize, moduleSize * 7, moduleSize * 7);
+      context.fillStyle = '#ffffff';
+      context.fillRect(qrX + (startX + 1) * moduleSize, qrY + (startY + 1) * moduleSize, moduleSize * 5, moduleSize * 5);
+      context.fillStyle = '#07110d';
+      context.fillRect(qrX + (startX + 2) * moduleSize, qrY + (startY + 2) * moduleSize, moduleSize * 3, moduleSize * 3);
+    };
+    finder(0, 0); finder(14, 0); finder(0, 14);
+    for (let row = 0; row < modules; row += 1) {
+      for (let column = 0; column < modules; column += 1) {
+        const inFinder = (row < 7 && column < 7) || (row < 7 && column > 13) || (row > 13 && column < 7);
+        if (!inFinder && ((row * 11 + column * 7 + row * column) % 5 < 2)) {
+          context.fillRect(qrX + column * moduleSize, qrY + row * moduleSize, moduleSize + .4, moduleSize + .4);
+        }
+      }
+    }
+
+    context.fillStyle = 'rgba(255,255,255,.72)';
+    context.font = '500 24px "Open Sans", Arial, sans-serif';
+    context.fillText(hint, width / 2, height - 38);
+  }
+
+  function drawMovieArtwork(context, image, width, height, kicker, title, status) {
+    const imageRatio = image.naturalWidth / image.naturalHeight;
+    const targetRatio = width / height;
+    let sourceX = 0;
+    let sourceY = 0;
+    let sourceWidth = image.naturalWidth;
+    let sourceHeight = image.naturalHeight;
+    if (imageRatio > targetRatio) {
+      sourceWidth = image.naturalHeight * targetRatio;
+      sourceX = (image.naturalWidth - sourceWidth) / 2;
+    } else {
+      sourceHeight = image.naturalWidth / targetRatio;
+      sourceY = (image.naturalHeight - sourceHeight) / 2;
+    }
+    context.drawImage(image, sourceX, sourceY, sourceWidth, sourceHeight, 0, 0, width, height);
+    const shade = context.createLinearGradient(0, 0, width * .8, 0);
+    shade.addColorStop(0, 'rgba(2,10,8,.7)');
+    shade.addColorStop(.58, 'rgba(2,10,8,.2)');
+    shade.addColorStop(1, 'rgba(2,10,8,0)');
+    context.fillStyle = shade;
+    context.fillRect(0, 0, width, height);
+    context.fillStyle = '#c4e94d';
+    context.font = '700 19px "Open Sans", Arial, sans-serif';
+    context.fillText(kicker, 54, 70);
+    context.fillStyle = '#ffffff';
+    context.font = '700 48px "Open Sans", Arial, sans-serif';
+    const titleWords = title.trim().split(/\s+/);
+    const titleMidpoint = Math.ceil(titleWords.length / 2);
+    context.fillText(titleWords.slice(0, titleMidpoint).join(' '), 54, 142);
+    context.fillText(titleWords.slice(titleMidpoint).join(' '), 54, 194);
+    context.fillStyle = 'rgba(4,16,11,.82)';
+    roundedRect(context, 54, height - 118, 260, 48, 24);
+    context.fill();
+    context.fillStyle = '#b8e43e';
+    context.beginPath();
+    context.arc(80, height - 94, 7, 0, Math.PI * 2);
+    context.fill();
+    context.fillStyle = '#ffffff';
+    context.font = '600 19px "Open Sans", Arial, sans-serif';
+    context.fillText(status, 98, height - 87);
+    context.fillStyle = 'rgba(255,255,255,.3)';
+    context.fillRect(54, height - 40, width - 108, 4);
+    context.fillStyle = '#b8e43e';
+    context.fillRect(54, height - 40, (width - 108) * .64, 4);
+  }
+
+  function projectArtwork(artwork, className) {
+    const canvas = document.createElement('canvas');
+    canvas.className = `casting-perspective-canvas ${className}`;
+    canvas.setAttribute('aria-hidden', 'true');
+    canvas.width = 1600;
+    canvas.height = 900;
+    const context = canvas.getContext('2d');
+    if (!context) return null;
+    const point = (corner) => ({ x: corner.x * canvas.width, y: corner.y * canvas.height });
+    const tl = point(corners.topLeft);
+    const tr = point(corners.topRight);
+    const br = point(corners.bottomRight);
+    const bl = point(corners.bottomLeft);
+    context.save();
+    context.beginPath();
+    context.moveTo(tl.x, tl.y);
+    context.lineTo(tr.x, tr.y);
+    context.lineTo(br.x, br.y);
+    context.lineTo(bl.x, bl.y);
+    context.closePath();
+    context.clip();
+    const slices = 300;
+    for (let index = 0; index < slices; index += 1) {
+      const start = index / slices;
+      const end = (index + 1) / slices;
+      const sourceX = Math.floor(start * artwork.width);
+      const sourceWidth = Math.max(1, Math.ceil(end * artwork.width) - sourceX);
+      const topStartX = tl.x + (tr.x - tl.x) * start;
+      const topEndX = tl.x + (tr.x - tl.x) * end;
+      const bottomStartX = bl.x + (br.x - bl.x) * start;
+      const bottomEndX = bl.x + (br.x - bl.x) * end;
+      const destinationX = (topStartX + bottomStartX) / 2;
+      const destinationEndX = (topEndX + bottomEndX) / 2;
+      const topY = ((tl.y + (tr.y - tl.y) * start) + (tl.y + (tr.y - tl.y) * end)) / 2;
+      const bottomY = ((bl.y + (br.y - bl.y) * start) + (bl.y + (br.y - bl.y) * end)) / 2;
+      context.drawImage(artwork, sourceX, 0, sourceWidth, artwork.height, destinationX - .8, topY, Math.max(1, destinationEndX - destinationX + 1.6), bottomY - topY);
+    }
+    context.restore();
+    return canvas;
+  }
+
+  demos.forEach((demo) => {
+    const qrLayer = demo.querySelector('.casting-screen-qr');
+    const filmLayer = demo.querySelector('.casting-screen-film');
+    if (!qrLayer || !filmLayer) return;
+    const movie = new Image();
+    movie.addEventListener('load', () => {
+      const qrArtwork = document.createElement('canvas');
+      qrArtwork.width = 960;
+      qrArtwork.height = 540;
+      drawQrArtwork(qrArtwork.getContext('2d'), qrArtwork.width, qrArtwork.height, qrLayer.querySelector('strong')?.textContent || '', qrLayer.querySelector('small')?.textContent || '');
+      const movieArtwork = document.createElement('canvas');
+      movieArtwork.width = 960;
+      movieArtwork.height = 540;
+      drawMovieArtwork(movieArtwork.getContext('2d'), movie, movieArtwork.width, movieArtwork.height, filmLayer.querySelector('.casting-film-kicker')?.textContent || '', filmLayer.querySelector('strong')?.textContent || '', filmLayer.querySelector('.casting-film-status')?.textContent || '');
+      demo.querySelectorAll('.casting-perspective-canvas').forEach((canvas) => canvas.remove());
+      const qrCanvas = projectArtwork(qrArtwork, 'is-qr');
+      const movieCanvas = projectArtwork(movieArtwork, 'is-movie');
+      if (!qrCanvas || !movieCanvas) return;
+      demo.append(qrCanvas, movieCanvas);
+      demo.classList.add('casting-perspective-ready');
+    }, { once: true });
+    movie.src = '/assets/blockbuster-alpine-v1.jpg';
+  });
 })();
 
 /*
