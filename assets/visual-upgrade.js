@@ -648,6 +648,7 @@
 (function () {
   const demos = document.querySelectorAll('.casting-demo');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const locale = (window.pageConfig && window.pageConfig.locale) || document.documentElement.lang.split('-')[0] || 'de';
   const canRenderMovie = Boolean(demos.length && window.HTMLCanvasElement && !reducedMotion);
 
   function extractMovieSource(layer) {
