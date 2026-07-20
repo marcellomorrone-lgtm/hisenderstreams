@@ -634,6 +634,30 @@
   color: #ffffff !important;
 }
 
+/* Per-package colour system. The explicit selectors beat legacy story-card rules. */
+body.hi-award-v2 #packages .cards3 .package-card.package-basic > h3.hi-heading,
+body.hi-award-v2 #packages .cards3 .package-card.package-max > h3.hi-heading,
+body.hi-award-v2 #packages .cards3 .package-card.package-basic > ul,
+body.hi-award-v2 #packages .cards3 .package-card.package-basic > ul li,
+body.hi-award-v2 #packages .cards3 .package-card.package-max > ul,
+body.hi-award-v2 #packages .cards3 .package-card.package-max > ul li {
+  color: #14261d !important;
+}
+
+body.hi-award-v2 #packages .cards3 .package-card.package-essential.popular > h3.hi-heading,
+body.hi-award-v2 #packages .cards3 .package-card.package-essential.popular > ul,
+body.hi-award-v2 #packages .cards3 .package-card.package-essential.popular > ul li,
+body.hi-award-v2 #packages .cards3 .package-card.package-essential.popular .package-price-block .price,
+body.hi-award-v2 #packages .cards3 .package-card.package-essential.popular .package-price-block .per {
+  color: #ffffff !important;
+}
+
+body.hi-award-v2 #packages .cards3 .package-card.package-essential.popular .package-card-head {
+  color: #ffffff !important;
+  background-color: #173429 !important;
+  background-image: linear-gradient(145deg, #173429, #10271d) !important;
+}
+
 @media (max-width: 1050px) {
   .hi-award-v2 #packages .cards3 {
     grid-template-columns: repeat(2, minmax(0, 334px)) !important;
