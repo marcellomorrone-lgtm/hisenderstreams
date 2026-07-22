@@ -18,7 +18,13 @@
         ['03', 'Persönliches Erlebnis', 'Live-TV und Casting auf einem Bildschirm.', 'Gäste wechseln nahtlos zwischen vertrauten Sendern und persönlichen Streaming-Inhalten.']
       ],
       finderEyebrow: 'KOMPAKTER SENDERFINDER',
-      finderTitle: 'In Sekunden zum passenden Sender.'
+      finderTitle: 'In Sekunden zum passenden Sender.',
+      castingKicker: 'ROOM CAST',
+      castingTitle: 'Mit Zimmer-TV verbinden',
+      castingHint: 'QR-Code scannen',
+      movieKicker: 'HOTEL CINEMA',
+      movieTitle: 'Beyond the Summit',
+      connected: 'Sicher verbunden'
     },
     en: {
       live: 'LIVE · INTERNATIONAL',
@@ -33,7 +39,13 @@
         ['03', 'Personal experience', 'Live TV and casting on one screen.', 'Guests move seamlessly between familiar live channels and their personal streaming content.']
       ],
       finderEyebrow: 'COMPACT CHANNEL FINDER',
-      finderTitle: 'Find the right channel in seconds.'
+      finderTitle: 'Find the right channel in seconds.',
+      castingKicker: 'ROOM CAST',
+      castingTitle: 'Connect to room TV',
+      castingHint: 'Scan the QR code',
+      movieKicker: 'HOTEL CINEMA',
+      movieTitle: 'Beyond the Summit',
+      connected: 'Securely connected'
     },
     fr: {
       live: 'LIVE · INTERNATIONAL',
@@ -48,7 +60,13 @@
         ['03', 'Expérience personnelle', 'TV en direct et casting sur un écran.', 'Les clients passent naturellement de leurs chaînes habituelles à leurs contenus personnels.']
       ],
       finderEyebrow: 'RECHERCHE COMPACTE',
-      finderTitle: 'La bonne chaîne en quelques secondes.'
+      finderTitle: 'La bonne chaîne en quelques secondes.',
+      castingKicker: 'ROOM CAST',
+      castingTitle: 'Connexion au téléviseur',
+      castingHint: 'Scanner le code QR',
+      movieKicker: 'HOTEL CINEMA',
+      movieTitle: 'Beyond the Summit',
+      connected: 'Connexion sécurisée'
     },
     it: {
       live: 'LIVE · INTERNAZIONALE',
@@ -63,7 +81,13 @@
         ['03', 'Esperienza personale', 'TV live e casting su uno schermo.', 'Gli ospiti passano senza interruzioni dai canali familiari ai propri contenuti streaming.']
       ],
       finderEyebrow: 'RICERCA CANALI COMPATTA',
-      finderTitle: 'Il canale giusto in pochi secondi.'
+      finderTitle: 'Il canale giusto in pochi secondi.',
+      castingKicker: 'ROOM CAST',
+      castingTitle: 'Collega la TV in camera',
+      castingHint: 'Scansiona il codice QR',
+      movieKicker: 'HOTEL CINEMA',
+      movieTitle: 'Beyond the Summit',
+      connected: 'Connessione sicura'
     }
   };
   const labels = copy[language] || copy.de;
@@ -72,11 +96,17 @@
   const heroPanel = document.querySelector('.hero-panel');
   if (heroPanel) {
     heroPanel.removeAttribute('data-parallax');
-    const logos = [
-      ['srf-1', 'SRF 1'], ['rts-1', 'RTS 1'], ['rsi-la-2', 'RSI LA 2'],
-      ['das-erste-ard', 'Das Erste'], ['france-2', 'France 2'], ['rai-1', 'Rai 1'],
-      ['bbc-one', 'BBC One'], ['la-1-tve', 'La 1'], ['rtp1', 'RTP 1'],
-      ['al-jazeera', 'Al Jazeera'], ['cnn-international', 'CNN'], ['tele-zueri', 'TeleZüri']
+    const logoRows = [
+      [
+        ['srf-1', 'SRF 1'], ['rts-1', 'RTS 1'], ['rsi-la-2', 'RSI LA 2'],
+        ['tele-zueri', 'TeleZüri'], ['tele-baern', 'TeleBärn'], ['das-erste-ard', 'Das Erste'],
+        ['zdf', 'ZDF'], ['3sat', '3sat']
+      ],
+      [
+        ['france-2', 'France 2'], ['tf1', 'TF1'], ['rai-1', 'Rai 1'],
+        ['bbc-one', 'BBC One'], ['la-1-tve', 'La 1'], ['rtp1', 'RTP 1'],
+        ['al-jazeera', 'Al Jazeera'], ['cnn-international', 'CNN']
+      ]
     ];
     const flags = ['ch', 'de', 'fr', 'it', 'en', 'es', 'pt', 'ar'];
     heroPanel.innerHTML = `
@@ -84,12 +114,17 @@
         <img src="${asset('premium-hero-channel-room-v1-web.webp')}" alt="${labels.heroAlt}">
         <div class="ps-hero-tv" aria-label="${labels.languages}">
           <div class="ps-tv-meta"><span><i></i>${labels.live}</span></div>
-          <div class="ps-tv-logos">
-            ${logos.map(([file, name]) => `<span class="ps-tv-logo"><img src="${asset(`channel-logos/${file}.png`)}" alt="${name}"></span>`).join('')}
+          <div class="ps-tv-marquees" aria-hidden="true">
+            ${logoRows.map((logos, rowIndex) => `
+              <div class="ps-tv-marquee ps-tv-marquee-${rowIndex + 1}">
+                <div class="ps-tv-track">
+                  ${[...logos, ...logos].map(([file, name]) => `<span class="ps-tv-logo"><img src="${asset(`channel-logos/${file}.png`)}" alt="${name}"></span>`).join('')}
+                </div>
+              </div>`).join('')}
           </div>
-          <div class="ps-tv-flags" aria-label="${labels.languages}">
+          <div class="ps-tv-footer"><span>${labels.languages}</span><div class="ps-tv-flags" aria-label="${labels.languages}">
             ${flags.map((flag) => `<span><img src="${asset(`flags/${flag}.svg`)}" alt=""></span>`).join('')}
-          </div>
+          </div></div>
         </div>
         <span class="ps-hero-glow" aria-hidden="true"></span>
       </div>`;
@@ -108,7 +143,7 @@
     const media = [
       ['premium-international-lounge-v1-web.webp', labels.steps[0][2]],
       ['award-infrastructure-web.jpg', labels.steps[1][2]],
-      ['premium-casting-guest-v2-web.webp', labels.steps[2][2]]
+      ['casting-anna-premium-v3-web.webp', labels.steps[2][2]]
     ];
     story.innerHTML = `
       <div class="ps-story-intro wrap">
@@ -147,6 +182,32 @@
       }, { rootMargin: '-28% 0px -42% 0px', threshold: [0, .18, .5, .75] });
       steps.forEach((step) => observer.observe(step));
     }
+  }
+
+  const castingDemo = document.querySelector('#casting .casting-demo');
+  if (castingDemo) {
+    castingDemo.classList.remove('casting-v2', 'casting-perspective-ready');
+    castingDemo.classList.add('ps-casting-v4');
+    castingDemo.setAttribute('aria-label', `${labels.castingTitle}: ${labels.movieTitle}`);
+    castingDemo.innerHTML = `
+      <img class="ps-casting-room" src="${asset('casting-anna-premium-v3-web.webp')}" alt="${labels.castingTitle}">
+      <div class="ps-casting-screen" aria-live="polite">
+        <div class="ps-cast-state ps-cast-pairing">
+          <span class="ps-cast-kicker"><i></i>${labels.castingKicker}</span>
+          <strong>${labels.castingTitle}</strong>
+          <span class="ps-cast-qr" aria-hidden="true"><i></i><i></i><i></i></span>
+          <small>${labels.castingHint}</small>
+        </div>
+        <div class="ps-cast-state ps-cast-movie">
+          <img src="${asset('blockbuster-alpine-v1.jpg')}" alt="">
+          <span class="ps-cast-movie-shade"></span>
+          <span class="ps-cast-movie-copy"><small>${labels.movieKicker}</small><strong>${labels.movieTitle}</strong></span>
+          <span class="ps-cast-connected"><i></i>${labels.connected}</span>
+          <span class="ps-cast-progress"><i></i></span>
+        </div>
+      </div>
+      <div class="ps-cast-signal" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="ps-cast-caption"><i></i><span>${labels.connected} · ${labels.movieTitle}</span></div>`;
   }
 
   const finder = document.querySelector('#finder');

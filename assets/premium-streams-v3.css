@@ -476,3 +476,425 @@
   .hi-premium-streams-v3 *, .hi-premium-streams-v3 *::before, .hi-premium-streams-v3 *::after { scroll-behavior: auto !important; animation-duration: .001ms !important; animation-iteration-count: 1 !important; }
   .hi-premium-streams-v3 .ps-reveal { opacity: 1; transform: none; }
 }
+
+/* --------------------------------------------------------------------------
+   Premium refinement v4: live TV wall, stable package states and room casting
+   -------------------------------------------------------------------------- */
+
+.hi-premium-streams-v3 .ps-hero-tv {
+  isolation: isolate;
+  padding: 4.6% 5.2% 4.2%;
+  border: 1px solid rgba(191, 231, 73, .16);
+  background:
+    radial-gradient(circle at 76% 7%, rgba(180, 225, 58, .25), transparent 38%),
+    linear-gradient(145deg, #06140f 0%, #0b261b 58%, #07130f 100%);
+  box-shadow: inset 0 0 42px rgba(168, 218, 33, .06);
+}
+.hi-premium-streams-v3 .ps-hero-tv::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  opacity: .23;
+  background-image:
+    linear-gradient(rgba(178, 218, 67, .16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(178, 218, 67, .16) 1px, transparent 1px);
+  background-size: 11% 22%;
+  mask-image: linear-gradient(90deg, rgba(0,0,0,.68), transparent 92%);
+}
+.hi-premium-streams-v3 .ps-tv-meta {
+  height: 16%;
+  min-height: 0;
+  padding: 0 1.5%;
+}
+.hi-premium-streams-v3 .ps-tv-meta span {
+  gap: 5px;
+  color: rgba(255,255,255,.9);
+  font-size: clamp(.3rem, .45vw, .58rem);
+  letter-spacing: .17em;
+  white-space: nowrap;
+}
+.hi-premium-streams-v3 .ps-tv-marquees {
+  display: grid;
+  align-content: center;
+  gap: 7%;
+  height: 60%;
+  padding: 2% 0 1%;
+  overflow: hidden;
+}
+.hi-premium-streams-v3 .ps-tv-marquee {
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+}
+.hi-premium-streams-v3 .ps-tv-track {
+  display: flex;
+  width: max-content;
+  gap: clamp(3px, .35vw, 6px);
+  will-change: transform;
+  animation: ps-tv-logo-flow 24s linear infinite;
+}
+.hi-premium-streams-v3 .ps-tv-marquee-2 .ps-tv-track {
+  animation-direction: reverse;
+  animation-duration: 28s;
+}
+.hi-premium-streams-v3 .ps-tv-logo {
+  flex: 0 0 clamp(34px, 3.55vw, 58px);
+  width: clamp(34px, 3.55vw, 58px);
+  height: clamp(16px, 1.62vw, 27px);
+  box-sizing: border-box;
+  padding: clamp(2px, .22vw, 4px) clamp(3px, .32vw, 5px);
+  border-color: rgba(255,255,255,.34);
+  border-radius: clamp(4px, .45vw, 7px);
+  background: rgba(255,255,255,.97);
+  box-shadow: 0 3px 10px rgba(0,0,0,.24);
+}
+.hi-premium-streams-v3 .ps-tv-logo img {
+  width: 86%;
+  height: 72%;
+  object-fit: contain;
+}
+.hi-premium-streams-v3 .ps-tv-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4%;
+  height: 18%;
+  padding: 0 1.5%;
+  border-top: 1px solid rgba(255,255,255,.12);
+}
+.hi-premium-streams-v3 .ps-tv-footer > span {
+  overflow: hidden;
+  color: rgba(255,255,255,.7);
+  font-size: clamp(.25rem, .38vw, .48rem);
+  font-weight: 600;
+  letter-spacing: .03em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.hi-premium-streams-v3 .ps-tv-flags {
+  flex: 0 0 42%;
+  justify-content: flex-end;
+  gap: 4%;
+  height: auto;
+  padding: 0;
+}
+.hi-premium-streams-v3 .ps-tv-flags span { width: 10.5%; }
+@keyframes ps-tv-logo-flow { to { transform: translateX(calc(-50% - 3px)); } }
+
+/* Package colours are deliberately invariant on hover and keyboard focus. */
+.hi-award-v2.hi-premium-streams-v3 #packages .package-card:not(.popular),
+.hi-award-v2.hi-premium-streams-v3 #packages .package-card:not(.popular):hover,
+.hi-award-v2.hi-premium-streams-v3 #packages .package-card:not(.popular):focus-within {
+  color: var(--ps-ink) !important;
+  background: rgba(255,255,255,.96) !important;
+}
+.hi-award-v2.hi-premium-streams-v3 #packages .package-card.popular,
+.hi-award-v2.hi-premium-streams-v3 #packages .package-card.popular:hover,
+.hi-award-v2.hi-premium-streams-v3 #packages .package-card.popular:focus-within {
+  color: #fff !important;
+  border-color: rgba(176, 219, 56, .72) !important;
+  background:
+    radial-gradient(circle at 82% 8%, rgba(178, 224, 58, .17), transparent 32%),
+    linear-gradient(150deg, #061710 0%, #143326 100%) !important;
+  box-shadow: 0 24px 64px rgba(5, 24, 16, .2) !important;
+}
+.hi-award-v2.hi-premium-streams-v3 #packages .package-card.popular :is(h3, p, li, .ideal, .per, .package-intro, .package-price, .package-price span),
+.hi-award-v2.hi-premium-streams-v3 #packages .package-card.popular:hover :is(h3, p, li, .ideal, .per, .package-intro, .package-price, .package-price span) {
+  color: rgba(255,255,255,.88) !important;
+}
+.hi-award-v2.hi-premium-streams-v3 #packages .package-card.popular .count { color: var(--ps-green) !important; }
+.hi-award-v2.hi-premium-streams-v3 #packages .package-card.popular .package-cta .btn,
+.hi-award-v2.hi-premium-streams-v3 #packages .package-card.popular .package-cta .btn:hover {
+  color: #102019 !important;
+  background: #fff !important;
+}
+
+/* The recommendation now lives inside the compact calculator tile. */
+.hi-premium-streams-v3 #calculator .calc-package {
+  min-height: 66px !important;
+  height: 66px !important;
+  overflow: hidden !important;
+  padding: 7px 8px !important;
+}
+.hi-premium-streams-v3 #calculator .calc-package em {
+  position: static !important;
+  order: -1;
+  width: auto !important;
+  max-width: 100% !important;
+  margin: 0 auto 2px !important;
+  padding: 0 !important;
+  overflow: hidden;
+  transform: none !important;
+  color: #345000 !important;
+  background: transparent !important;
+  font-size: clamp(.42rem, .56vw, .55rem) !important;
+  font-style: normal;
+  line-height: 1.1 !important;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Rebuilt casting scene: generated room photo + screen-safe animated layers. */
+.hi-award-v2.hi-premium-streams-v3 #casting .casting-demo.ps-casting-v4 {
+  position: relative;
+  min-height: 0 !important;
+  aspect-ratio: 16 / 9;
+  overflow: hidden !important;
+  border: 1px solid rgba(255,255,255,.76);
+  border-radius: 30px !important;
+  background: #09120e !important;
+  box-shadow: 0 28px 74px rgba(4, 18, 12, .2) !important;
+}
+.hi-award-v2.hi-premium-streams-v3 #casting .casting-demo.ps-casting-v4::before,
+.hi-award-v2.hi-premium-streams-v3 #casting .casting-demo.ps-casting-v4::after {
+  content: none !important;
+  display: none !important;
+  animation: none !important;
+}
+.hi-award-edition.hi-premium-streams-v3 #casting .casting-demo.ps-casting-v4 > * {
+  opacity: 1 !important;
+  pointer-events: none !important;
+}
+.hi-award-v2.hi-premium-streams-v3 #casting .casting-demo.ps-casting-v4 > .casting-composite-canvas,
+.hi-award-v2.hi-premium-streams-v3 #casting .casting-demo.ps-casting-v4 > .casting-perspective-canvas,
+.hi-award-v2.hi-premium-streams-v3 #casting .casting-demo.ps-casting-v4 > .casting-tv-experience,
+.hi-award-v2.hi-premium-streams-v3 #casting .casting-demo.ps-casting-v4 > .casting-data-flight,
+.hi-award-v2.hi-premium-streams-v3 #casting .casting-demo.ps-casting-v4 > .casting-projected-film,
+.hi-award-v2.hi-premium-streams-v3 #casting .casting-demo.ps-casting-v4 > .award-casting-live {
+  display: none !important;
+}
+.hi-premium-streams-v3 #casting .ps-casting-room {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  display: block !important;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hi-premium-streams-v3 #casting .ps-casting-screen {
+  position: absolute;
+  z-index: 3;
+  top: 20.7%;
+  left: 67.15%;
+  width: 29.75%;
+  height: 43.1%;
+  container-type: inline-size;
+  overflow: hidden;
+  color: #fff;
+  background: #06120e;
+  clip-path: polygon(0 5.5%, 100% 0, 100% 100%, 0 93.5%);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.05);
+}
+.hi-premium-streams-v3 #casting .ps-cast-state {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.hi-premium-streams-v3 #casting .ps-cast-pairing {
+  z-index: 2;
+  gap: 2.5cqw;
+  background:
+    radial-gradient(circle at 75% 15%, rgba(177,222,55,.22), transparent 38%),
+    linear-gradient(145deg, #071810, #0c281c);
+  animation: ps-cast-pairing 16s ease-in-out infinite;
+}
+.hi-premium-streams-v3 #casting .ps-cast-kicker {
+  display: flex;
+  align-items: center;
+  gap: 2.2cqw;
+  color: #c1e84b;
+  font-size: 3.3cqw;
+  font-weight: 700;
+  letter-spacing: .16em;
+}
+.hi-premium-streams-v3 #casting .ps-cast-kicker i,
+.hi-premium-streams-v3 #casting .ps-cast-connected i,
+.hi-premium-streams-v3 #casting .ps-cast-caption i {
+  width: .56em;
+  height: .56em;
+  border-radius: 50%;
+  background: #b8e43e;
+  box-shadow: 0 0 1.2em rgba(184,228,62,.82);
+}
+.hi-premium-streams-v3 #casting .ps-cast-pairing > strong {
+  max-width: 76%;
+  color: #fff !important;
+  font-size: 6.7cqw !important;
+  font-weight: 500 !important;
+  line-height: 1.08 !important;
+  text-align: center;
+}
+.hi-premium-streams-v3 #casting .ps-cast-pairing > small {
+  color: rgba(255,255,255,.66);
+  font-size: 3.5cqw;
+}
+.hi-premium-streams-v3 #casting .ps-cast-qr {
+  position: relative;
+  width: 25cqw;
+  aspect-ratio: 1;
+  padding: 2.4cqw;
+  border-radius: 3cqw;
+  background:
+    repeating-conic-gradient(#07120e 0 25%, #fff 0 50%) 50% / 5.6cqw 5.6cqw,
+    #fff;
+  box-shadow: 0 5px 18px rgba(0,0,0,.25);
+}
+.hi-premium-streams-v3 #casting .ps-cast-qr i {
+  position: absolute;
+  width: 6.8cqw;
+  aspect-ratio: 1;
+  border: 1.9cqw solid #07120e;
+  background: #fff;
+  box-shadow: inset 0 0 0 1.2cqw #fff, inset 0 0 0 3cqw #07120e;
+}
+.hi-premium-streams-v3 #casting .ps-cast-qr i:nth-child(1) { left: 2.4cqw; top: 2.4cqw; }
+.hi-premium-streams-v3 #casting .ps-cast-qr i:nth-child(2) { right: 2.4cqw; top: 2.4cqw; }
+.hi-premium-streams-v3 #casting .ps-cast-qr i:nth-child(3) { left: 2.4cqw; bottom: 2.4cqw; }
+.hi-premium-streams-v3 #casting .ps-cast-movie {
+  z-index: 1;
+  opacity: 0;
+  animation: ps-cast-movie 16s ease-in-out infinite;
+}
+.hi-premium-streams-v3 #casting .ps-cast-movie > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hi-premium-streams-v3 #casting .ps-cast-movie-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(2,11,8,.76), rgba(2,11,8,.18) 68%, transparent);
+}
+.hi-premium-streams-v3 #casting .ps-cast-movie-copy {
+  position: absolute;
+  z-index: 2;
+  top: 20%;
+  left: 9%;
+  display: grid;
+  gap: 2.5cqw;
+  max-width: 65%;
+}
+.hi-premium-streams-v3 #casting .ps-cast-movie-copy small {
+  color: #c4e94d;
+  font-size: 3.2cqw;
+  font-weight: 700;
+  letter-spacing: .16em;
+}
+.hi-premium-streams-v3 #casting .ps-cast-movie-copy strong {
+  color: #fff !important;
+  font-size: 8cqw !important;
+  font-weight: 600 !important;
+  line-height: .96 !important;
+  text-transform: uppercase;
+}
+.hi-premium-streams-v3 #casting .ps-cast-connected {
+  position: absolute;
+  z-index: 2;
+  left: 9%;
+  bottom: 15%;
+  display: inline-flex;
+  align-items: center;
+  gap: 2.2cqw;
+  padding: 2.5cqw 4cqw;
+  border: 1px solid rgba(255,255,255,.26);
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(3,15,10,.68);
+  font-size: 3.4cqw;
+  font-weight: 600;
+}
+.hi-premium-streams-v3 #casting .ps-cast-progress {
+  position: absolute;
+  z-index: 2;
+  right: 8%;
+  bottom: 8%;
+  left: 8%;
+  height: 1.15cqw;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255,255,255,.28);
+}
+.hi-premium-streams-v3 #casting .ps-cast-progress i {
+  display: block;
+  width: 62%;
+  height: 100%;
+  background: #b8e43e;
+  animation: ps-cast-progress 8s linear infinite;
+}
+.hi-premium-streams-v3 #casting .ps-cast-signal {
+  position: absolute;
+  z-index: 4;
+  inset: 0;
+  overflow: hidden;
+}
+.hi-premium-streams-v3 #casting .ps-cast-signal i {
+  position: absolute;
+  left: 25.7%;
+  top: 54.3%;
+  width: clamp(4px, .55vw, 8px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  opacity: 0;
+  background: #b8e43e;
+  box-shadow: 0 0 0 5px rgba(184,228,62,.08), 0 0 18px rgba(184,228,62,.7);
+  animation: ps-cast-signal 6.8s cubic-bezier(.34,.01,.34,1) infinite;
+}
+.hi-premium-streams-v3 #casting .ps-cast-signal i:nth-child(2) { animation-delay: 2.25s; }
+.hi-premium-streams-v3 #casting .ps-cast-signal i:nth-child(3) { animation-delay: 4.5s; }
+.hi-premium-streams-v3 #casting .ps-cast-caption {
+  position: absolute;
+  z-index: 5;
+  left: 2%;
+  bottom: 3.2%;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 44%;
+  padding: 10px 14px;
+  border: 1px solid rgba(255,255,255,.19);
+  border-radius: 999px;
+  color: rgba(255,255,255,.9);
+  background: rgba(4,15,11,.64);
+  box-shadow: 0 10px 30px rgba(0,0,0,.18);
+  backdrop-filter: blur(12px);
+  font-size: clamp(.58rem, .8vw, .82rem);
+  font-weight: 600;
+}
+@keyframes ps-cast-pairing {
+  0%, 37% { opacity: 1; transform: scale(1); }
+  46%, 92% { opacity: 0; transform: scale(1.018); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes ps-cast-movie {
+  0%, 39% { opacity: 0; transform: scale(1.025); }
+  48%, 92% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.015); }
+}
+@keyframes ps-cast-progress { from { transform: scaleX(.08); transform-origin: left; } to { transform: scaleX(1); transform-origin: left; } }
+@keyframes ps-cast-signal {
+  0% { left: 25.7%; top: 54.3%; opacity: 0; transform: scale(.65); }
+  18% { opacity: .76; }
+  72% { opacity: .64; }
+  100% { left: 81.8%; top: 42.4%; opacity: 0; transform: scale(1.15); }
+}
+
+@media (max-width: 640px) {
+  .hi-premium-streams-v3 #calculator .calc-package { min-height: 62px !important; height: 62px !important; }
+  .hi-premium-streams-v3 #casting .ps-cast-caption { left: 10px; bottom: 10px; max-width: 58%; padding: 7px 9px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hi-premium-streams-v3 .ps-tv-track { animation: none !important; }
+  .hi-premium-streams-v3 #casting .ps-cast-pairing { opacity: 0; }
+  .hi-premium-streams-v3 #casting .ps-cast-movie { opacity: 1; transform: none; }
+  .hi-premium-streams-v3 #casting .ps-cast-signal { display: none; }
+  .hi-premium-streams-v3 #casting .ps-cast-progress i { animation: none !important; }
+}
