@@ -107,7 +107,7 @@
     story.setAttribute('aria-labelledby', 'premium-story-title');
     const media = [
       ['premium-international-lounge-v1-web.webp', labels.steps[0][2]],
-      ['award-infrastructure-web68.jpg', labels.steps[1][2]],
+      ['award-infrastructure-web.jpg', labels.steps[1][2]],
       ['premium-casting-guest-v2-web.webp', labels.steps[2][2]]
     ];
     story.innerHTML = `
