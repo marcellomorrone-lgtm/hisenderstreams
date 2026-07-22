@@ -3,244 +3,87 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#061b17">
-  <meta name="description" content="Hotelinnovativ ist der Partner für digitale Lösungen für eine moderne Hotelinfrastruktur.">
-  <title>Hotelinnovativ — Digitale Hotelinfrastruktur</title>
+  <meta name="theme-color" content="#edf1e8">
+  <meta name="description" content="Hotelinnovativ verbindet IPTV, TV-Senderstreams, digitale Guest Journey, IP over Coax, Netzwerk und Service zu einer modernen Hotelinfrastruktur.">
+  <title>Hotelinnovativ — Digitale Systeme, die Teams entlasten</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-page="home">
   <div class="scroll-progress" aria-hidden="true"><span id="progress"></span></div>
-
   <header class="site-header" id="header">
-    <div class="header-inner">
-      <a class="brand" href="#top" aria-label="Hotelinnovativ Startseite">
-        <span class="brand-surface"><img src="assets/hotelinnovativ-logo.png" alt="Hotelinnovativ — proud to serve you"></span>
-      </a>
-      <nav class="product-switch" aria-label="Produktwelten">
-        <a href="#worlds" class="active"><small>00</small><span data-i18n="navOverview">Übersicht</span></a>
-        <a href="../guest-journey-3d/"><small>01</small><span>Guest Journey</span></a>
-        <a href="../?award=cinematic"><small>02</small><span>TV-Streams</span></a>
-      </nav>
-      <div class="header-actions">
-        <div class="language-switch" aria-label="Sprache wählen">
-          <button type="button" data-lang="de" class="active">DE</button>
-          <button type="button" data-lang="en">EN</button>
-          <button type="button" data-lang="fr">FR</button>
-          <button type="button" data-lang="it">IT</button>
-        </div>
-        <a class="header-cta" href="#contact"><span data-i18n="navContact">Kontakt</span><b>↗</b></a>
+    <a class="brand" href="#top" aria-label="Hotelinnovativ Startseite"><img src="assets/hotelinnovativ-logo.png" alt="Hotelinnovativ — proud to serve you"></a>
+    <nav class="desktop-nav" aria-label="Hauptnavigation">
+      <a href="#solutions" data-i18n="navSolutions">Lösungen</a>
+      <a href="#relief" data-i18n="navRelief">Teamentlastung</a>
+      <a href="../netzwerk-service/" data-i18n="navService">Netzwerk & Service</a>
+    </nav>
+    <div class="header-actions">
+      <div class="language-switch" aria-label="Sprache wählen">
+        <button type="button" data-lang="de" class="active">DE</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="fr">FR</button><button type="button" data-lang="it">IT</button>
       </div>
+      <a class="header-cta" href="mailto:sales@hotelinnovativ.ch"><span data-i18n="navContact">Kontakt</span><span aria-hidden="true">↗</span></a>
     </div>
   </header>
-
   <main id="top">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-world hero-guest" aria-hidden="true">
-      </div>
-      <div class="hero-world hero-streams" aria-hidden="true">
-        <div class="stream-lines"><i></i><i></i><i></i><i></i><i></i></div>
-        <div class="channel-cloud">
-          <span>LIVE</span><span>NEWS</span><span>SPORT</span><span>MOVIES</span><span>250+</span><span>4K</span>
-        </div>
-      </div>
-      <div class="hero-vignette" aria-hidden="true"></div>
+    <section class="hero compact-hero" aria-labelledby="hero-title">
+      <div class="hero-image" aria-hidden="true"></div><div class="hero-grid" aria-hidden="true"></div>
       <div class="hero-content reveal visible">
-        <span class="eyebrow"><i></i><span data-i18n="heroEyebrow">Digitale Lösungen für moderne Hotels</span></span>
-        <h1 id="hero-title" data-i18n="heroTitle">Digitale Infrastruktur.<br>Gastfreundschaft neu gedacht.</h1>
-        <p data-i18n="heroLead">Hotelinnovativ ist der Partner für digitale Lösungen für eine moderne Hotelinfrastruktur.</p>
+        <span class="eyebrow"><i></i><span data-i18n="heroEyebrow">Digitale Hotelinfrastruktur aus der Schweiz</span></span>
+        <h1 id="hero-title" data-i18n="heroTitle">Systeme, die Teams entlasten.<br>Erlebnisse, die Gäste begeistern.</h1>
+        <p data-i18n="heroLead">Eine vernetzte Plattform für Entertainment, Guest Experience und Betrieb — persönlich geplant, sauber integriert und lokal betreut.</p>
         <div class="hero-actions">
-          <a class="button button-light" href="#worlds"><span data-i18n="discoverWorlds">Lösungen entdecken</span><b>↓</b></a>
-          <a class="button button-glass" href="mailto:sales@hotelinnovativ.ch"><span data-i18n="talkToUs">Mit uns sprechen</span><b>↗</b></a>
+          <a class="button button-primary" href="#solutions"><span data-i18n="discoverWorlds">Themenwelten entdecken</span><span aria-hidden="true">↓</span></a>
+          <a class="button button-quiet" href="mailto:sales@hotelinnovativ.ch"><span data-i18n="talkToUs">Projekt besprechen</span><span aria-hidden="true">↗</span></a>
         </div>
       </div>
-      <div class="hero-foot">
-        <span class="scroll-hint"><i></i><span data-i18n="scroll">Scrollen</span></span>
+      <div class="hero-proof reveal visible"><span>IPTV</span><i></i><span>Guest Journey</span><i></i><span data-i18n="heroProof">Swiss Service</span></div>
+    </section>
+    <section class="solutions section" id="solutions" aria-labelledby="solutions-title">
+      <div class="section-heading reveal">
+        <div><span class="kicker" data-i18n="solutionsKicker">Sechs Themen. Ein Partner.</span><h2 id="solutions-title" data-i18n="solutionsTitle">Ihre digitale Infrastruktur — klar verbunden.</h2></div>
+        <p data-i18n="solutionsLead">Wählen Sie den Einstieg, der zu Ihrem Projekt passt. Dahinter steht immer ein System, das mit Ihrem Haus mitwächst.</p>
+      </div>
+      <div class="solution-grid">
+        <a class="solution-card card-iptv reveal" href="../iptv-system/"><span class="card-index">01</span><span class="card-arrow">↗</span><div class="card-visual tv-icon" aria-hidden="true"><i></i><b></b></div><div><span class="card-label">Entertainment</span><h3>IPTV</h3><p data-i18n="iptvText">Interaktives Hotel-TV, Casting und digitale Services auf einem Bildschirm.</p></div></a>
+        <a class="solution-card card-streams reveal" href="../?design=20260720v6"><span class="card-index">02</span><span class="card-arrow">↗</span><div class="card-visual stream-icon" aria-hidden="true"><i></i><i></i><i></i></div><div><span class="card-label">Content</span><h3 data-i18n="streamsTitle">TV-Senderstreams</h3><p data-i18n="streamsText">Internationale Senderpakete — flexibel, zentral und auf Ihren Gästemix abgestimmt.</p></div></a>
+        <a class="solution-card card-journey reveal" href="../guest-journey/"><span class="card-index">03</span><span class="card-arrow">↗</span><div class="card-visual phone-icon" aria-hidden="true"><i></i><b></b></div><div><span class="card-label">Experience</span><h3>Guest Journey</h3><p data-i18n="journeyText">Digitale Touchpoints von Pre-Stay bis After-Stay — nahtlos und im eigenen Look.</p></div></a>
+        <a class="solution-card card-coax reveal" href="https://coax.hotelinnovativ.tech/" target="_blank" rel="noopener"><span class="card-index">04</span><span class="card-arrow">↗</span><div class="card-visual coax-icon" aria-hidden="true"><i></i><b></b></div><div><span class="card-label">Modernisierung</span><h3>IP over Coax</h3><p data-i18n="coaxText">Bestehende Koaxialleitungen intelligent weiterverwenden — ohne unnötige Bauarbeiten.</p></div></a>
+        <a class="solution-card card-network reveal" href="../netzwerk-service/#netzwerk"><span class="card-index">05</span><span class="card-arrow">↗</span><div class="card-visual network-icon" aria-hidden="true"><i></i><i></i><i></i><b></b></div><div><span class="card-label">Connectivity</span><h3 data-i18n="networkTitle">Netzwerk</h3><p data-i18n="networkText">LAN, WLAN und segmentierte Netze als verlässliche Basis für den digitalen Hotelbetrieb.</p></div></a>
+        <a class="solution-card card-service reveal" href="../netzwerk-service/#service"><span class="card-index">06</span><span class="card-arrow">↗</span><div class="card-visual service-icon" aria-hidden="true"><i></i><b></b></div><div><span class="card-label">Swiss Care</span><h3 data-i18n="serviceTitle">Service</h3><p data-i18n="serviceText">Beratung, Installation und Support mit persönlichen Ansprechpartnern in der Schweiz.</p></div></a>
       </div>
     </section>
-
-    <section class="intro section" id="worlds">
-      <div class="section-number">01</div>
-      <div class="intro-copy reveal">
-        <span class="kicker" data-i18n="introKicker">Das digitale Hotelerlebnis</span>
-        <h2 data-i18n="introTitle">Technologie, die im Hintergrund arbeitet. Wirkung, die der Gast spürt.</h2>
-      </div>
-      <p class="intro-text reveal" data-i18n="introText">Vom ersten Kontakt bis zum Lieblingssender im Zimmer verbinden wir digitale Services, Entertainment und Infrastruktur zu einem konsistenten Erlebnis.</p>
-    </section>
-
-    <section class="product-world journey-world" aria-labelledby="journey-title">
-      <div class="journey-media" aria-hidden="true">
-        <img class="journey-room" src="assets/omnichannel-room.png" alt="">
-        <img class="journey-phone phone-front" src="assets/guest-app.png" alt="">
-        <div class="journey-orbit orbit-one"><span>Pre-Stay</span></div>
-        <div class="journey-orbit orbit-two"><span>In-Stay</span></div>
-        <div class="journey-orbit orbit-three"><span>After-Stay</span></div>
-      </div>
-      <div class="product-copy reveal">
-        <div class="product-index">01 / 02</div>
-        <span class="kicker light" data-i18n="journeyKicker">Guest Journey</span>
-        <h2 id="journey-title" data-i18n="journeyTitle">Jeder Touchpoint.<br>Ein Erlebnis.</h2>
-        <p data-i18n="journeyText">Eine digitale Gästereise, die vor der Ankunft beginnt, den Aufenthalt vereinfacht und nach der Abreise in Erinnerung bleibt.</p>
-        <div class="product-features">
-          <span data-i18n="journeyFeature1">Pre-Arrival & Upselling</span>
-          <span data-i18n="journeyFeature2">Mobile Key & Guest App</span>
-          <span data-i18n="journeyFeature3">Check-out & Loyalty</span>
+    <section class="relief section" id="relief" aria-labelledby="relief-title">
+      <div class="relief-panel">
+        <div class="relief-copy reveal">
+          <span class="kicker light" data-i18n="reliefKicker">Mehr Zeit für echte Gastfreundschaft</span>
+          <h2 id="relief-title" data-i18n="reliefTitle">Wenn Fachkräfte knapp sind, sollte Technologie Routine übernehmen — nicht Nähe.</h2>
+          <p data-i18n="reliefText">2026 zählt jede gute Arbeitsstunde. Vernetzte Systeme reduzieren manuelle Übergaben, automatisieren wiederkehrende Abläufe und geben Ihrem Team Raum für das, was kein System ersetzen kann: persönliche Aufmerksamkeit.</p>
+          <a href="mailto:sales@hotelinnovativ.ch?subject=Teamentlastende%20Systeme" class="text-link"><span data-i18n="reliefCta">Entlastungspotenzial besprechen</span><b>↗</b></a>
         </div>
-        <a class="product-link" href="../guest-journey-3d/"><span data-i18n="openJourney">Guest Journey erleben</span><b>↗</b></a>
-      </div>
-    </section>
-
-    <section class="product-world streams-world" aria-labelledby="streams-title">
-      <div class="streams-copy product-copy reveal">
-        <div class="product-index">02 / 02</div>
-        <span class="kicker light" data-i18n="streamsKicker">TV-Streams</span>
-        <h2 id="streams-title" data-i18n="streamsTitle">Die Welt zu Gast.<br>Auf jedem Bildschirm.</h2>
-        <p data-i18n="streamsText">Internationale TV-Unterhaltung über IP – flexibel, zentral verwaltet und abgestimmt auf Ihren Gästemix.</p>
-        <div class="product-features">
-          <span data-i18n="streamsFeature1">250+ internationale Sender</span>
-          <span data-i18n="streamsFeature2">Flexible Senderpakete</span>
-          <span data-i18n="streamsFeature3">Schweizer Support</span>
+        <div class="relief-flow reveal">
+          <article><span>01</span><i></i><h3 data-i18n="reliefOne">Routine automatisieren</h3><p data-i18n="reliefOneText">Informationen, Anfragen und wiederkehrende Touchpoints laufen strukturiert.</p></article>
+          <article><span>02</span><i></i><h3 data-i18n="reliefTwo">Prozesse verbinden</h3><p data-i18n="reliefTwoText">TV, App, Netzwerk und Services greifen ineinander statt nebeneinander.</p></article>
+          <article class="relief-result"><span>03</span><i></i><h3 data-i18n="reliefThree">Gäste persönlich begeistern</h3><p data-i18n="reliefThreeText">Ihr Team gewinnt Zeit für Präsenz, Beratung und echte Gastgebermomente.</p></article>
         </div>
-        <a class="product-link" href="../?award=cinematic"><span data-i18n="openStreams">TV-Streams entdecken</span><b>↗</b></a>
-      </div>
-      <div class="tv-stage" aria-hidden="true">
-        <div class="data-orbit orbit-a"></div>
-        <div class="data-orbit orbit-b"></div>
-        <div class="tv-set">
-          <div class="tv-screen">
-            <div class="tv-head"><span>HOTELINNOVATIV</span><span>LIVE · 14:26</span></div>
-            <div class="tv-hero-channel"><small>WELCOME, GUEST</small><strong data-i18n="tvWelcome">Ihre Welt.<br>Ihr Programm.</strong></div>
-            <div class="channel-marquee" aria-label="Internationale TV-Sender">
-              <div class="channel-track">
-                <span><img src="assets/channels/srf-1.png" alt="SRF 1"></span><span><img src="assets/channels/bbc-one.png" alt="BBC One"></span><span><img src="assets/channels/rai-1.png" alt="Rai 1"></span><span><img src="assets/channels/tf1.png" alt="TF1"></span><span><img src="assets/channels/cnn.png" alt="CNN International"></span><span><img src="assets/channels/das-erste.png" alt="Das Erste"></span><span><img src="assets/channels/zdf.png" alt="ZDF"></span><span><img src="assets/channels/rts-1.png" alt="RTS 1"></span><span><img src="assets/channels/rsi-la1.png" alt="RSI LA 1"></span><span><img src="assets/channels/arte.png" alt="Arte"></span>
-                <span><img src="assets/channels/srf-1.png" alt=""></span><span><img src="assets/channels/bbc-one.png" alt=""></span><span><img src="assets/channels/rai-1.png" alt=""></span><span><img src="assets/channels/tf1.png" alt=""></span><span><img src="assets/channels/cnn.png" alt=""></span><span><img src="assets/channels/das-erste.png" alt=""></span><span><img src="assets/channels/zdf.png" alt=""></span><span><img src="assets/channels/rts-1.png" alt=""></span><span><img src="assets/channels/rsi-la1.png" alt=""></span><span><img src="assets/channels/arte.png" alt=""></span>
-              </div>
-            </div>
-          </div>
-          <div class="tv-neck"></div><div class="tv-base"></div>
-        </div>
-        <div class="signal-card signal-card-one"><small>CHANNELS</small><strong>250+</strong></div>
-        <div class="signal-card signal-card-two"><small>QUALITY</small><strong>HD · 4K</strong></div>
       </div>
     </section>
-
-    <section class="platform section" id="platform">
-      <div class="section-number">02</div>
-      <div class="platform-heading reveal">
-        <span class="kicker" data-i18n="platformKicker">Vernetzte Hotelinfrastruktur</span>
-        <h2 data-i18n="platformTitle">Ein Partner.<br>Ein digitales Ökosystem.</h2>
-        <p data-i18n="platformText">Wir denken nicht in Einzelprodukten, sondern in Lösungen, die zusammenarbeiten.</p>
-      </div>
-      <div class="ecosystem reveal" aria-label="Digitale Lösungen">
-        <div class="ecosystem-core"><img src="assets/hotelinnovativ-pictogram.png" alt="Hotelinnovativ"></div>
-        <div class="eco-item eco-1"><i></i><span>IPTV</span></div>
-        <div class="eco-item eco-2"><i></i><span data-i18n="ecoGuestApp">Guest App</span></div>
-        <div class="eco-item eco-3"><i></i><span>Casting</span></div>
-        <div class="eco-item eco-4"><i></i><span>WiFi</span></div>
-        <div class="eco-item eco-5"><i></i><span>Signage</span></div>
-        <div class="eco-item eco-6"><i></i><span data-i18n="ecoAutomation">Automation</span></div>
-      </div>
+    <section class="promise section">
+      <div class="promise-mark reveal"><img src="assets/hotelinnovativ-pictogram.png" alt="Hotelinnovativ"></div>
+      <div class="promise-copy reveal"><span class="kicker" data-i18n="promiseKicker">Ein Partner in der Schweiz</span><h2 data-i18n="promiseTitle">Planen. Verbinden. Betreuen.</h2><p data-i18n="promiseText">Kurze Wege, klare Verantwortung und Lösungen, die vom ersten Kabel bis zum letzten Gästetouchpoint zusammengedacht sind.</p></div>
+      <a class="promise-link reveal" href="../netzwerk-service/"><span data-i18n="promiseLink">Netzwerk & Service ansehen</span><b>↗</b></a>
     </section>
-
-    <section class="service-support section" id="service">
-      <div class="section-number">03</div>
-      <div class="service-heading reveal">
-        <span class="kicker" data-i18n="serviceKicker">Service & Support</span>
-        <h2 data-i18n="serviceTitle">Lokal verankert.<br>Persönlich begleitet.</h2>
-        <p data-i18n="serviceLead">Von der ersten Idee bis zum laufenden Betrieb bleibt Hotelinnovativ an Ihrer Seite – mit kurzen Wegen, direkter Verantwortung und einem Team in der Schweiz.</p>
-      </div>
-      <div class="swiss-promise reveal">
-        <div class="swiss-cross" aria-hidden="true"><i></i><b></b></div>
-        <div><span data-i18n="swissLabel">Ihr Schweizer Technologiepartner</span><strong data-i18n="swissPromise">Nah, schnell und zuverlässig.</strong></div>
-        <p data-i18n="swissText">Persönliche Ansprechpartner in Baar, fundierte Projektbegleitung und Support, der Ihre Infrastruktur kennt.</p>
-      </div>
-      <div class="service-grid">
-        <article class="reveal"><span>01</span><div class="service-symbol"><i></i><i></i></div><h3 data-i18n="serviceConsulting">Beratung & Konzeption</h3><p data-i18n="serviceConsultingText">Wir übersetzen Anforderungen in eine klare, zukunftsfähige Lösung – abgestimmt auf Haus, Gäste und Betrieb.</p></article>
-        <article class="reveal"><span>02</span><div class="service-symbol install"><i></i><i></i></div><h3 data-i18n="serviceIntegration">Integration & Inbetriebnahme</h3><p data-i18n="serviceIntegrationText">Saubere Planung, koordinierte Installation und verlässliche Integration in die bestehende Infrastruktur.</p></article>
-        <article class="reveal"><span>03</span><div class="service-symbol support"><i></i><i></i></div><h3 data-i18n="serviceSupport">Support & Weiterentwicklung</h3><p data-i18n="serviceSupportText">Direkte Hilfe, kurze Reaktionswege und kontinuierliche Optimierung über den gesamten Lebenszyklus.</p></article>
-      </div>
-    </section>
-
-    <section class="audience section sectors">
-      <div class="section-number">04</div>
-      <div class="audience-heading reveal">
-        <span class="kicker" data-i18n="audienceKicker">Unsere Branchen</span>
-        <h2 data-i18n="audienceTitle">Digitale Erlebnisse für Hotels und Gesundheitseinrichtungen.</h2>
-      </div>
-      <p class="sectors-lead reveal" data-i18n="audienceLead">Wo Menschen ankommen, bleiben und sich gut aufgehoben fühlen sollen, schafft Hotelinnovativ die digitale Verbindung.</p>
-      <div class="sector-grid">
-        <article class="sector-card hotel-sector reveal">
-          <div class="sector-visual" aria-hidden="true"><span>01</span><i></i></div>
-          <div class="sector-content">
-            <span class="sector-label" data-i18n="sectorHotelLabel">Hotellerie</span>
-            <h3 data-i18n="sectorHotelTitle">Mehr Komfort für Gäste.<br>Mehr Wirkung für Hotels.</h3>
-            <p data-i18n="sectorHotelText">Guest Journey, IPTV, Casting, WiFi und Automation verbinden sich zu einem konsistenten Aufenthalt und effizienteren Abläufen.</p>
-            <a href="../guest-journey-3d/"><span data-i18n="sectorHotelLink">Lösungen für Hotels</span><b>↗</b></a>
-          </div>
-        </article>
-        <article class="sector-card health-sector reveal">
-          <div class="health-signal" aria-hidden="true"><i></i><i></i><i></i><i></i><span>02</span></div>
-          <div class="sector-content">
-            <span class="sector-label" data-i18n="sectorHealthLabel">Gesundheitseinrichtungen</span>
-            <h3 data-i18n="sectorHealthTitle">Interaktives Patienten-TV.<br>Information, Komfort und Verbindung.</h3>
-            <p data-i18n="sectorHealthText">Das bestehende TV wird zur zentralen Kommunikationsplattform: Es informiert, unterhält und stärkt Patienten – während digitale Abläufe das Pflegepersonal entlasten.</p>
-            <div class="health-capabilities">
-              <span data-i18n="healthFeature1">TV & Unterhaltung</span><span data-i18n="healthFeature2">Information & Bildung</span><span data-i18n="healthFeature3">Essen & Service</span><span data-i18n="healthFeature4">Zimmersteuerung</span><span data-i18n="healthFeature5">Telehealth & Familie</span><span data-i18n="healthFeature6">Feedback & Kommunikation</span>
-            </div>
-            <a href="mailto:sales@hotelinnovativ.ch?subject=Digitale%20Lösungen%20für%20Gesundheitseinrichtungen"><span data-i18n="sectorHealthLink">Lösungen für Gesundheit</span><b>↗</b></a>
-          </div>
-        </article>
-      </div>
-    </section>
-
     <section class="contact" id="contact">
-      <div class="contact-glow" aria-hidden="true"></div>
-      <span class="kicker light" data-i18n="contactKicker">Der nächste Schritt</span>
-      <h2 data-i18n="contactTitle">Bereit für ein Hotel,<br>das digital weiterdenkt?</h2>
-      <p data-i18n="contactText">Lassen Sie uns über Ihre Infrastruktur, Ihre Gäste und Ihre Ziele sprechen.</p>
-      <a class="contact-button" href="mailto:sales@hotelinnovativ.ch"><span data-i18n="contactCta">Kontakt aufnehmen</span><b>↗</b></a>
-      <div class="contact-meta">
-        <a href="mailto:sales@hotelinnovativ.ch">sales@hotelinnovativ.ch</a>
-        <a href="tel:+41417666868">+41 41 766 68 68</a>
-        <span>Ruessenstrasse 5a · CH–6340 Baar</span>
-      </div>
+      <span class="kicker light" data-i18n="contactKicker">Ihr nächster Schritt</span><h2 data-i18n="contactTitle">Digitaler denken.<br>Gäste begeistern.</h2><p data-i18n="contactText">Erzählen Sie uns, wo Ihr Hotel heute steht. Wir zeigen Ihnen den sinnvollsten nächsten Schritt.</p><a class="contact-button" href="mailto:sales@hotelinnovativ.ch"><span data-i18n="contactCta">Kontakt aufnehmen</span><b>↗</b></a>
     </section>
   </main>
-
   <footer class="site-footer">
-    <div class="footer-main">
-      <div class="footer-brand">
-        <span class="footer-logo"><img src="assets/hotelinnovativ-logo.png" alt="Hotelinnovativ"></span>
-        <p data-i18n="footerClaim">Ihr Partner für digitale Hotelinfrastruktur.</p>
-        <a class="footer-mail" href="mailto:sales@hotelinnovativ.ch">sales@hotelinnovativ.ch <b>↗</b></a>
-      </div>
-      <div class="footer-column">
-        <span data-i18n="footerSolutions">Lösungen</span>
-        <a href="../guest-journey-3d/">Guest Journey</a>
-        <a href="../?award=cinematic">TV-Streams</a>
-        <a href="#platform" data-i18n="navPlatform">Plattform</a>
-      </div>
-      <div class="footer-column">
-        <span data-i18n="footerContact">Kontakt</span>
-        <p>Ruessenstrasse 5a<br>CH–6340 Baar</p>
-        <a href="tel:+41417666868">+41 41 766 68 68</a>
-      </div>
-      <div class="footer-column">
-        <span data-i18n="footerLegal">Rechtliches</span>
-        <a href="https://www.hotelinnovativ.ch/impressum/" target="_blank" rel="noopener" data-i18n="imprint">Impressum</a>
-        <a href="https://www.hotelinnovativ.ch/datenschutz/" target="_blank" rel="noopener" data-i18n="privacy">Datenschutz</a>
-        <a href="https://www.hotelinnovativ.ch/cookie-richtlinie-eu/" target="_blank" rel="noopener" data-i18n="cookies">Cookie-Richtlinie</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <small>© <span id="year"></span> Hotelinnovativ AG · <span data-i18n="rights">Alle Rechte vorbehalten.</span></small>
-      <span data-i18n="footerTagline">Proud to serve you.</span>
-      <a href="#top"><span data-i18n="backTop">Nach oben</span> ↑</a>
-    </div>
+    <div class="footer-brand"><img src="assets/hotelinnovativ-logo.png" alt="Hotelinnovativ"><p data-i18n="footerClaim">Digitale Lösungen für moderne Hotelinfrastruktur.</p></div>
+    <div class="footer-links"><a href="mailto:sales@hotelinnovativ.ch">sales@hotelinnovativ.ch</a><a href="tel:+41417666868">+41 41 766 68 68</a><span>Ruessenstrasse 5a · CH–6340 Baar</span></div>
+    <div class="footer-legal"><span>© <span id="year"></span> Hotelinnovativ AG</span><a href="https://www.hotelinnovativ.ch/impressum/" target="_blank" rel="noopener" data-i18n="imprint">Impressum</a><a href="https://www.hotelinnovativ.ch/datenschutz/" target="_blank" rel="noopener" data-i18n="privacy">Datenschutz</a></div>
   </footer>
-
   <script src="app.js"></script>
 </body>
 </html>
