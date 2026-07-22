@@ -56,6 +56,12 @@
 .hi-premium-streams-v3 .hero h1 * { color: var(--ps-ink) !important; }
 .hi-premium-streams-v3 .hero h1 .ps-green,
 .hi-premium-streams-v3 .ps-green { color: #7fb00d !important; }
+.hi-premium-streams-v3 .hero .eyebrow {
+  color: #4f6c08 !important;
+  border-color: rgba(105, 143, 13, .24) !important;
+  background: rgba(244, 249, 231, .94) !important;
+  backdrop-filter: blur(12px);
+}
 .hi-premium-streams-v3 .hero-copy .lead {
   max-width: 30ch;
   color: #34413c !important;
@@ -70,7 +76,7 @@
 .hi-premium-streams-v3 .hero-panel {
   position: relative !important;
   inset: auto !important;
-  width: 100%;
+  width: 100% !important;
   height: auto !important;
   max-width: none !important;
   padding: 0 !important;
