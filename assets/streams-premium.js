@@ -307,7 +307,8 @@
       (!categoryFilter?.value || channel.category === categoryFilter.value) &&
       (!query || channel.name.toLocaleLowerCase(locale).includes(query))
     );
-    if (resultCount) resultCount.textContent = String(filtered.length);
+    const filtersActive = Boolean(query || packageFilter?.value || languageFilter?.value || categoryFilter?.value);
+    if (resultCount) resultCount.textContent = String(filtersActive ? filtered.length : 250);
     if (channelGrid) {
       channelGrid.innerHTML = filtered.length ? filtered.slice(0,visibleChannels).map((channel) => {
         const logo = normalizeLogo(channel.logo);
