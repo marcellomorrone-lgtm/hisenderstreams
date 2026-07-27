@@ -70,3 +70,17 @@ function updateScrollState(){
 }
 addEventListener("scroll",updateScrollState,{passive:true});updateScrollState();
 const year=document.getElementById("year");if(year)year.textContent=new Date().getFullYear();
+
+const solutionsNavigation=document.querySelector(".nav-solutions");
+const solutionsTrigger=document.querySelector(".solutions-trigger");
+if(solutionsNavigation&&solutionsTrigger){
+  const closeSolutions=()=>{solutionsNavigation.classList.remove("open");solutionsTrigger.setAttribute("aria-expanded","false")};
+  solutionsTrigger.addEventListener("click",event=>{
+    event.stopPropagation();
+    const isOpen=solutionsNavigation.classList.toggle("open");
+    solutionsTrigger.setAttribute("aria-expanded",String(isOpen));
+  });
+  solutionsNavigation.querySelectorAll("a").forEach(link=>link.addEventListener("click",closeSolutions));
+  document.addEventListener("click",event=>{if(!solutionsNavigation.contains(event.target))closeSolutions()});
+  document.addEventListener("keydown",event=>{if(event.key==="Escape"){closeSolutions();solutionsTrigger.focus()}});
+}

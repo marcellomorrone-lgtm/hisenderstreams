@@ -50,3 +50,65 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button{fon
   .section{padding:82px 20px}.section-heading{grid-template-columns:1fr;gap:20px;margin-bottom:35px}.section h2{font-size:36px}.solution-grid{grid-template-columns:1fr}.solution-card{min-height:330px}.relief-panel{padding:38px 22px;border-radius:25px}.relief-copy h2{font-size:33px}.relief-flow article{padding-left:62px}.promise{grid-template-columns:1fr;gap:28px}.promise-mark{width:100px;height:100px;border-radius:28px}.promise-mark img{width:76px}.promise-link{grid-column:auto}.contact{padding:90px 20px}.contact h2{font-size:49px}.site-footer{grid-template-columns:1fr;padding:38px 20px}.footer-links{justify-self:start;text-align:left}.footer-legal{flex-wrap:wrap;gap:14px 20px}.subhero{min-height:700px;padding:140px 21px 70px}.subhero h1{font-size:49px}.subhero p{font-size:14px}.foundation-grid,.scope-grid{grid-template-columns:1fr}.network-layer{padding:24px 21px 24px 72px}.network-layer>span{left:19px;top:24px}.network-layer::after{left:40px}.lifecycle-card{min-height:285px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.solution-card,.button,.header-cta{transition:none}}
+
+/* Compact premium navigation and solution cards */
+.site-header{top:14px;height:58px;padding:0 13px 0 18px;grid-template-columns:182px 1fr auto;gap:18px;border-radius:16px}
+.site-header.scrolled{top:7px;height:54px;border-radius:14px}
+.brand img{width:148px}
+.desktop-nav{gap:22px}
+.nav-solutions{position:relative}.nav-solutions::after{content:"";position:absolute;top:100%;left:0;width:100%;height:20px}
+.solutions-trigger{height:36px;padding:0 13px;border:1px solid transparent;border-radius:999px;background:transparent;color:var(--ink);display:flex;align-items:center;gap:9px;font-size:11px;letter-spacing:.035em;cursor:pointer;transition:.25s}
+.solutions-trigger:hover,.nav-solutions.open .solutions-trigger,.nav-solutions:focus-within .solutions-trigger{border-color:var(--line);background:rgba(255,255,255,.72)}
+.solutions-trigger b{font-weight:400;font-size:14px;line-height:1;transition:transform .25s}
+.nav-solutions.open .solutions-trigger b,.nav-solutions:focus-within .solutions-trigger b{transform:rotate(180deg)}
+.trigger-grid{width:13px;height:13px;display:grid;grid-template-columns:repeat(2,4px);grid-template-rows:repeat(2,4px);gap:3px}
+.trigger-grid i{display:block;border-radius:1px;background:var(--ink)}
+.trigger-grid i:nth-child(2){background:var(--lime)}
+.solutions-menu{position:absolute;top:calc(100% + 17px);left:50%;z-index:110;width:min(720px,calc(100vw - 40px));padding:12px;border:1px solid rgba(255,255,255,.72);border-radius:20px;background:rgba(250,251,247,.96);backdrop-filter:blur(24px) saturate(1.2);box-shadow:0 28px 70px rgba(5,27,21,.18);display:grid;grid-template-columns:repeat(3,1fr);gap:6px;opacity:0;visibility:hidden;pointer-events:none;transform:translate(-50%,10px);transition:opacity .22s,transform .22s,visibility .22s}
+.nav-solutions:hover .solutions-menu,.nav-solutions:focus-within .solutions-menu,.nav-solutions.open .solutions-menu{opacity:1;visibility:visible;pointer-events:auto;transform:translate(-50%,0)}
+.solutions-menu a{min-height:66px;padding:12px 13px;border-radius:13px;display:grid;grid-template-columns:28px 1fr 18px;align-items:center;gap:8px;transition:.22s}
+.solutions-menu a:hover,.solutions-menu a:focus-visible{background:#edf2e7;outline:none}
+.solutions-menu a>span{font-size:9px;color:#7a8983}
+.solutions-menu strong{font-size:12px;font-weight:400;line-height:1.3}
+.solutions-menu a>b{font-size:12px;font-weight:400;color:#74817c;transition:transform .2s}
+.solutions-menu a:hover>b{transform:translate(2px,-2px);color:#66820e}
+.nav-secondary{font-size:11px!important}
+.solution-grid{gap:13px}
+.solution-card{min-height:300px;padding:20px;border-radius:20px}
+.solution-card:hover{transform:translateY(-5px)}
+.card-arrow{right:17px;top:16px;width:32px;height:32px}
+.card-visual{width:88px;height:88px;margin:8px auto 5px;border-radius:28px}
+.solution-card h3{margin:6px 0;font-size:22px}
+.solution-card p{font-size:12px;line-height:1.55}
+.card-label{font-size:8px}
+.tv-icon i{inset:23px 17px 29px}.tv-icon b{left:34px;bottom:18px;width:20px}
+.stream-icon i{transform:scale(.78)}
+.phone-icon i{inset:15px 28px}.phone-icon b{left:39px;bottom:20px;width:8px;height:8px}
+.coax-icon i{width:43px;height:43px;left:22px;top:22px}.coax-icon b{width:14px;height:14px;left:37px;top:37px;box-shadow:0 0 0 6px rgba(184,220,47,.2)}
+.network-icon i:nth-child(1){left:19px;top:22px}.network-icon i:nth-child(2){right:19px;top:22px}.network-icon i:nth-child(3){left:37px;bottom:19px}.network-icon b{inset:28px 24px 24px}
+.service-icon i{width:38px;height:38px;left:25px;top:24px}.service-icon i::after{width:11px;height:11px;left:11px;top:11px}.service-icon b{width:18px;right:13px;bottom:19px}
+
+@media(max-width:1050px){
+  .site-header{grid-template-columns:165px 1fr auto}
+  .brand img{width:136px}
+  .desktop-nav{display:flex;justify-self:center}
+  .nav-secondary{display:none}
+  .solutions-menu{left:auto;right:-155px;transform:translateY(10px)}
+  .nav-solutions:hover .solutions-menu,.nav-solutions:focus-within .solutions-menu,.nav-solutions.open .solutions-menu{transform:translateY(0)}
+  .solution-card{min-height:285px}
+}
+@media(max-width:720px){
+  .site-header{top:8px;width:calc(100% - 14px);height:54px;padding:0 8px 0 12px;grid-template-columns:auto 1fr auto;gap:5px}
+  .site-header.scrolled{height:51px}
+  .brand img{width:112px}
+  .desktop-nav{justify-self:center}
+  .solutions-trigger{height:32px;padding:0 8px;gap:6px;font-size:9px}
+  .trigger-grid{width:11px;height:11px;grid-template-columns:repeat(2,3px);grid-template-rows:repeat(2,3px);gap:3px}
+  .solutions-menu{position:fixed;top:69px;left:8px;right:8px;width:auto;grid-template-columns:repeat(2,1fr);transform:translateY(8px)}
+  .nav-solutions:hover .solutions-menu,.nav-solutions:focus-within .solutions-menu,.nav-solutions.open .solutions-menu{transform:none}
+  .language-switch button{width:23px;height:23px;font-size:7px}
+  .solution-grid{gap:10px}
+  .solution-card{min-height:255px;padding:18px}
+  .card-visual{width:78px;height:78px;transform:scale(.88);margin:0 auto}
+  .solution-card h3{font-size:20px}
+}

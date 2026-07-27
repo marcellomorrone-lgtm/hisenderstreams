@@ -16,9 +16,22 @@
   <header class="site-header" id="header">
     <a class="brand" href="#top" aria-label="Hotelinnovativ Startseite"><img src="assets/hotelinnovativ-logo.png" alt="Hotelinnovativ — proud to serve you"></a>
     <nav class="desktop-nav" aria-label="Hauptnavigation">
-      <a href="#solutions" data-i18n="navSolutions">Lösungen</a>
-      <a href="#relief" data-i18n="navRelief">Teamentlastung</a>
-      <a href="../netzwerk-service/" data-i18n="navService">Netzwerk & Service</a>
+      <div class="nav-solutions">
+        <button class="solutions-trigger" type="button" aria-expanded="false" aria-controls="solutions-menu">
+          <span class="trigger-grid" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span data-i18n="navSolutions">Lösungen</span>
+          <b aria-hidden="true">⌄</b>
+        </button>
+        <div class="solutions-menu" id="solutions-menu" aria-label="Themenwelten">
+          <a href="../iptv-system/"><span>01</span><strong>IPTV</strong><b>↗</b></a>
+          <a href="../?design=20260720v6"><span>02</span><strong>TV-Senderstreams</strong><b>↗</b></a>
+          <a href="../guest-journey/"><span>03</span><strong>Guest Journey</strong><b>↗</b></a>
+          <a href="https://coax.hotelinnovativ.tech/" target="_blank" rel="noopener"><span>04</span><strong>IP over Coax</strong><b>↗</b></a>
+          <a href="../netzwerk-service/#netzwerk"><span>05</span><strong data-i18n="networkTitle">Netzwerk</strong><b>↗</b></a>
+          <a href="../netzwerk-service/#service"><span>06</span><strong data-i18n="serviceTitle">Service</strong><b>↗</b></a>
+        </div>
+      </div>
+      <a class="nav-secondary" href="#relief" data-i18n="navRelief">Teamentlastung</a>
     </nav>
     <div class="header-actions">
       <div class="language-switch" aria-label="Sprache wählen">
