@@ -12,6 +12,94 @@
   document.querySelectorAll('.hero-panel, .casting-demo').forEach((scene) => scene.replaceChildren());
   document.querySelector('#contact .contact-side')?.remove();
 
+  const footerCopy = {
+    de: {
+      claim: 'Die passende Senderwelt für jedes Hotel.<br>International, zuverlässig und zentral betreut.',
+      discover: 'Entdecken',
+      contact: 'Kontakt',
+      navLabel: 'TV-Streams entdecken',
+      links: [
+        ['#packages', 'Senderpakete'],
+        ['#calculator', 'Kostenrechner'],
+        ['#finder', 'Senderfinder'],
+        ['#technology', 'Technik & Betrieb']
+      ],
+      signature: 'TV-Senderstreams für Hotels · Swiss Made'
+    },
+    en: {
+      claim: 'The right channel line-up for every hotel.<br>International, reliable and centrally managed.',
+      discover: 'Discover',
+      contact: 'Contact',
+      navLabel: 'Discover TV streams',
+      links: [
+        ['#packages', 'Channel packages'],
+        ['#calculator', 'Cost calculator'],
+        ['#finder', 'Channel finder'],
+        ['#technology', 'Technology & operations']
+      ],
+      signature: 'TV channel streams for hotels · Swiss Made'
+    },
+    fr: {
+      claim: 'Le bouquet TV adapté à chaque hôtel.<br>International, fiable et géré de manière centralisée.',
+      discover: 'Découvrir',
+      contact: 'Contact',
+      navLabel: 'Découvrir les flux TV',
+      links: [
+        ['#packages', 'Bouquets TV'],
+        ['#calculator', 'Calculateur de coûts'],
+        ['#finder', 'Recherche de chaînes'],
+        ['#technology', 'Technique & exploitation']
+      ],
+      signature: 'Flux TV pour hôtels · Swiss Made'
+    },
+    it: {
+      claim: 'Il bouquet TV adatto a ogni hotel.<br>Internazionale, affidabile e gestito centralmente.',
+      discover: 'Scoprire',
+      contact: 'Contatto',
+      navLabel: 'Scoprire gli stream TV',
+      links: [
+        ['#packages', 'Pacchetti TV'],
+        ['#calculator', 'Calcolatore dei costi'],
+        ['#finder', 'Ricerca canali'],
+        ['#technology', 'Tecnologia & gestione']
+      ],
+      signature: 'Stream TV per hotel · Swiss Made'
+    }
+  };
+
+  const footer = document.querySelector('.footer');
+  if (footer) {
+    const copy = footerCopy[locale] || footerCopy.de;
+    const logo = assetUrl('logo-hotelinnovativ-original.png');
+    footer.className = 'footer hi-site-footer';
+    footer.innerHTML = `
+      <div class="hi-footer-grid">
+        <div class="hi-footer-intro">
+          <img class="hi-footer-wordmark" src="${logo}" alt="Hotelinnovativ – proud to serve you">
+          <p>${copy.claim}</p>
+        </div>
+        <div class="hi-footer-seal" aria-label="Hotelinnovativ – proud to serve you">
+          <i aria-hidden="true"></i><i aria-hidden="true"></i>
+          <span class="hi-footer-pictogram" aria-hidden="true"><img src="${logo}" alt=""></span>
+          <small>PROUD TO SERVE YOU</small>
+        </div>
+        <nav class="hi-footer-links" aria-label="${copy.navLabel}">
+          <small>${copy.discover}</small>
+          ${copy.links.map(([href, label]) => `<a href="${href}">${label}</a>`).join('')}
+        </nav>
+        <div class="hi-footer-contact">
+          <small>${copy.contact}</small>
+          <a href="mailto:sales@hotelinnovativ.ch">sales@hotelinnovativ.ch</a>
+          <a href="tel:+41417666868">+41 41 766 68 68</a>
+          <a href="https://www.hotelinnovativ.ch/" target="_blank" rel="noreferrer">hotelinnovativ.ch ↗</a>
+        </div>
+        <div class="hi-footer-bottom">
+          <span>© ${new Date().getFullYear()} Hotelinnovativ AG · Baar, Schweiz</span>
+          <span>${copy.signature}</span>
+        </div>
+      </div>`;
+  }
+
   const progress = byId('progress');
   const updateProgress = () => {
     if (!progress) return;
