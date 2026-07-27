@@ -121,3 +121,8 @@ input[type=range]{cursor:grab}input[type=range]:active{cursor:grabbing}
   .hero-bg,.hero-tv-focus,.journey-chapter>img,.journey-chapter .chapter-copy.in-view{transform:none!important;transition:none!important}
   .hero-bottom>span:last-child i,.journey-chapter.is-active .chapter-float,.journey-chapter.is-active .chapter-live>i,.screen-bezel img{animation:none!important;transition:none!important}
 }
+
+/* Hotelinnovativ corporate typography — Open Sans Regular */
+:root{--hi-font:"Open Sans",Arial,Helvetica,sans-serif}
+html,body{font-family:var(--hi-font)!important;font-synthesis:none!important}
+body *,body *::before,body *::after{font-family:var(--hi-font)!important;font-style:normal!important;font-weight:400!important;font-synthesis:none!important}
