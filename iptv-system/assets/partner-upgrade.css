@@ -126,3 +126,6 @@ input[type=range]{cursor:grab}input[type=range]:active{cursor:grabbing}
 :root{--hi-font:"Open Sans",Arial,Helvetica,sans-serif}
 html,body{font-family:var(--hi-font)!important;font-synthesis:none!important}
 body *,body *::before,body *::after{font-family:var(--hi-font)!important;font-style:normal!important;font-weight:400!important;font-synthesis:none!important}
+
+/* Specificity lock: no serif, italic or synthetic weights after motion classes initialise */
+html.motion-ready.static-iptv body,html.motion-ready.static-iptv body *,html.motion-ready.static-iptv body *::before,html.motion-ready.static-iptv body *::after{font-family:var(--hi-font)!important;font-style:normal!important;font-weight:400!important;font-synthesis:none!important}
