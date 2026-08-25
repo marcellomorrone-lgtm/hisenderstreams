@@ -282,6 +282,7 @@ h1 em, h2 em { color: var(--lime); font-style: normal; font-weight: 400; }
 .channel-card:hover { border-color: rgba(129,164,0,.5); transform: translateY(-2px); box-shadow: 0 9px 25px rgba(18,33,23,.07); }
 .channel-card-logo { width: 54px; height: 42px; flex: 0 0 auto; display: grid; place-items: center; border-radius: 8px; background: #f7f8f4; }
 .channel-card-logo img { max-width: 44px; max-height: 25px; object-fit: contain; }
+.channel-card-logo.has-light-logo { background: var(--ink); }
 .channel-card-logo span { color: #6e7c73; font-size: .6rem; }
 .channel-card-logo.is-fallback { border: 1px solid rgba(129,164,0,.22); background: linear-gradient(145deg,#fbfcf8,#eef4e3); }
 .channel-card-logo.is-fallback span { color: #527007; font-weight: 700; letter-spacing: .06em; }
