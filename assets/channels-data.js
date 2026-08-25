@@ -254,22 +254,6 @@ window.channelData = [
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
-    "id": "tv-16",
-    "number": 16,
-    "name": "ORF OE3",
-    "type": "tv",
-    "language": "de",
-    "country": "international",
-    "category": "general",
-    "quality": "hd",
-    "packages": [
-      "max"
-    ],
-    "badge": "ORF",
-    "logo": "/assets/channel-logos/wikimedia/hitradio-oe3.png",
-    "source": "Hotelinnovativ Channels Lineup"
-  },
-  {
     "id": "tv-17",
     "number": 17,
     "name": "ORF Sports",
@@ -6710,6 +6694,22 @@ window.channelData = [
     "badge": "ABC",
     "logo": "assets/radio-logos/141-abc-80s.png",
     "sourceLogo": "https://cloud.hotelinnovativ.tech/images/radio-logos/abc-80s.png",
+    "source": "Hotelinnovativ Radio Lineup"
+  },
+  {
+    "id": "radio-142",
+    "number": 142,
+    "name": "ORF OE3",
+    "type": "radio",
+    "language": "de",
+    "country": "austria",
+    "category": "radio",
+    "quality": "audio",
+    "packages": [
+      "max"
+    ],
+    "badge": "Ö3",
+    "logo": "/assets/channel-logos/wikimedia/hitradio-oe3.png",
     "source": "Hotelinnovativ Radio Lineup"
   }
 ];
