@@ -102,7 +102,7 @@ window.channelData = [
       "max"
     ],
     "badge": "ZDF",
-    "logo": "",
+    "logo": "assets/channel-logos/imported/zdf-info.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -119,7 +119,7 @@ window.channelData = [
       "max"
     ],
     "badge": "ZDF",
-    "logo": "",
+    "logo": "assets/channel-logos/imported/zdf-neo.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -169,7 +169,7 @@ window.channelData = [
       "max"
     ],
     "badge": "TZ",
-    "logo": "",
+    "logo": "assets/channel-logos/tele-zueri.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -185,7 +185,7 @@ window.channelData = [
       "max"
     ],
     "badge": "TEL",
-    "logo": "",
+    "logo": "assets/channel-logos/tele-baern.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -334,7 +334,7 @@ window.channelData = [
       "max"
     ],
     "badge": "SAT",
-    "logo": "",
+    "logo": "assets/channel-logos/imported/sat1-gold.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -402,7 +402,7 @@ window.channelData = [
       "max"
     ],
     "badge": "RTL",
-    "logo": "",
+    "logo": "assets/channel-logos/rtl-zwei.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -418,7 +418,7 @@ window.channelData = [
       "max"
     ],
     "badge": "RTL",
-    "logo": "",
+    "logo": "assets/channel-logos/imported/rtl-nitro.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -434,7 +434,7 @@ window.channelData = [
       "max"
     ],
     "badge": "RTL",
-    "logo": "",
+    "logo": "assets/channel-logos/imported/rtl-up.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -548,7 +548,7 @@ window.channelData = [
       "max"
     ],
     "badge": "ARD",
-    "logo": "",
+    "logo": "assets/channel-logos/imported/ard-alpha.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -582,7 +582,7 @@ window.channelData = [
       "max"
     ],
     "badge": "KAB",
-    "logo": "",
+    "logo": "assets/channel-logos/imported/kabel-eins-doku.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -631,7 +631,7 @@ window.channelData = [
       "max"
     ],
     "badge": "BR",
-    "logo": "",
+    "logo": "assets/channel-logos/br-fernsehen.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -664,7 +664,7 @@ window.channelData = [
       "max"
     ],
     "badge": "SWR",
-    "logo": "",
+    "logo": "assets/channel-logos/swr-fernsehen.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -714,7 +714,7 @@ window.channelData = [
       "max"
     ],
     "badge": "ONE",
-    "logo": "",
+    "logo": "assets/channel-logos/imported/one.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -779,7 +779,7 @@ window.channelData = [
       "max"
     ],
     "badge": "SIX",
-    "logo": "",
+    "logo": "assets/channel-logos/imported/sixx.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -795,7 +795,7 @@ window.channelData = [
       "max"
     ],
     "badge": "SUP",
-    "logo": "",
+    "logo": "assets/channel-logos/imported/super-rtl.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -811,7 +811,7 @@ window.channelData = [
       "max"
     ],
     "badge": "TOG",
-    "logo": "",
+    "logo": "assets/channel-logos/imported/toggo-plus.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -827,7 +827,7 @@ window.channelData = [
       "max"
     ],
     "badge": "KIK",
-    "logo": "",
+    "logo": "assets/channel-logos/imported/kika.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -1037,7 +1037,7 @@ window.channelData = [
       "max"
     ],
     "badge": "SER",
-    "logo": "",
+    "logo": "assets/channel-logos/imported/servus-tv.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -1101,7 +1101,7 @@ window.channelData = [
       "max"
     ],
     "badge": "SPO",
-    "logo": "",
+    "logo": "assets/channel-logos/imported/sport1.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -1133,7 +1133,7 @@ window.channelData = [
       "max"
     ],
     "badge": "ANI",
-    "logo": "",
+    "logo": "assets/channel-logos/imported/anixe.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -1149,7 +1149,7 @@ window.channelData = [
       "max"
     ],
     "badge": "COM",
-    "logo": "",
+    "logo": "assets/channel-logos/imported/comedy-central.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -1181,7 +1181,7 @@ window.channelData = [
       "max"
     ],
     "badge": "MTV",
-    "logo": "",
+    "logo": "assets/channel-logos/imported/mtv.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -1213,7 +1213,7 @@ window.channelData = [
       "max"
     ],
     "badge": "RTS",
-    "logo": "",
+    "logo": "assets/channel-logos/rts-1.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -1229,7 +1229,7 @@ window.channelData = [
       "max"
     ],
     "badge": "RTS",
-    "logo": "",
+    "logo": "assets/channel-logos/rts-2.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -2341,7 +2341,7 @@ window.channelData = [
       "max"
     ],
     "badge": "CNN",
-    "logo": "",
+    "logo": "assets/channel-logos/imported/cnn.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -2375,7 +2375,7 @@ window.channelData = [
       "max"
     ],
     "badge": "BBC",
-    "logo": "",
+    "logo": "assets/channel-logos/imported/bbc-world-news.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -2461,7 +2461,7 @@ window.channelData = [
       "max"
     ],
     "badge": "AL ",
-    "logo": "",
+    "logo": "assets/channel-logos/imported/al-jazeera.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -2477,7 +2477,7 @@ window.channelData = [
       "max"
     ],
     "badge": "DW ",
-    "logo": "",
+    "logo": "assets/channel-logos/imported/dw.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -3415,7 +3415,7 @@ window.channelData = [
       "max"
     ],
     "badge": "RTP",
-    "logo": "",
+    "logo": "assets/channel-logos/rtp-internacional.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -6718,6 +6718,6 @@ window.lineupMeta = {
   "radio": 141,
   "total": 405,
   "languages": 10,
-  "matchedTvLogos": 44,
+  "matchedTvLogos": 73,
   "source": "https://cloud.hotelinnovativ.tech/channels-lineup/generic/WBSSc4dPVU1BR5B3Q69HwDdOdvDrrbA5BAuFaHGZ"
 };

@@ -40,9 +40,7 @@
       basicTitle: "The most important source markets", basicF1: "Swiss core channels", basicF2: "Relevant neighbouring markets", basicF3: "HD quality included",
       essentialTitle: "The international hotel standard", essentialF1: "Broad European coverage", essentialF2: "More channels in core languages", essentialF3: "Ideal for most hotels",
       maxTitle: "For guests from around the world", maxF1: "Maximum international variety", maxF2: "Additional language regions", maxF3: "For resorts and international properties",
-      recommended: "Recommended", perTvMonth: "per TV and month", packageCta: "Request advice ↗",
-      calcEyebrow: "Interactive cost calculator", calcTitle: "Predictable per room.<br><em>Transparent per month.</em>", calcLead: "Choose room count and package. Hardware, installation and setup are calculated for your project.",
-      rooms: "TVs / rooms", calcPackage: "Channel package", monthly: "Monthly cost", pricePer: "Price per TV and month", calcSignal: "Channels included", calcCta: "Request project price",
+      recommended: "Recommended", packageCta: "Request advice ↗",
       finderEyebrow: "Channel finder", finderTitle: "Find quickly.<br><em>Compare clearly.</em>", finderLead: "Search the portfolio by language, category and package. The channel view stays deliberately compact.",
       searchPlaceholder: "Search TV or radio", packageAll: "All packages", langAll: "All languages", categoryAll: "All categories", typeAll: "TV & radio", typeTV: "TV channels", typeRadio: "Radio stations", resultsAll: "services found", resultsTV: "TV channels found", resultsRadio: "radio stations found", mediaTV: "TV", mediaRadio: "Radio", reset: "Reset", resultsLabel: "services found", finderHint: "Official line-up: 264 TV channels and 141 radio stations.", showMore: "Show more ↓",
       platformEyebrow: "One source. Every room.", platformTitle: "Technically precise.<br><em>Quiet in operation.</em>", platformLead: "From source and headend to network and hotel TV: every step is planned, documented and monitored.", platformCta: "Check your infrastructure",
@@ -75,9 +73,7 @@
       basicTitle: "Les principaux marchés d’origine", basicF1: "Chaînes suisses essentielles", basicF2: "Marchés voisins pertinents", basicF3: "Qualité HD incluse",
       essentialTitle: "Le standard hôtelier international", essentialF1: "Large couverture européenne", essentialF2: "Plus de chaînes dans les langues principales", essentialF3: "Idéal pour la plupart des hôtels",
       maxTitle: "Pour les clients du monde entier", maxF1: "Diversité internationale maximale", maxF2: "Espaces linguistiques supplémentaires", maxF3: "Pour resorts et hôtels internationaux",
-      recommended: "Recommandé", perTvMonth: "par TV et par mois", packageCta: "Demander conseil ↗",
-      calcEyebrow: "Calculateur interactif", calcTitle: "Prévisible par chambre.<br><em>Transparent par mois.</em>", calcLead: "Choisissez le nombre de chambres et le bouquet. Le matériel, l’installation et la configuration sont calculés selon le projet.",
-      rooms: "TV / chambres", calcPackage: "Bouquet TV", monthly: "Coût mensuel", pricePer: "Prix par TV et par mois", calcSignal: "Chaînes incluses", calcCta: "Demander le prix du projet",
+      recommended: "Recommandé", packageCta: "Demander conseil ↗",
       finderEyebrow: "Recherche de chaînes", finderTitle: "Trouver vite.<br><em>Comparer clairement.</em>", finderLead: "Parcourez le portefeuille par langue, catégorie et bouquet. L’affichage reste volontairement compact.",
       searchPlaceholder: "Rechercher TV ou radio", packageAll: "Tous les bouquets", langAll: "Toutes les langues", categoryAll: "Toutes les catégories", typeAll: "TV & radio", typeTV: "Chaînes TV", typeRadio: "Radios", resultsAll: "programmes trouvés", resultsTV: "chaînes TV trouvées", resultsRadio: "radios trouvées", mediaTV: "TV", mediaRadio: "Radio", reset: "Réinitialiser", resultsLabel: "programmes trouvés", finderHint: "Line-up officiel : 264 chaînes TV et 141 radios.", showMore: "Afficher plus ↓",
       platformEyebrow: "Une source. Chaque chambre.", platformTitle: "Précision technique.<br><em>Sérénité opérationnelle.</em>", platformLead: "De la source au headend, du réseau au téléviseur: chaque étape est planifiée, documentée et supervisée.", platformCta: "Faire vérifier l’infrastructure",
@@ -110,9 +106,7 @@
       basicTitle: "I principali mercati di provenienza", basicF1: "Canali svizzeri essenziali", basicF2: "Mercati vicini rilevanti", basicF3: "Qualità HD inclusa",
       essentialTitle: "Lo standard alberghiero internazionale", essentialF1: "Ampia copertura europea", essentialF2: "Più canali nelle lingue principali", essentialF3: "Ideale per la maggior parte degli hotel",
       maxTitle: "Per ospiti da tutto il mondo", maxF1: "Massima varietà internazionale", maxF2: "Aree linguistiche aggiuntive", maxF3: "Per resort e strutture internazionali",
-      recommended: "Consigliato", perTvMonth: "per TV e mese", packageCta: "Richiedi consulenza ↗",
-      calcEyebrow: "Calcolatore interattivo", calcTitle: "Prevedibile per camera.<br><em>Trasparente al mese.</em>", calcLead: "Scegliete numero di camere e pacchetto. Hardware, installazione e configurazione vengono calcolati per il progetto.",
-      rooms: "TV / camere", calcPackage: "Pacchetto canali", monthly: "Costo mensile", pricePer: "Prezzo per TV e mese", calcSignal: "Canali inclusi", calcCta: "Richiedi il prezzo del progetto",
+      recommended: "Consigliato", packageCta: "Richiedi consulenza ↗",
       finderEyebrow: "Ricerca canali", finderTitle: "Trova subito.<br><em>Confronta con chiarezza.</em>", finderLead: "Cercate nel portfolio per lingua, categoria e pacchetto. La visualizzazione resta volutamente compatta.",
       searchPlaceholder: "Cerca TV o radio", packageAll: "Tutti i pacchetti", langAll: "Tutte le lingue", categoryAll: "Tutte le categorie", typeAll: "TV & radio", typeTV: "Canali TV", typeRadio: "Radio", resultsAll: "programmi trovati", resultsTV: "canali TV trovati", resultsRadio: "radio trovate", mediaTV: "TV", mediaRadio: "Radio", reset: "Reimposta", resultsLabel: "programmi trovati", finderHint: "Line-up ufficiale: 264 canali TV e 141 radio.", showMore: "Mostra altri ↓",
       platformEyebrow: "Una fonte. Ogni camera.", platformTitle: "Precisione tecnica.<br><em>Tranquillità operativa.</em>", platformLead: "Dalla sorgente e headend alla rete e al TV: ogni passaggio è pianificato, documentato e monitorato.", platformCta: "Verifica l’infrastruttura",
@@ -241,40 +235,6 @@
     const set = logoFiles.map(([file,label]) => `<span class="channel-logo"><img src="/assets/channel-logos/${file}" alt="${label}"></span>`).join("");
     marquee.innerHTML = set + set;
   }
-
-  const roomRange = document.getElementById("roomRange");
-  const roomOutput = document.getElementById("roomOutput");
-  const monthlyOutput = document.getElementById("monthlyOutput");
-  const priceOutput = document.getElementById("priceOutput");
-  const channelOutput = document.getElementById("channelOutput");
-  const calcChannels = document.getElementById("calcChannels");
-  const calcPackageName = document.getElementById("calcPackageName");
-  const calcButtons = [...document.querySelectorAll(".calc-package-buttons button")];
-  let selectedPackage = calcButtons.find((button) => button.classList.contains("active")) || calcButtons[0];
-  const currencyLocale = locale === "de" ? "de-CH" : locale === "fr" ? "fr-CH" : locale === "it" ? "it-CH" : "en-CH";
-  const money = (value) => `CHF ${Number(value).toLocaleString(currencyLocale,{minimumFractionDigits:2,maximumFractionDigits:2})}`;
-  const updateCalculator = () => {
-    if (!roomRange || !selectedPackage) return;
-    const rooms = Number(roomRange.value);
-    const price = Number(selectedPackage.dataset.price);
-    const channels = selectedPackage.dataset.channels;
-    const packageName = selectedPackage.dataset.package[0].toUpperCase() + selectedPackage.dataset.package.slice(1);
-    roomRange.style.setProperty("--fill", `${((rooms - 10) / 490) * 100}%`);
-    if (roomOutput) roomOutput.value = rooms;
-    if (monthlyOutput) monthlyOutput.textContent = money(rooms * price);
-    if (priceOutput) priceOutput.textContent = money(price);
-    if (channelOutput) channelOutput.textContent = channels;
-    if (calcChannels) calcChannels.textContent = `${channels} ${locale === "fr" ? "chaînes" : locale === "it" ? "canali" : locale === "en" ? "channels" : "Sender"}`;
-    if (calcPackageName) calcPackageName.textContent = packageName;
-  };
-  roomRange?.addEventListener("input", updateCalculator);
-  calcButtons.forEach((button) => button.addEventListener("click", () => {
-    calcButtons.forEach((item) => item.classList.remove("active"));
-    button.classList.add("active");
-    selectedPackage = button;
-    updateCalculator();
-  }));
-  updateCalculator();
 
   const channels = Array.isArray(window.channelData) ? window.channelData : [];
   const search = document.getElementById("channelSearch");
