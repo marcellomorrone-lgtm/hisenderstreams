@@ -62,6 +62,15 @@ button, a { -webkit-tap-highlight-color: transparent; }
   background: var(--ink); transition: right .3s ease;
 }
 .site-header nav a:hover::after, .site-header nav a:focus-visible::after { right: 0; }
+.site-header nav a[href="#finder"] {
+  padding: 8px 13px; border-radius: 999px; color: var(--ink); background: var(--lime);
+  box-shadow: 0 0 0 1px rgba(132,169,0,.18), 0 0 22px rgba(183,223,49,.38);
+  font-weight: 700; letter-spacing: .02em;
+}
+.site-header nav a[href="#finder"]::after { display: none; }
+.site-header nav a[href="#finder"]:hover, .site-header nav a[href="#finder"]:focus-visible {
+  background: #c8ef45; box-shadow: 0 0 0 1px rgba(132,169,0,.24), 0 0 28px rgba(183,223,49,.58);
+}
 .header-actions { display: flex; align-items: center; gap: 10px; }
 .language-switcher { display: flex; gap: 3px; padding: 3px; border: 1px solid var(--line); border-radius: 999px; }
 .language-switcher a {
@@ -282,7 +291,6 @@ h1 em, h2 em { color: var(--lime); font-style: normal; font-weight: 400; }
 .channel-card:hover { border-color: rgba(129,164,0,.5); transform: translateY(-2px); box-shadow: 0 9px 25px rgba(18,33,23,.07); }
 .channel-card-logo { width: 54px; height: 42px; flex: 0 0 auto; display: grid; place-items: center; border-radius: 8px; background: #f7f8f4; }
 .channel-card-logo img { max-width: 44px; max-height: 25px; object-fit: contain; }
-.channel-card-logo.has-light-logo { background: var(--ink); }
 .channel-card-logo span { color: #6e7c73; font-size: .6rem; }
 .channel-card-logo.is-fallback { border: 1px solid rgba(129,164,0,.22); background: linear-gradient(145deg,#fbfcf8,#eef4e3); }
 .channel-card-logo.is-fallback span { color: #527007; font-weight: 700; letter-spacing: .06em; }
