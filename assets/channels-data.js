@@ -1470,7 +1470,7 @@ window.channelData = [
       "max"
     ],
     "badge": "ART",
-    "logo": "",
+    "logo": "assets/channel-logos/arte-france.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -1486,7 +1486,7 @@ window.channelData = [
       "max"
     ],
     "badge": "ART",
-    "logo": "",
+    "logo": "assets/channel-logos/arte-france.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -1713,7 +1713,7 @@ window.channelData = [
       "max"
     ],
     "badge": "RSIL",
-    "logo": "assets/channel-logos/rsi-la-2.png",
+    "logo": "",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -2623,7 +2623,7 @@ window.channelData = [
       "max"
     ],
     "badge": "ITV",
-    "logo": "",
+    "logo": "assets/channel-logos/itv1.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -3511,7 +3511,7 @@ window.channelData = [
       "max"
     ],
     "badge": "ART",
-    "logo": "",
+    "logo": "assets/channel-logos/arte-france.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -3608,7 +3608,7 @@ window.channelData = [
       "max"
     ],
     "badge": "AL ",
-    "logo": "",
+    "logo": "assets/channel-logos/al-jazeera.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {

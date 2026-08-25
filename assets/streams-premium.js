@@ -232,8 +232,13 @@
   ];
   const marquee = document.querySelector(".channel-marquee-track");
   if (marquee) {
-    const set = logoFiles.map(([file,label]) => `<span class="channel-logo"><img src="/assets/channel-logos/${file}" alt="${label}"></span>`).join("");
+    const set = logoFiles.map(([file,label]) => `<span class="channel-logo"><span class="channel-logo-wordmark" aria-hidden="true">${label}</span><img src="/assets/channel-logos/${file}" alt="${label}"></span>`).join("");
     marquee.innerHTML = set + set;
+    marquee.querySelectorAll("img").forEach((image) => {
+      const useWordmark = () => image.closest(".channel-logo")?.classList.add("is-fallback");
+      image.addEventListener("error", useWordmark, { once: true });
+      if (image.complete && !image.naturalWidth) useWordmark();
+    });
   }
 
   const channels = Array.isArray(window.channelData) ? window.channelData : [];
@@ -261,6 +266,20 @@
     if (!logo) return "";
     return logo.startsWith("assets/") ? `/${logo}` : logo;
   };
+  const escapeHtml = (value) => String(value || "").replace(/[&<>"]/g, (character) => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"
+  })[character]);
+  const wordmark = (channel) => {
+    const language = /^[a-z]{2}$/i.test(channel.language || "") ? channel.language.toLowerCase() : "other";
+    return `<span class="channel-wordmark channel-wordmark--${language}" aria-hidden="true"><b>${escapeHtml(channel.name)}</b></span>`;
+  };
+  const activateBrokenLogoFallbacks = () => {
+    channelGrid?.querySelectorAll("img[data-station-logo]").forEach((image) => {
+      const useWordmark = () => image.closest(".channel-card-logo")?.classList.add("is-fallback");
+      image.addEventListener("error", useWordmark, { once: true });
+      if (image.complete && !image.naturalWidth) useWordmark();
+    });
+  };
   const renderChannels = () => {
     const query = (search?.value || "").trim().toLocaleLowerCase(locale);
     const filtered = channels.filter((channel) =>
@@ -279,10 +298,11 @@
         const language = c.languageNames[channel.language] || channel.language || "";
         const mediaType = channel.type === "radio" ? c.mediaRadio : c.mediaTV;
         return `<article class="channel-card channel-card--${channel.type || "tv"}">
-          <span class="channel-card-logo${logo ? "" : " is-fallback"}">${logo ? `<img src="${logo}" alt="${channel.name}" loading="lazy">` : `<span>${channel.badge || channel.name.slice(0,2)}</span>`}</span>
-          <span class="channel-card-copy"><strong>${channel.name}</strong><small>#${channel.number || "–"} · ${mediaType} · ${language}</small></span>
+          <span class="channel-card-logo${logo ? "" : " is-fallback"}" aria-label="${escapeHtml(channel.name)}">${wordmark(channel)}${logo ? `<img data-station-logo src="${escapeHtml(logo)}" alt="${escapeHtml(channel.name)}" loading="lazy" decoding="async">` : ""}</span>
+          <span class="channel-card-copy"><strong>${escapeHtml(channel.name)}</strong><small>#${channel.number || "–"} · ${escapeHtml(mediaType)} · ${escapeHtml(language)}</small></span>
         </article>`;
       }).join("") : `<p class="no-results">${c.noResults}</p>`;
+      activateBrokenLogoFallbacks();
     }
     if (showMore) showMore.hidden = visibleChannels >= filtered.length;
   };
