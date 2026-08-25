@@ -1005,7 +1005,7 @@ window.channelData = [
       "max"
     ],
     "badge": "MVM",
-    "logo": "",
+    "logo": "/assets/channel-logos/provided/mvmt-culture-user.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -1181,7 +1181,7 @@ window.channelData = [
       "max"
     ],
     "badge": "ARE",
-    "logo": "",
+    "logo": "/assets/channel-logos/provided/arena-user.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -1281,7 +1281,7 @@ window.channelData = [
       "max"
     ],
     "badge": "TMC",
-    "logo": "assets/channel-logos/tmc.png",
+    "logo": "/assets/channel-logos/provided/tmc-user.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -3009,7 +3009,7 @@ window.channelData = [
       "max"
     ],
     "badge": "SPO",
-    "logo": "",
+    "logo": "/assets/channel-logos/provided/sports-first-user.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -3237,7 +3237,7 @@ window.channelData = [
       "max"
     ],
     "badge": "ANT",
-    "logo": "",
+    "logo": "/assets/channel-logos/provided/antena-user.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -4072,7 +4072,7 @@ window.channelData = [
       "max"
     ],
     "badge": "THT",
-    "logo": "",
+    "logo": "/assets/channel-logos/provided/tht-user.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -4152,7 +4152,7 @@ window.channelData = [
       "max"
     ],
     "badge": "PTC",
-    "logo": "",
+    "logo": "/assets/channel-logos/provided/ptc-cbet-user.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -4168,7 +4168,7 @@ window.channelData = [
       "max"
     ],
     "badge": "ANT",
-    "logo": "",
+    "logo": "/assets/channel-logos/provided/antena-user.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -4184,7 +4184,7 @@ window.channelData = [
       "max"
     ],
     "badge": "UAT",
-    "logo": "",
+    "logo": "/assets/channel-logos/provided/uatv-user.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -4248,7 +4248,7 @@ window.channelData = [
       "max"
     ],
     "badge": "NEW",
-    "logo": "",
+    "logo": "/assets/channel-logos/provided/new-tv-drama-user.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -4264,7 +4264,7 @@ window.channelData = [
       "max"
     ],
     "badge": "NEW",
-    "logo": "",
+    "logo": "/assets/channel-logos/provided/new-tv-variety-user.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
