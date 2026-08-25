@@ -294,6 +294,8 @@ h1 em, h2 em { color: var(--lime); font-style: normal; font-weight: 400; }
 .channel-card:hover { border-color: rgba(129,164,0,.5); transform: translateY(-2px); box-shadow: 0 9px 25px rgba(18,33,23,.07); }
 .channel-card-logo { width: 64px; height: 44px; flex: 0 0 auto; display: grid; place-items: center; overflow: hidden; border: 1px solid #e4e8e2; border-radius: 9px; background: linear-gradient(145deg,#fff,#f2f5f0); }
 .channel-card-logo img { grid-area: 1/1; max-width: 54px; max-height: 29px; object-fit: contain; filter: drop-shadow(0 1px 1px rgba(8,28,18,.3)); }
+.channel-card-logo.is-dark-source { border-color: rgba(183,223,49,.2); background: linear-gradient(145deg,#10251d,#07140f); box-shadow: inset 0 1px rgba(255,255,255,.06); }
+.channel-card-logo.is-dark-source img { filter: drop-shadow(0 1px 2px rgba(0,0,0,.5)) drop-shadow(0 0 1px rgba(255,255,255,.82)); }
 .channel-wordmark { grid-area: 1/1; width: 100%; height: 100%; padding: 5px; display: none; place-items: center; position: relative; overflow: hidden; color: #173428; background: linear-gradient(145deg,#fbfdf7,#edf4df); text-align: center; }
 .channel-wordmark::before { content: ""; width: 4px; height: 4px; position: absolute; top: 5px; right: 5px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 0 3px rgba(183,223,49,.14); }
 .channel-wordmark b { max-width: 52px; display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; color: #385522; font-size: .46rem; font-weight: 700; line-height: 1.04; letter-spacing: -.01em; text-wrap: balance; }

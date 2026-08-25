@@ -294,10 +294,11 @@
     if (channelGrid) {
       channelGrid.innerHTML = filtered.length ? filtered.slice(0,visibleChannels).map((channel) => {
         const logo = normalizeLogo(channel.logo);
+        const darkLogo = logo.includes("/channel-logos/tvlogos/") || logo.includes("/channel-logos/iptvorg/");
         const language = c.languageNames[channel.language] || channel.language || "";
         const mediaType = channel.type === "radio" ? c.mediaRadio : c.mediaTV;
         return `<article class="channel-card channel-card--${channel.type || "tv"}">
-          <span class="channel-card-logo${logo ? "" : " is-fallback"}" aria-label="${escapeHtml(channel.name)}">${wordmark(channel)}${logo ? `<img data-station-logo src="${escapeHtml(logo)}" alt="${escapeHtml(channel.name)}" loading="lazy" decoding="async">` : ""}</span>
+          <span class="channel-card-logo${logo ? "" : " is-fallback"}${darkLogo ? " is-dark-source" : ""}" aria-label="${escapeHtml(channel.name)}">${wordmark(channel)}${logo ? `<img data-station-logo src="${escapeHtml(logo)}" alt="${escapeHtml(channel.name)}" loading="lazy" decoding="async">` : ""}</span>
           <span class="channel-card-copy"><strong>${escapeHtml(channel.name)}</strong><small>#${channel.number || "–"} · ${escapeHtml(mediaType)} · ${escapeHtml(language)}</small></span>
         </article>`;
       }).join("") : `<p class="no-results">${c.noResults}</p>`;
