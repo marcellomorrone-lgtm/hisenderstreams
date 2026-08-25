@@ -8,8 +8,9 @@
       description: "250+ internationale TV-Sender für Hotels – zuverlässig über IP, zentral betreut und passend zu Ihren Gästen.",
       storyStatusValues: ["250+ Sender bereit", "8+ Sprachwelten aktiv", "Alle Streams stabil", "Betrieb überwacht"],
       storyStatusSubs: ["Portfolio aktuell", "Gästeprofil passend", "Signal stabil", "Schweizer Support"],
-      languageNames: { de: "Deutsch", fr: "Französisch", it: "Italienisch", en: "Englisch", es: "Spanisch", pt: "Portugiesisch", tr: "Türkisch", ar: "Arabisch", nl: "Niederländisch", pl: "Polnisch", ru: "Russisch", sr: "Serbisch", hr: "Kroatisch", el: "Griechisch" },
-      categoryNames: { news: "Nachrichten", entertainment: "Unterhaltung", sports: "Sport", culture: "Kultur", kids: "Kinder", music: "Musik", general: "Vollprogramm", movies: "Filme" },
+      searchPlaceholder: "TV- oder Radiosender suchen", typeAll: "TV & Radio", typeTV: "TV-Sender", typeRadio: "Radiosender", resultsAll: "Programme gefunden", resultsTV: "TV-Sender gefunden", resultsRadio: "Radiosender gefunden", mediaTV: "TV", mediaRadio: "Radio", finderHint: "Offizielles Line-up: 264 TV-Sender und 141 Radiosender.",
+      languageNames: { de: "Deutsch", fr: "Französisch", it: "Italienisch", en: "Englisch", es: "Spanisch", ar: "Arabisch", nl: "Niederländisch", zh: "Chinesisch", hu: "Ungarisch", other: "Weitere Sprachen" },
+      categoryNames: { news: "Nachrichten", entertainment: "Unterhaltung", sports: "Sport", culture: "Kultur", kids: "Kinder", music: "Musik", general: "Vollprogramm", movies: "Filme", radio: "Radio" },
       noResults: "Keine passenden Sender gefunden."
     },
     en: {
@@ -43,12 +44,12 @@
       calcEyebrow: "Interactive cost calculator", calcTitle: "Predictable per room.<br><em>Transparent per month.</em>", calcLead: "Choose room count and package. Hardware, installation and setup are calculated for your project.",
       rooms: "TVs / rooms", calcPackage: "Channel package", monthly: "Monthly cost", pricePer: "Price per TV and month", calcSignal: "Channels included", calcCta: "Request project price",
       finderEyebrow: "Channel finder", finderTitle: "Find quickly.<br><em>Compare clearly.</em>", finderLead: "Search the portfolio by language, category and package. The channel view stays deliberately compact.",
-      searchPlaceholder: "Search channels", packageAll: "All packages", langAll: "All languages", categoryAll: "All categories", reset: "Reset", resultsLabel: "channels found", finderHint: "Logos and names come from the maintained channel list.", showMore: "Show more channels ↓",
+      searchPlaceholder: "Search TV or radio", packageAll: "All packages", langAll: "All languages", categoryAll: "All categories", typeAll: "TV & radio", typeTV: "TV channels", typeRadio: "Radio stations", resultsAll: "services found", resultsTV: "TV channels found", resultsRadio: "radio stations found", mediaTV: "TV", mediaRadio: "Radio", reset: "Reset", resultsLabel: "services found", finderHint: "Official line-up: 264 TV channels and 141 radio stations.", showMore: "Show more ↓",
       platformEyebrow: "One source. Every room.", platformTitle: "Technically precise.<br><em>Quiet in operation.</em>", platformLead: "From source and headend to network and hotel TV: every step is planned, documented and monitored.", platformCta: "Check your infrastructure",
       contactEyebrow: "Your channel world starts here", contactTitle: "Ready for<br><em>television with vision?</em>", contactLead: "30 minutes. Your hotel. Your guest profile. Together we define package, infrastructure and operation.", contactCta: "Discuss your project",
       footerClaim: "The right channel world for every hotel.<br>International, reliable and centrally managed.", footerDiscover: "Discover", footerLink1: "Channel world", footerLink2: "Channel packages", footerLink3: "Channel finder", footerLink4: "Technology & operations", footerContact: "Contact", footerSignature: "TV channel streams for hotels · Swiss Made",
-      languageNames: { de: "German", fr: "French", it: "Italian", en: "English", es: "Spanish", pt: "Portuguese", tr: "Turkish", ar: "Arabic", nl: "Dutch", pl: "Polish", ru: "Russian", sr: "Serbian", hr: "Croatian", el: "Greek" },
-      categoryNames: { news: "News", entertainment: "Entertainment", sports: "Sports", culture: "Culture", kids: "Kids", music: "Music", general: "General", movies: "Movies" },
+      languageNames: { de: "German", fr: "French", it: "Italian", en: "English", es: "Spanish", ar: "Arabic", nl: "Dutch", zh: "Chinese", hu: "Hungarian", other: "Other languages" },
+      categoryNames: { news: "News", entertainment: "Entertainment", sports: "Sports", culture: "Culture", kids: "Kids", music: "Music", general: "General", movies: "Movies", radio: "Radio" },
       noResults: "No matching channels found."
     },
     fr: {
@@ -78,12 +79,12 @@
       calcEyebrow: "Calculateur interactif", calcTitle: "Prévisible par chambre.<br><em>Transparent par mois.</em>", calcLead: "Choisissez le nombre de chambres et le bouquet. Le matériel, l’installation et la configuration sont calculés selon le projet.",
       rooms: "TV / chambres", calcPackage: "Bouquet TV", monthly: "Coût mensuel", pricePer: "Prix par TV et par mois", calcSignal: "Chaînes incluses", calcCta: "Demander le prix du projet",
       finderEyebrow: "Recherche de chaînes", finderTitle: "Trouver vite.<br><em>Comparer clairement.</em>", finderLead: "Parcourez le portefeuille par langue, catégorie et bouquet. L’affichage reste volontairement compact.",
-      searchPlaceholder: "Rechercher une chaîne", packageAll: "Tous les bouquets", langAll: "Toutes les langues", categoryAll: "Toutes les catégories", reset: "Réinitialiser", resultsLabel: "chaînes trouvées", finderHint: "Logos et noms proviennent de la liste de chaînes actualisée.", showMore: "Afficher plus de chaînes ↓",
+      searchPlaceholder: "Rechercher TV ou radio", packageAll: "Tous les bouquets", langAll: "Toutes les langues", categoryAll: "Toutes les catégories", typeAll: "TV & radio", typeTV: "Chaînes TV", typeRadio: "Radios", resultsAll: "programmes trouvés", resultsTV: "chaînes TV trouvées", resultsRadio: "radios trouvées", mediaTV: "TV", mediaRadio: "Radio", reset: "Réinitialiser", resultsLabel: "programmes trouvés", finderHint: "Line-up officiel : 264 chaînes TV et 141 radios.", showMore: "Afficher plus ↓",
       platformEyebrow: "Une source. Chaque chambre.", platformTitle: "Précision technique.<br><em>Sérénité opérationnelle.</em>", platformLead: "De la source au headend, du réseau au téléviseur: chaque étape est planifiée, documentée et supervisée.", platformCta: "Faire vérifier l’infrastructure",
       contactEyebrow: "Votre univers TV commence ici", contactTitle: "Prêt pour une<br><em>télévision avec vision?</em>", contactLead: "30 minutes. Votre hôtel. Votre clientèle. Ensemble, nous définissons bouquet, infrastructure et exploitation.", contactCta: "Parler du projet",
       footerClaim: "Le bouquet TV adapté à chaque hôtel.<br>International, fiable et géré de manière centralisée.", footerDiscover: "Découvrir", footerLink1: "Univers TV", footerLink2: "Bouquets TV", footerLink3: "Recherche de chaînes", footerLink4: "Technique & exploitation", footerContact: "Contact", footerSignature: "Flux TV pour hôtels · Swiss Made",
-      languageNames: { de: "Allemand", fr: "Français", it: "Italien", en: "Anglais", es: "Espagnol", pt: "Portugais", tr: "Turc", ar: "Arabe", nl: "Néerlandais", pl: "Polonais", ru: "Russe", sr: "Serbe", hr: "Croate", el: "Grec" },
-      categoryNames: { news: "Actualités", entertainment: "Divertissement", sports: "Sport", culture: "Culture", kids: "Enfants", music: "Musique", general: "Généraliste", movies: "Films" },
+      languageNames: { de: "Allemand", fr: "Français", it: "Italien", en: "Anglais", es: "Espagnol", ar: "Arabe", nl: "Néerlandais", zh: "Chinois", hu: "Hongrois", other: "Autres langues" },
+      categoryNames: { news: "Actualités", entertainment: "Divertissement", sports: "Sport", culture: "Culture", kids: "Enfants", music: "Musique", general: "Généraliste", movies: "Films", radio: "Radio" },
       noResults: "Aucune chaîne correspondante."
     },
     it: {
@@ -113,12 +114,12 @@
       calcEyebrow: "Calcolatore interattivo", calcTitle: "Prevedibile per camera.<br><em>Trasparente al mese.</em>", calcLead: "Scegliete numero di camere e pacchetto. Hardware, installazione e configurazione vengono calcolati per il progetto.",
       rooms: "TV / camere", calcPackage: "Pacchetto canali", monthly: "Costo mensile", pricePer: "Prezzo per TV e mese", calcSignal: "Canali inclusi", calcCta: "Richiedi il prezzo del progetto",
       finderEyebrow: "Ricerca canali", finderTitle: "Trova subito.<br><em>Confronta con chiarezza.</em>", finderLead: "Cercate nel portfolio per lingua, categoria e pacchetto. La visualizzazione resta volutamente compatta.",
-      searchPlaceholder: "Cerca canale", packageAll: "Tutti i pacchetti", langAll: "Tutte le lingue", categoryAll: "Tutte le categorie", reset: "Reimposta", resultsLabel: "canali trovati", finderHint: "Loghi e nomi provengono dalla lista canali aggiornata.", showMore: "Mostra altri canali ↓",
+      searchPlaceholder: "Cerca TV o radio", packageAll: "Tutti i pacchetti", langAll: "Tutte le lingue", categoryAll: "Tutte le categorie", typeAll: "TV & radio", typeTV: "Canali TV", typeRadio: "Radio", resultsAll: "programmi trovati", resultsTV: "canali TV trovati", resultsRadio: "radio trovate", mediaTV: "TV", mediaRadio: "Radio", reset: "Reimposta", resultsLabel: "programmi trovati", finderHint: "Line-up ufficiale: 264 canali TV e 141 radio.", showMore: "Mostra altri ↓",
       platformEyebrow: "Una fonte. Ogni camera.", platformTitle: "Precisione tecnica.<br><em>Tranquillità operativa.</em>", platformLead: "Dalla sorgente e headend alla rete e al TV: ogni passaggio è pianificato, documentato e monitorato.", platformCta: "Verifica l’infrastruttura",
       contactEyebrow: "Il vostro mondo TV inizia qui", contactTitle: "Pronti per una<br><em>TV con visione?</em>", contactLead: "30 minuti. Il vostro hotel. I vostri ospiti. Insieme definiamo pacchetto, infrastruttura e gestione.", contactCta: "Parliamo del progetto",
       footerClaim: "Il bouquet TV adatto a ogni hotel.<br>Internazionale, affidabile e gestito centralmente.", footerDiscover: "Scoprire", footerLink1: "Mondo TV", footerLink2: "Pacchetti TV", footerLink3: "Ricerca canali", footerLink4: "Tecnologia & gestione", footerContact: "Contatto", footerSignature: "Stream TV per hotel · Swiss Made",
-      languageNames: { de: "Tedesco", fr: "Francese", it: "Italiano", en: "Inglese", es: "Spagnolo", pt: "Portoghese", tr: "Turco", ar: "Arabo", nl: "Olandese", pl: "Polacco", ru: "Russo", sr: "Serbo", hr: "Croato", el: "Greco" },
-      categoryNames: { news: "Notizie", entertainment: "Intrattenimento", sports: "Sport", culture: "Cultura", kids: "Bambini", music: "Musica", general: "Generalista", movies: "Film" },
+      languageNames: { de: "Tedesco", fr: "Francese", it: "Italiano", en: "Inglese", es: "Spagnolo", ar: "Arabo", nl: "Olandese", zh: "Cinese", hu: "Ungherese", other: "Altre lingue" },
+      categoryNames: { news: "Notizie", entertainment: "Intrattenimento", sports: "Sport", culture: "Cultura", kids: "Bambini", music: "Musica", general: "Generalista", movies: "Film", radio: "Radio" },
       noResults: "Nessun canale corrispondente."
     }
   };
@@ -277,6 +278,7 @@
 
   const channels = Array.isArray(window.channelData) ? window.channelData : [];
   const search = document.getElementById("channelSearch");
+  const typeFilter = document.getElementById("typeFilter");
   const packageFilter = document.getElementById("packageFilter");
   const languageFilter = document.getElementById("languageFilter");
   const categoryFilter = document.getElementById("categoryFilter");
@@ -302,31 +304,35 @@
   const renderChannels = () => {
     const query = (search?.value || "").trim().toLocaleLowerCase(locale);
     const filtered = channels.filter((channel) =>
+      (!typeFilter?.value || channel.type === typeFilter.value) &&
       (!packageFilter?.value || (channel.packages || []).includes(packageFilter.value)) &&
       (!languageFilter?.value || channel.language === languageFilter.value) &&
       (!categoryFilter?.value || channel.category === categoryFilter.value) &&
       (!query || channel.name.toLocaleLowerCase(locale).includes(query))
     );
-    const filtersActive = Boolean(query || packageFilter?.value || languageFilter?.value || categoryFilter?.value);
-    if (resultCount) resultCount.textContent = String(filtersActive ? filtered.length : 250);
+    if (resultCount) resultCount.textContent = String(filtered.length);
+    const resultLabel = document.getElementById("resultLabel");
+    if (resultLabel) resultLabel.textContent = typeFilter?.value === "tv" ? c.resultsTV : typeFilter?.value === "radio" ? c.resultsRadio : c.resultsAll;
     if (channelGrid) {
       channelGrid.innerHTML = filtered.length ? filtered.slice(0,visibleChannels).map((channel) => {
         const logo = normalizeLogo(channel.logo);
         const language = c.languageNames[channel.language] || channel.language || "";
-        return `<article class="channel-card">
-          <span class="channel-card-logo">${logo ? `<img src="${logo}" alt="${channel.name}" loading="lazy">` : `<span>${channel.badge || channel.name.slice(0,2)}</span>`}</span>
-          <span class="channel-card-copy"><strong>${channel.name}</strong><small>${language} · ${(channel.quality || "HD").toUpperCase()}</small></span>
+        const mediaType = channel.type === "radio" ? c.mediaRadio : c.mediaTV;
+        return `<article class="channel-card channel-card--${channel.type || "tv"}">
+          <span class="channel-card-logo${logo ? "" : " is-fallback"}">${logo ? `<img src="${logo}" alt="${channel.name}" loading="lazy">` : `<span>${channel.badge || channel.name.slice(0,2)}</span>`}</span>
+          <span class="channel-card-copy"><strong>${channel.name}</strong><small>#${channel.number || "–"} · ${mediaType} · ${language}</small></span>
         </article>`;
       }).join("") : `<p class="no-results">${c.noResults}</p>`;
     }
     if (showMore) showMore.hidden = visibleChannels >= filtered.length;
   };
-  [search,packageFilter,languageFilter,categoryFilter].forEach((control) => control?.addEventListener(control.tagName === "INPUT" ? "input" : "change", () => {
+  [search,typeFilter,packageFilter,languageFilter,categoryFilter].forEach((control) => control?.addEventListener(control.tagName === "INPUT" ? "input" : "change", () => {
     visibleChannels = 20;
     renderChannels();
   }));
   reset?.addEventListener("click", () => {
     if (search) search.value = "";
+    if (typeFilter) typeFilter.value = "";
     if (packageFilter) packageFilter.value = "";
     if (languageFilter) languageFilter.value = "";
     if (categoryFilter) categoryFilter.value = "";

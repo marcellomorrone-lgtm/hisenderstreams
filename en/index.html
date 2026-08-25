@@ -209,12 +209,13 @@
       <div class="finder-panel reveal">
         <div class="finder-filters">
           <label class="search-field"><span aria-hidden="true">⌕</span><input id="channelSearch" type="search" placeholder="Sender suchen" data-i18n-placeholder="searchPlaceholder"></label>
+          <select id="typeFilter" aria-label="Media type"><option value="" data-i18n="typeAll">TV & radio</option><option value="tv" data-i18n="typeTV">TV channels</option><option value="radio" data-i18n="typeRadio">Radio stations</option></select>
           <select id="packageFilter" aria-label="Paket"><option value="" data-i18n="packageAll">Alle Pakete</option><option value="basic">Basic</option><option value="essential">Essential</option><option value="max">Max</option></select>
           <select id="languageFilter" aria-label="Sprache"><option value="" data-i18n="langAll">Alle Sprachen</option></select>
           <select id="categoryFilter" aria-label="Kategorie"><option value="" data-i18n="categoryAll">Alle Kategorien</option></select>
           <button id="resetFilters" type="button" data-i18n="reset">Zurücksetzen</button>
         </div>
-        <div class="finder-summary"><span><i></i><b id="resultCount">0</b> <span data-i18n="resultsLabel">Sender gefunden</span></span><small data-i18n="finderHint">Logos und Sendernamen werden aus der gepflegten Senderliste übernommen.</small></div>
+        <div class="finder-summary"><span><i></i><b id="resultCount">0</b> <span id="resultLabel">services found</span></span><small data-i18n="finderHint">Official line-up: 264 TV channels and 141 radio stations.</small></div>
         <div id="channelGrid" class="channel-grid"></div>
         <button id="showMore" class="show-more" type="button" data-i18n="showMore">Weitere Sender anzeigen ↓</button>
       </div>
@@ -272,7 +273,7 @@
     </div>
   </footer>
 
-  <script src="/assets/channels-data.js?v=20260727p1"></script>
-  <script src="/assets/streams-premium.js?v=20260727p2"></script>
+  <script src="/assets/channels-data.js?v=20260825-lineup1"></script>
+  <script src="/assets/streams-premium.js?v=20260825-lineup1"></script>
 </body>
 </html>

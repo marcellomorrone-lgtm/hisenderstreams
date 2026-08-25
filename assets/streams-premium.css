@@ -302,7 +302,8 @@ h1 em, h2 em { color: var(--lime); font-style: normal; font-weight: 400; }
 
 .finder { padding: 145px 0; }
 .finder-panel { margin-top: 75px; padding: 24px; border: 1px solid var(--line); border-radius: 28px; background: #fff; box-shadow: 0 30px 80px rgba(18,33,23,.06); }
-.finder-filters { display: grid; grid-template-columns: 1.4fr repeat(3,.72fr) auto; gap: 8px; }
+.finder-filters { display: grid; grid-template-columns: 1.35fr repeat(4,minmax(110px,.72fr)) auto; gap: 8px; }
+.finder-filters > * { min-width: 0; }
 .finder-filters input, .finder-filters select, .finder-filters button {
   width: 100%; min-height: 45px; padding: 0 13px; border: 1px solid #dce2dc; border-radius: 10px; color: var(--ink); background: #f8f9f6; font-size: .65rem;
 }
@@ -321,6 +322,10 @@ h1 em, h2 em { color: var(--lime); font-style: normal; font-weight: 400; }
 .channel-card-logo { width: 54px; height: 42px; flex: 0 0 auto; display: grid; place-items: center; border-radius: 8px; background: #f7f8f4; }
 .channel-card-logo img { max-width: 44px; max-height: 25px; object-fit: contain; }
 .channel-card-logo span { color: #6e7c73; font-size: .6rem; }
+.channel-card-logo.is-fallback { border: 1px solid rgba(129,164,0,.22); background: linear-gradient(145deg,#fbfcf8,#eef4e3); }
+.channel-card-logo.is-fallback span { color: #527007; font-weight: 700; letter-spacing: .06em; }
+.channel-card--radio .channel-card-logo { background: linear-gradient(145deg,#f8faef,#eef5da); }
+.channel-card--radio:hover { border-color: rgba(183,223,49,.75); }
 .channel-card-copy { min-width: 0; display: flex; flex-direction: column; }
 .channel-card-copy strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: .64rem; font-weight: 400; }
 .channel-card-copy small { margin-top: 4px; color: #8a958e; font-size: .48rem; text-transform: uppercase; }
@@ -439,7 +444,7 @@ h1 em, h2 em { color: var(--lime); font-style: normal; font-weight: 400; }
   .package-grid { grid-template-columns: 1fr; margin-top: 46px; }.package-card { min-height: 370px; }
   .calculator-section { padding: 95px 0; }.calculator { grid-template-columns: 1fr; margin-top: 50px; }
   .calc-controls,.calc-result { padding: 34px 22px; }.calc-result > strong { margin: 42px 0 32px; font-size: 3.5rem; }
-  .finder-panel { margin-top: 50px; padding: 14px; }.finder-filters { grid-template-columns: 1fr 1fr; }
+  .finder-panel { margin-top: 50px; padding: 14px; }.finder-filters { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .search-field { grid-column: 1/-1; }.finder-filters button { width: 100%; }
   .finder-summary { align-items: flex-start; flex-direction: column; }.channel-grid { grid-template-columns: repeat(2,1fr); }
   .platform-section { padding: 95px 0; }.platform-grid { min-height: 0; grid-template-columns: 1fr; }
