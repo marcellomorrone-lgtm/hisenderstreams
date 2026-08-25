@@ -135,7 +135,7 @@ window.channelData = [
       "max"
     ],
     "badge": "TEL",
-    "logo": "",
+    "logo": "assets/channel-logos/provided/tele-basel.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -151,7 +151,7 @@ window.channelData = [
       "max"
     ],
     "badge": "TEL",
-    "logo": "",
+    "logo": "assets/channel-logos/provided/tele-basel.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -201,7 +201,7 @@ window.channelData = [
       "max"
     ],
     "badge": "TEL",
-    "logo": "",
+    "logo": "assets/channel-logos/provided/tele-suedostschweiz.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -218,7 +218,7 @@ window.channelData = [
       "max"
     ],
     "badge": "ORF",
-    "logo": "assets/channel-logos/orf-1.png",
+    "logo": "assets/channel-logos/provided/orf-1-hd.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -234,7 +234,7 @@ window.channelData = [
       "max"
     ],
     "badge": "ORF",
-    "logo": "",
+    "logo": "assets/channel-logos/provided/orf-2.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -250,7 +250,7 @@ window.channelData = [
       "max"
     ],
     "badge": "ORF",
-    "logo": "",
+    "logo": "assets/channel-logos/provided/orf-3.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -282,7 +282,7 @@ window.channelData = [
       "max"
     ],
     "badge": "ORF",
-    "logo": "",
+    "logo": "assets/channel-logos/provided/orf-sport.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -368,7 +368,7 @@ window.channelData = [
       "max"
     ],
     "badge": "PRO",
-    "logo": "",
+    "logo": "assets/channel-logos/wikimedia/pro7-max.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -450,7 +450,7 @@ window.channelData = [
       "max"
     ],
     "badge": "3+",
-    "logo": "",
+    "logo": "assets/channel-logos/wikimedia/3-plus.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -466,7 +466,7 @@ window.channelData = [
       "max"
     ],
     "badge": "4+",
-    "logo": "",
+    "logo": "assets/channel-logos/wikimedia/4-plus.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -875,7 +875,7 @@ window.channelData = [
       "max"
     ],
     "badge": "PUL",
-    "logo": "",
+    "logo": "assets/channel-logos/wikimedia/puls-8.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -1117,7 +1117,7 @@ window.channelData = [
       "max"
     ],
     "badge": "QVC",
-    "logo": "",
+    "logo": "assets/channel-logos/wikimedia/qvc.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -1263,7 +1263,7 @@ window.channelData = [
       "max"
     ],
     "badge": "TF1",
-    "logo": "",
+    "logo": "assets/channel-logos/wikimedia/tf1-series-films.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -1279,7 +1279,7 @@ window.channelData = [
       "max"
     ],
     "badge": "TFX",
-    "logo": "",
+    "logo": "assets/channel-logos/wikimedia/tfx.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -1366,7 +1366,7 @@ window.channelData = [
       "max"
     ],
     "badge": "CST",
-    "logo": "",
+    "logo": "assets/channel-logos/wikimedia/cstar.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -1384,7 +1384,7 @@ window.channelData = [
       "max"
     ],
     "badge": "CN",
-    "logo": "",
+    "logo": "assets/channel-logos/wikimedia/cnews.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -1436,7 +1436,7 @@ window.channelData = [
       "max"
     ],
     "badge": "FRA",
-    "logo": "",
+    "logo": "assets/channel-logos/wikimedia/france-4.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -1519,7 +1519,7 @@ window.channelData = [
       "max"
     ],
     "badge": "TV ",
-    "logo": "",
+    "logo": "assets/channel-logos/wikimedia/tv-monaco.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -1567,7 +1567,7 @@ window.channelData = [
       "max"
     ],
     "badge": "CHE",
-    "logo": "",
+    "logo": "assets/channel-logos/wikimedia/cherie25.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -1664,7 +1664,7 @@ window.channelData = [
       "max"
     ],
     "badge": "CHA",
-    "logo": "",
+    "logo": "assets/channel-logos/wikimedia/chasse-et-peche.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -1801,7 +1801,7 @@ window.channelData = [
       "max"
     ],
     "badge": "RAI",
-    "logo": "",
+    "logo": "assets/channel-logos/wikimedia/rai-4.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -1817,7 +1817,7 @@ window.channelData = [
       "max"
     ],
     "badge": "RAI",
-    "logo": "",
+    "logo": "assets/channel-logos/wikimedia/rai-5.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -1851,7 +1851,7 @@ window.channelData = [
       "max"
     ],
     "badge": "RAI",
-    "logo": "",
+    "logo": "assets/channel-logos/wikimedia/rai-gulp.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -1867,7 +1867,7 @@ window.channelData = [
       "max"
     ],
     "badge": "RAI",
-    "logo": "",
+    "logo": "assets/channel-logos/wikimedia/rai-sport.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -2037,7 +2037,7 @@ window.channelData = [
       "max"
     ],
     "badge": "CIN",
-    "logo": "",
+    "logo": "assets/channel-logos/wikimedia/cine34.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -2261,7 +2261,7 @@ window.channelData = [
       "max"
     ],
     "badge": "SUP",
-    "logo": "",
+    "logo": "assets/channel-logos/wikimedia/super-tennis.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -2445,7 +2445,7 @@ window.channelData = [
       "max"
     ],
     "badge": "FRA",
-    "logo": "",
+    "logo": "assets/channel-logos/wikimedia/france-24-english.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -2493,7 +2493,7 @@ window.channelData = [
       "max"
     ],
     "badge": "TRT",
-    "logo": "",
+    "logo": "assets/channel-logos/wikimedia/trt-world.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -2509,7 +2509,7 @@ window.channelData = [
       "max"
     ],
     "badge": "NHK",
-    "logo": "",
+    "logo": "assets/channel-logos/wikimedia/nhk-world.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -2525,7 +2525,7 @@ window.channelData = [
       "max"
     ],
     "badge": "CGT",
-    "logo": "",
+    "logo": "assets/channel-logos/wikimedia/cgtn-english.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -2541,7 +2541,7 @@ window.channelData = [
       "max"
     ],
     "badge": "CGT",
-    "logo": "",
+    "logo": "assets/channel-logos/wikimedia/cgtn-documentary.png",
     "source": "Hotelinnovativ Channels Lineup"
   },
   {
@@ -6713,11 +6713,3 @@ window.channelData = [
     "source": "Hotelinnovativ Radio Lineup"
   }
 ];
-window.lineupMeta = {
-  "tv": 264,
-  "radio": 141,
-  "total": 405,
-  "languages": 10,
-  "matchedTvLogos": 73,
-  "source": "https://cloud.hotelinnovativ.tech/channels-lineup/generic/WBSSc4dPVU1BR5B3Q69HwDdOdvDrrbA5BAuFaHGZ"
-};

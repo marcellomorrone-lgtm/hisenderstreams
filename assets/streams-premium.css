@@ -275,7 +275,7 @@ h1 em, h2 em { color: var(--lime); font-style: normal; font-weight: 400; }
 
 .finder { padding: 145px 0; }
 .finder-panel { margin-top: 75px; padding: 24px; border: 1px solid var(--line); border-radius: 28px; background: #fff; box-shadow: 0 30px 80px rgba(18,33,23,.06); }
-.finder-filters { display: grid; grid-template-columns: 1.35fr repeat(4,minmax(110px,.72fr)) auto; gap: 8px; }
+.finder-filters { display: grid; grid-template-columns: 1.35fr repeat(3,minmax(110px,.72fr)) auto; gap: 8px; }
 .finder-filters > * { min-width: 0; }
 .finder-filters input, .finder-filters select, .finder-filters button {
   width: 100%; min-height: 45px; padding: 0 13px; border: 1px solid #dce2dc; border-radius: 10px; color: var(--ink); background: #f8f9f6; font-size: .65rem;

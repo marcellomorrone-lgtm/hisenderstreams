@@ -41,7 +41,7 @@
       essentialTitle: "The international hotel standard", essentialF1: "Broad European coverage", essentialF2: "More channels in core languages", essentialF3: "Ideal for most hotels",
       maxTitle: "For guests from around the world", maxF1: "Maximum international variety", maxF2: "Additional language regions", maxF3: "For resorts and international properties",
       recommended: "Recommended", packageCta: "Request advice ↗",
-      finderEyebrow: "Channel finder", finderTitle: "Find quickly.<br><em>Compare clearly.</em>", finderLead: "Search the portfolio by language, category and package. The channel view stays deliberately compact.",
+      finderEyebrow: "Channel finder", finderTitle: "Find quickly.<br><em>Compare clearly.</em>", finderLead: "Search by media type, language, package or channel name. The channel view stays deliberately compact.",
       searchPlaceholder: "Search TV or radio", packageAll: "All packages", langAll: "All languages", categoryAll: "All categories", typeAll: "TV & radio", typeTV: "TV channels", typeRadio: "Radio stations", resultsAll: "services found", resultsTV: "TV channels found", resultsRadio: "radio stations found", mediaTV: "TV", mediaRadio: "Radio", reset: "Reset", resultsLabel: "services found", finderHint: "Official Hotelinnovativ line-up: 264 TV channels and 141 radio stations.", showMore: "Show more ↓",
       platformEyebrow: "One source. Every room.", platformTitle: "Technically precise.<br><em>Quiet in operation.</em>", platformLead: "From source and headend to network and hotel TV: every step is planned, documented and monitored.", platformCta: "Check your infrastructure",
       contactEyebrow: "Your channel world starts here", contactTitle: "Ready for<br><em>television with vision?</em>", contactLead: "30 minutes. Your hotel. Your guest profile. Together we define package, infrastructure and operation.", contactCta: "Discuss your project",
@@ -74,7 +74,7 @@
       essentialTitle: "Le standard hôtelier international", essentialF1: "Large couverture européenne", essentialF2: "Plus de chaînes dans les langues principales", essentialF3: "Idéal pour la plupart des hôtels",
       maxTitle: "Pour les clients du monde entier", maxF1: "Diversité internationale maximale", maxF2: "Espaces linguistiques supplémentaires", maxF3: "Pour resorts et hôtels internationaux",
       recommended: "Recommandé", packageCta: "Demander conseil ↗",
-      finderEyebrow: "Recherche de chaînes", finderTitle: "Trouver vite.<br><em>Comparer clairement.</em>", finderLead: "Parcourez le portefeuille par langue, catégorie et bouquet. L’affichage reste volontairement compact.",
+      finderEyebrow: "Recherche de chaînes", finderTitle: "Trouver vite.<br><em>Comparer clairement.</em>", finderLead: "Recherchez par type de média, langue, bouquet ou nom de chaîne. L’affichage reste volontairement compact.",
       searchPlaceholder: "Rechercher TV ou radio", packageAll: "Tous les bouquets", langAll: "Toutes les langues", categoryAll: "Toutes les catégories", typeAll: "TV & radio", typeTV: "Chaînes TV", typeRadio: "Radios", resultsAll: "programmes trouvés", resultsTV: "chaînes TV trouvées", resultsRadio: "radios trouvées", mediaTV: "TV", mediaRadio: "Radio", reset: "Réinitialiser", resultsLabel: "programmes trouvés", finderHint: "Line-up officiel Hotelinnovativ : 264 chaînes TV et 141 radios.", showMore: "Afficher plus ↓",
       platformEyebrow: "Une source. Chaque chambre.", platformTitle: "Précision technique.<br><em>Sérénité opérationnelle.</em>", platformLead: "De la source au headend, du réseau au téléviseur: chaque étape est planifiée, documentée et supervisée.", platformCta: "Faire vérifier l’infrastructure",
       contactEyebrow: "Votre univers TV commence ici", contactTitle: "Prêt pour une<br><em>télévision avec vision?</em>", contactLead: "30 minutes. Votre hôtel. Votre clientèle. Ensemble, nous définissons bouquet, infrastructure et exploitation.", contactCta: "Parler du projet",
@@ -107,7 +107,7 @@
       essentialTitle: "Lo standard alberghiero internazionale", essentialF1: "Ampia copertura europea", essentialF2: "Più canali nelle lingue principali", essentialF3: "Ideale per la maggior parte degli hotel",
       maxTitle: "Per ospiti da tutto il mondo", maxF1: "Massima varietà internazionale", maxF2: "Aree linguistiche aggiuntive", maxF3: "Per resort e strutture internazionali",
       recommended: "Consigliato", packageCta: "Richiedi consulenza ↗",
-      finderEyebrow: "Ricerca canali", finderTitle: "Trova subito.<br><em>Confronta con chiarezza.</em>", finderLead: "Cercate nel portfolio per lingua, categoria e pacchetto. La visualizzazione resta volutamente compatta.",
+      finderEyebrow: "Ricerca canali", finderTitle: "Trova subito.<br><em>Confronta con chiarezza.</em>", finderLead: "Cercate per tipo di media, lingua, pacchetto o nome del canale. La visualizzazione resta volutamente compatta.",
       searchPlaceholder: "Cerca TV o radio", packageAll: "Tutti i pacchetti", langAll: "Tutte le lingue", categoryAll: "Tutte le categorie", typeAll: "TV & radio", typeTV: "Canali TV", typeRadio: "Radio", resultsAll: "programmi trovati", resultsTV: "canali TV trovati", resultsRadio: "radio trovate", mediaTV: "TV", mediaRadio: "Radio", reset: "Reimposta", resultsLabel: "programmi trovati", finderHint: "Line-up ufficiale Hotelinnovativ: 264 canali TV e 141 radio.", showMore: "Mostra altri ↓",
       platformEyebrow: "Una fonte. Ogni camera.", platformTitle: "Precisione tecnica.<br><em>Tranquillità operativa.</em>", platformLead: "Dalla sorgente e headend alla rete e al TV: ogni passaggio è pianificato, documentato e monitorato.", platformCta: "Verifica l’infrastruttura",
       contactEyebrow: "Il vostro mondo TV inizia qui", contactTitle: "Pronti per una<br><em>TV con visione?</em>", contactLead: "30 minuti. Il vostro hotel. I vostri ospiti. Insieme definiamo pacchetto, infrastruttura e gestione.", contactCta: "Parliamo del progetto",
@@ -225,10 +225,12 @@
 
   const logoFiles = [
     ["srf-1.png","SRF 1"],["srf-zwei.png","SRF zwei"],["tele-zueri.png","TeleZüri"],
-    ["tele-baern.png","TeleBärn"],["rts-1.png","RTS 1"],["rsi-la-2.png","RSI LA 2"],
+    ["tele-baern.png","TeleBärn"],["provided/tele-basel.png","Tele Basel"],["provided/tele-suedostschweiz.png","Tele Südostschweiz"],
+    ["rts-1.png","RTS 1"],["rsi-la-2.png","RSI LA 2"],
     ["das-erste-ard.png","ARD"],["zdf.png","ZDF"],["3sat.png","3sat"],["arte-deutsch.png","arte"],
     ["france-2.png","France 2"],["tf1.png","TF1"],["rai-1.png","Rai 1"],["bbc-one.png","BBC One"],
-    ["cnn-international.png","CNN"],["orf-1.png","ORF 1"],["blue-zoom.png","blue Zoom"]
+    ["cnn-international.png","CNN"],["provided/orf-1-hd.png","ORF 1 HD"],["provided/orf-2.png","ORF 2"],
+    ["provided/orf-3.png","ORF III"],["provided/orf-sport.png","ORF Sport"],["blue-zoom.png","blue Zoom"]
   ];
   const marquee = document.querySelector(".channel-marquee-track");
   if (marquee) {
@@ -246,7 +248,6 @@
   const typeFilter = document.getElementById("typeFilter");
   const packageFilter = document.getElementById("packageFilter");
   const languageFilter = document.getElementById("languageFilter");
-  const categoryFilter = document.getElementById("categoryFilter");
   const reset = document.getElementById("resetFilters");
   const resultCount = document.getElementById("resultCount");
   const channelGrid = document.getElementById("channelGrid");
@@ -260,7 +261,6 @@
     });
   };
   addOptions(languageFilter, [...new Set(channels.map((item) => item.language).filter(Boolean))].sort(), c.languageNames);
-  addOptions(categoryFilter, [...new Set(channels.map((item) => item.category).filter(Boolean))].sort(), c.categoryNames);
 
   const normalizeLogo = (logo) => {
     if (!logo) return "";
@@ -286,7 +286,6 @@
       (!typeFilter?.value || channel.type === typeFilter.value) &&
       (!packageFilter?.value || (channel.packages || []).includes(packageFilter.value)) &&
       (!languageFilter?.value || channel.language === languageFilter.value) &&
-      (!categoryFilter?.value || channel.category === categoryFilter.value) &&
       (!query || channel.name.toLocaleLowerCase(locale).includes(query))
     );
     if (resultCount) resultCount.textContent = String(filtered.length);
@@ -306,7 +305,7 @@
     }
     if (showMore) showMore.hidden = visibleChannels >= filtered.length;
   };
-  [search,typeFilter,packageFilter,languageFilter,categoryFilter].forEach((control) => control?.addEventListener(control.tagName === "INPUT" ? "input" : "change", () => {
+  [search,typeFilter,packageFilter,languageFilter].forEach((control) => control?.addEventListener(control.tagName === "INPUT" ? "input" : "change", () => {
     visibleChannels = 20;
     renderChannels();
   }));
@@ -315,7 +314,6 @@
     if (typeFilter) typeFilter.value = "";
     if (packageFilter) packageFilter.value = "";
     if (languageFilter) languageFilter.value = "";
-    if (categoryFilter) categoryFilter.value = "";
     visibleChannels = 20;
     renderChannels();
   });
